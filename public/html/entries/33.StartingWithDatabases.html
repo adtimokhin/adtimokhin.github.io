@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | Databases Introduction</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">Getting started with Databases</h1>
+                <section>
+                    <h4 class="section-title">What is a database
+                    </h4>
+                    <div class="paragraph">
+                        <p> Database allows you to store data in a convenient way. All data is split into tables. Each
+                            table stores some kind of data. That "kind of data" is data that is grouped under some
+                            common entity. For example, you can have a table that will store
+                            information about your users. Each user should have an id, username and password. So every
+                            column will represent a single parameter of an entity. Table
+                            for users may look something like this:
+                        </p>
+
+                        <div class="text-image">
+                            <img src="../../images/entries/33/3.3.1Pic1.png" class="mx-auto d-block">
+                        </div>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Columns store the same type of data (like passwords), rows store one entity (like user).
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> Most databases make use of a query language named SQL. It allows us to communicate with
+                            databases. If you are unfamiliar with SQL, I suggest you spend a few hours getting the basic
+                            idea. The language itself is quite easy, and right now you don't need to go into depths of
+                            it. There are many wonderful tutorials out there to learn SQL. I can recommend
+                            you try
+                            <a href="https://www.w3schools.com/sql/" target="_blank"
+                                class="text-link">this one</a>.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Connecting database to our Spring application</h4>
+                    <div class="paragraph">
+                        <p> Spring applications can make use of databases. Before starting to work with it though we
+                            need to download the database onto our machine. There are many databases to choose from:
+                            MySQL, PostgreSQL, Oracle Database and many others. No matter which one you choose - all of
+                            them use more or less same syntax.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p> I will teach you how to work with PostgreSQL. If you prefer any other database I am certain
+                            that you will be able to use it in the Spring application online.
+                        </p>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step One: Download your database</h6>
+                        <div class="paragraph">
+                            <p> Do the following:
+                            </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Download database onto your machine (link to download postgreSQL from their
+                                        official website: <a href="https://www.postgresql.org/download/" target="_blank"
+                                            class="text-link">​​https://www.postgresql.org/download/</a>)
+                                    </li>
+                                </ul>
+                            </ul>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p> After you follow through the installation process you will get onto a screen that looks
+                                something like this:
+                            </p>
+
+                            <div class="text-image">
+                                <img src="../../images/entries/33/3.3.2Pic2.png" class="mx-auto d-block">
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>You should also see a few servers on the left of that screen. Inside these servers you
+                                have some databases that we will be using for storing our data.
+                            </p>
+                            <!-- Todo: change later -->
+                            <div class="text-image">
+                                <img src="../../images/entries/33/3.3.2Pic2.png" class="mx-auto d-block">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Two: Troubleshooting with running postgreSQL
+                        </h6>
+                        <div class="paragraph">
+                            <p> When I restart my computer and try to run a postgreSQL server I always get an error
+                                message that tells me that I cannot start my Postgres server because the port that is
+                                used by Postgres by default is in use.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> I found this solution and it works for me, so it may also work for you. <a
+                                    href="https://github.com/dwyl/learn-postgresql/issues/60#issuecomment-590024646"
+                                    target="_blank" class="text-link">Here it is</a>
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>You're welcome :)</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Three: Adding dependency
+                        </h6>
+
+                        <div class="paragraph">
+                            <p> To make our Java code be able to communicate with our Postgres database we need a
+                                special class called Driver. There is a Driver class for any database that you will be
+                                using so you will be able to find it in some dependency.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>This one is for <a href="https://mvnrepository.com/artifact/org.postgresql/postgresql"
+                                    class="text-link" target="_blank"></a>postgreSQL</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Do the following:
+                            </p>
+
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Get Maven dependency with Driver class for your database</li>
+                                </ul>
+                            </ul>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>This is how it will look for Postgres:</p>
+                            <p class="file-name">pom.xml:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;dependency&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;groupId&#62;</span>org.postgresql<span
+                                            class="xml-tag">&#60;/groupId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;artifactId&#62;</span>postgresql<span
+                                            class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;version&#62;</span>42.2.23<span
+                                            class="xml-tag">&#60;/version&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;/dependency&#62;</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-class">
+                        <h6 class="sub-section-title">Step Four: Connecting database to our application</h6>
+                        <div class="paragraph">
+                            <p> Now we can connect our database to our application. We need a connection so that we can
+                                work with our database inside our Spring application.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p> Do the following:
+                            </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>
+                                        On the right open the “Database” tab
+                                        <div class="text-image">
+                                            <img src="../../images/entries/33/3.3.3Pic4.png" class="mx-auto d-block">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        Click new and select your database from the datasource tab
+                                        <div class="text-image">
+                                            <img src="../../images/entries/33/3.3.4Pic5.png" class="mx-auto d-block">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        Fill in the information about your connection
+                                        <div class="text-image">
+                                            <img src="../../images/entries/33/3.3.5Pic6.png" class="mx-auto d-block">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>I suggest that the only things that you change here for now are your username, password
+                                and the name of your database.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> Your username and password are already inside the settings of the postgres server, so
+                                either you need to find them or use the username and password for your loggin for your
+                                computer. It is also possible that your database will have some default password and
+                                username set.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> Database name should be equal to the name of one database that already exists inside
+                                your postgreSQL server.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>
+                                        Press the <span class="text-button">Test Connection</span> button to see that
+                                        everything worked fine. If it
+                                        does, you should see a message like this:
+
+                                        <div class="text-image">
+                                            <img src="../../images/entries/33/3.3.6Pic7.png" class="mx-auto d-block">
+                                        </div>
+
+                                    </li>
+
+                                    <li>
+                                        Copy the URL for your database connection. We will need it in just a second.
+                                        <div class="text-image">
+                                            <img src="../../images/entries/33/3.3.7Pic8.png" class="mx-auto d-block">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        Press the <span class="text-button">OK</span> button to create the connection.
+                                        If everything goes well (as it
+                                        should), you will see a new connection inside your “Database” tab:
+                                        <div class="text-image">
+                                            <img src="../../images/entries/33/3.3.8Pic9.png" class="mx-auto d-block">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Fantastic.</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Four: Creating .properties file for our database</h6>
+                        <div class="paragraph">
+                            <p> What we have done in the previous step is we have established a connection with the
+                                database so that our <u>IDE</u> can work with our database. But we want our Spring
+                                application
+                                also to have access to the server as well.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> First of all, in order to establish a connection we need to store information about that
+                                connection inside our app. There are a few ways of doing this. For example, you can
+                                create
+                                some final static Strings and use them to store information about the connection.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> But there is a better one. We can create a seperate file where we will store a list
+                                of properties that we need for establishing our connection. That is considered a better
+                                way because it is much simpler to update your data if it changes.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> And now we finally get to use the <span class="text-folder-name">resource</span> folder!
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Do the following:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>
+                                        Create file <span>persistence.properties</span>inside the
+                                        <span>resource</span> folder.
+
+                                    </li>
+
+                                    <li>
+                                        Add required properties inside our <span
+                                          >persistence.properties</span> file.
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="paragraph">
+                            <div class="text-image">
+                                <p>Inside the resource folder:</p>
+                                <img src="../../images/entries/33/3.3.9Pic10.png" class="mx-auto d-block">
+                            </div>
+
+                            <p>
+                                A filetype with extension <b>.properties</b> is
+                                a special file type that stores only a list of properties.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>In order to establish connection, we are going to need the following properties:
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p><b>user</b> - that’s your username for the postgres database<br />
+
+                                <b>password</b> - that’s your password for the postgres database<br />
+                                <b>url</b> - that’s the url that we have copied from the previous step. It tells Spring
+                                where is the database<br />
+                                <b>driver</b> - that’s the folder hierarchy where your Driver class can be found.
+                            </p>
+                            <div class="text-image">
+                                <p>persistence.properties:</p>
+                                <img src="../../images/entries/33/3.310Pic11.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Step Connecting our java application to our postgres database
+                    </h4>
+                    <div class="paragraph">
+                        <p> Now let’s finally establish the connection!
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> There is a special class called <span class="text-class-name">Connection</span> that will
+                            allow us to communicate with our
+                            database through code.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> We can create that <span class="text-class-name">Connection</span> object inside a
+                            configuration file where we would also set all
+                            the properties we have created.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Do the following:
+                        </p>
+
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>Create a new configuration file where we have a bean of class <span
+                                        class="text-class-name">Connection</span>.
+
+
+                                </li>
+                            </ul>
+                        </ul>
+
+                        <p class="file-name">PersistenceConfig.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p> </p>
+                                <p><span class="annotation">@Configuration</span> </p>
+                                <p><span class="annotation">@PropertySource</span> (<span
+                                        class="string">"classpath:persistence properties"</span>) </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    PersistenceConfig { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Bean</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> Connection
+                                    getConnection (<span class="annotation">@Value</span> (<span
+                                        class="string">"${user}"</span>) String user, </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="annotation">@Value</span> (<span class="string">"${password}"</span>)
+                                    String password, </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="annotation">@Value</span> (<span class="string">"${url}"</span>)
+                                    String url, </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="annotation">@Value</span> (<span class="string">"${driver}"</span>)
+                                    String driver){ </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">try</span> {
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Class.forName(driver)
+                                    <span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">return</span> DriverManager.getConnection(url, user,
+                                    password) <span
+                                    class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} <span class="key-word">catch</span>
+                                    (SQLException |
+                                    ClassNotFoundException e) { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">return</span> <span class="key-word">null</span> <span
+                                        class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>} </p><br />
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>To tell Spring where our <b>.properties</b> file is, we use <span
+                                class="text-annotation">@PropertySource</span> annotation. As a
+                            parameter we set the classpath to our <span
+                                class="text-file-name">persistence.properties</span> file.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p><span class="text-annotation">@Value</span> annotation is used to tell what value from the
+                            property file we want to download.
+                            As a parameter of the annotation we pass a name of the property in the following format:
+                        </p>
+                        <p class="centered">
+                            <b>“${property name}”</b>
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Yay! We have established the connection. Yep. It's that simple.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Don’t forget to add this configuration class to our <span
+                                class="text-class-name">WebAppInitializer</span>!
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <div class="paragraph">
+                        <p>
+                            There are four main ways to work with SQL requests through Java code. I want to show all of
+                            them to you. I will show you how to work with them on an example of creating the sign up
+                            functionality for our application.
+                        </p>
+                    </div>
+                </section>
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="nav-button" onclick="location.href='00.MVC.html'" type="button">
+                                Previous topic: MVC Model
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='331.JDBCAPI.html'" type="button">
+                                Next topic: JDBC API
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

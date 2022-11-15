@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | JDBC API</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">JDBC API</h1>
+                <section>
+                    <h4 class="section-title">Quick introduction to database opperations in Java</h4>
+
+                    <div class="paragraph">
+                        <p>First of all, we need to think about what data about our user we would want to save about
+                            them.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> In our system I want us to save the following details:
+                        </p>
+
+                        <p class="centered">
+                            <b>id</b><br />
+                            <b>email</b> - email will also act as username of users<br />
+                            <b>password</b>
+
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>We need to add the appropriate columns into a table, but before doing that we need to create
+                            that table.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>We can create one either through a graphical interface that Intellij IDEA offers, or by
+                            writing SQL statements.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>This is how you create the table through the graphical interface:
+                        </p>
+
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>Press CMND + N on your schema</li>
+                                <li>
+                                    Select to create a new table
+                                    <div class="text-image">
+                                        <img src="../../images/entries/331/3.3.1.1Pic13.png" class="mx-auto d-block">
+                                    </div>
+                                </li>
+
+                                <li>
+                                    Fill in the information about the table
+                                    <div class="text-image">
+                                        <img src="../../images/entries/331/3.3.1.2Pic14.png" class="mx-auto d-block">
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </ul>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>This is how you create the same table by writing a SQL statement:
+                        </p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>
+                                    Open the SQL console for the shema you are working in
+                                    <div class="text-image">
+                                        <img src="../../images/entries/331/3.3.1.3Pic15.png" class="mx-auto d-block">
+                                    </div>
+                                </li>
+
+                                <li>
+                                    Write your statement and press the green <span class="text-button">execute</span>
+                                    button.
+
+                                    <div class="text-image">
+                                        <img src="../../images/entries/331/3.3.1.4Pic16.png" class="mx-auto d-block">
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </ul>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Now let’s create a <span class="text-class-name"><span class="text-class-name">User</span></span> class.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p><span class="text-class-name"><span class="text-class-name">User</span></span> is an entity that we work with through the
+                            database. Such entities we store in a
+                            seperate folder called <span class="text-folder-name">model</span>
+                        </p>
+                    </div>
+
+
+                    <div class="paragraph">
+                        <p>Do the following:
+                        </p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>
+                                    Create <span class="text-folder-name">model</span> folder
+                                </li>
+
+                                <li>
+                                    Create <span class="text-class-name"><span class="text-class-name">User</span></span> class with all the fields we have
+                                    created for that entity in our table
+                                </li>
+
+                            </ul>
+                        </ul>
+
+                        <div class="text-image">
+                            <p>folder structure:</p>
+                            <img src="../../images/entries/331/3.3.1.5Pic17.png" class="mx-auto d-block">
+                        </div>
+                        <p class="file-name">User.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;"><br />
+                                <p> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span> User { </p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// attributes </span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                        class="key-word">int</span> id<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String email<span
+                                        class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String password<span
+                                        class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">//constructors </span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User () { </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// Getters and Setters </span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">int</span> getId () { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    id<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> setId (<span class="key-word">int</span> id) { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">this</span>.id= id<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String getEmail () {
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    email<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> setEmail (String email) { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">this</span>.email= email<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String getPassword () {
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    password<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> setPassword (String password) { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">this</span>.password= password<span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>} </p><br />
+                                <p> </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Superb.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>The users in our system will be added through our sign up page where people will enter their
+                            credentials.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> To make our FTL pages to pass information to the server we need to modify the sign up page
+                            that we have created before.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> There is a special tag in HTML for sending information from clients back to the server. It
+                            is called
+                            <span class="text-xml-tag">&#60;form&#62;&#60;/form&#62;</span>
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> You set two properties to the <span
+                                class="text-xml-tag">&#60;form&#62;&#60;/form&#62;</span> tags:
+                        </p>
+
+                        <p class="centered">
+                            <b>method</b> - that is the type of HTML method that will the form send (either <b>post</b>
+                            or <b>get</b>). We usually set it
+                            to <b>post</b><br />
+                            <b>action</b> - that is the URL to which the information will be sent.
+                        </p>
+
+                        <div class="text-image">
+                            <p>singUp.ftl:</p>
+                            <img src="../../images/entries/331/3.3.1.7Pic19.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> Inside <span class="text-xml-tag">&#60;form&#62;&#60;/form&#62;</span> tags we need to add
+                            the information that we want to retrieve from our users. Special tags <span
+                                class="text-xml-tag">&#60;input&#62;&#60;/input&#62;</span> will help us in
+                            that.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>
+                            <span class="text-xml-tag">&#60;input&#62;&#60;/input&#62;</span> tags have a number of
+                            parameters:
+                        </p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>
+                                    <b>type</b> - that is the type of input we will receive. Right now we need to
+                                    remember only these 4:
+                                    <ul class="list-unstyled">
+                                        <ul>
+                                            <li>
+                                                email
+                                            </li>
+                                            <li>
+                                                password
+                                            </li>
+                                            <li>submit
+                                            </li>
+                                            <li>
+                                                hidden
+                                            </li>
+                                        </ul>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <b>submit</b> is used to send the form back to server
+                                </li>
+                                <li>
+                                    <b>hidden</b> tells that input cannot be nor viewed, nor edited by the client
+                                </li>
+                                <li>
+                                    <b>name</b> is the name of the input by which we can access the data it
+                                    stores
+                                </li>
+                                <li>
+                                    <b>value</b> is predefined value for the input parameter.
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>We will need a form with 2 inputs from the user: one for email and another for password.
+                        </p>
+
+                        <div class="text-image">
+                            <p>singUp.ftl:</p>
+                            <img src="../../images/entries/331/3.3.1.8Pic20.png" class="mx-auto d-block">
+                        </div>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>We will also need input for sending the form - the input with <span
+                                class="code">submit</span> type.
+                        </p>
+
+                        <div class="text-image">
+                            <p>singUp.ftl:</p>
+                            <img src="../../images/entries/331/3.3.1.9Pic21.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Now let’s create a method for handling this URL inside our <span
+                                class="text-class-name">AuthController</span>.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Method will have <span class="text-annotation">@PostMapping</span> annotation as we put data
+                            from the user into our system.
+                        </p>
+                        <p class="file-name">AuthController.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p>&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@PostMapping</span> (<span
+                                        class="string">"/sign_up"</span>)<span class="comment">// this method will
+                                        be evoked when user sends the form in signUp.ftl</span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String signUpPost ()
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Method for
+                                        post functionality of method </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    <span class="string">"signUp"</span><span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>
+                            To get information from the HTML form we can use a special tag <span
+                                class="text-annotation">@RequestParam</span>
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Inside parameters of the <span class="text-annotation">@RequestParam</span> annotation we put
+                            the name of the input tag from which
+                            we want to get the information.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> We need to put that annotation next to a method parameter that we would get from the HTML
+                            form.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>After adding parameters to our <span class="code">signUpPost()</span> method it looks like
+                            this:
+                        </p>
+                        <p class="file-name">AuthController.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p>&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@PostMapping</span> (<span
+                                        class="string">"/sign_up"</span>) <span class="comment">// this method will
+                                        be evoked when user sends the form in signUp.ftl</span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String signUpPost (<span
+                                        class="annotation">@RequestParam</span> (name = <span
+                                        class="string">"email"</span>) String email, </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="annotation">@RequestParam</span> (name = <span
+                                        class="string">"password"</span>) String password){ </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Method for
+                                        post functionality of method </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    <span class="string">"signUp"</span><span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>&#160;&#160;&#160;&#160; </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Inside this method we will be adding users to our database.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="section-title">Service model
+                    </h4>
+
+                    <div class="paragraph">
+                        <p> All the work we will be doing with the data we get (our business logic) will be carried in
+                            separate classes and methods.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>All of that business logic is done through services. There will be a service for working with
+                            users, for working with news, etc.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> It is a good idea to make our services be interfaces. In the interfaces you can only declare
+                            methods but you can’t specify their implementation. Then whenever we need a new way for
+                            the methods of our service to work we will create a new interface implementation of that
+                            service.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>
+                                    Create a new package called service
+                                </li>
+                                <li>
+                                    Inside create an interface for user service (e.g. UserService)
+                                </li>
+                            </ul>
+                        </ul>
+
+
+                        <div class="text-image">
+                            <p>file structure:</p>
+                            <img src="../../images/entries/331/3.3.1.10Pic24.png" class="mx-auto d-block">
+                        </div>
+
+                        <p class="file-name">UserService.interface:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="key-word">package</span> com.adtimokhin.service<span class="key-word">;
+                                    </span>
+                                </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p><span class="annotation">@Service</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                    UserService { </p><br />
+                                <p> </p>
+                                <p>} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="paragraph">
+                        <p>
+                            <span class="text-annotation">@Service</span>
+                            annotation is a variation of <span class="text-annotation">@Component</span>. <span
+                                class="text-annotation">@Service</span> tells
+                            Spring that that class is actually a service.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Inside this service let’s declare a method that we will need to call when we want to create a
+                            new user. It will take email and password as parameters to create that user and save him
+                            inside our database.</p>
+
+                        <p class="file-name">UserService.interface:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Service</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                    UserService { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">void</span> saveUser (User user) <span class="key-word">;</span></p>
+                                <p>} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Now, as I have said, we will be working with users inside an implementation of our
+                            <span class="text-interface-name">UserService</span>. Let’s create one.
+                        </p>
+
+                        <p class="file-name">UserServiceImpl.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> <span class="comment">// This annotation
+                                        is very important. Do not forget to add it (or its variation) to classes that
+                                        you want to use as beans.</span></p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    UserServiceImpl <span class="key-word">implements</span> UserService{ </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> saveUser (User user) { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Using this
+                                        method we will save user into our database. </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>} </p><br />
+                                <p> </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>I will also create methods for viewing all users and a user with a particular email in a
+                            similar fashion.
+                        </p>
+
+                        <p class="file-name">UserService.interface:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Service</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                    UserService { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">void</span> saveUser (User user) <span class="key-word">; </span></p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;User findUser (String email) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;List&#60;User&#62; findAll() <span class="key-word">; </span>
+                                </p>
+                                <p>} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Let’s call <span class="code">saveUser()</span> method from our <span
+                                class="text-class-name">AuthController</span> to save an entity of class <span
+                                class="text-class-name">User></span>.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>We would need to autowire our <span class="text-interface-name">UserService</span> to our
+                            <span class="text-class-name">AuthController</span>. Note, we can autowire the interface
+                            <span class="text-interface-name">UserService</span> and later (if required) specify what
+                            implementation of it we would like to use.
+                        </p>
+
+                        <p class="file-name">Declaring UserService in
+                            AuthController.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Controller</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    AuthController { </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span >UserService
+                                    userService<span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// .... </span></p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+
+                        <p class="file-name">Using in
+                            AuthController.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@PostMapping</span> (<span
+                                        class="string">"/sign_up"</span>) <span class="comment">// this method will
+                                        be evoked when user sends the form in signUp.ftl</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String signUpPost (<span
+                                        class="annotation">@RequestParam</span> (name = <span
+                                        class="string">"email"</span>) String email, </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="annotation">@RequestParam</span> (name = <span
+                                        class="string">"password"</span>) String password){ </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Method for
+                                        post functionality of method that gives sign up functionality</span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user = <span
+                                        class="key-word">new</span> User() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setEmail(email)<span
+                                        class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setPassword(password)<span
+                                        class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;userService.saveUser(user) <span
+                                        class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    <span class="string">"signUp"</span><span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Now, to save users into your database we can use one of four options. The first one in JDBC
+                            API</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">
+                        JDBC API
+                    </h4>
+
+
+                    <div class="paragraph">
+                        <p>JDBC API is a classical way of working with databases. JDBC API is the
+                            only method that makes use of standard SQL queries that we are going to discuss.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>I will show you how to work with the JDBC API by writing the code for the 3 methods I’ve
+                            defined in <span class="text-interface-name"><span class="text-class-name">User</span>Service</span>.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>To be honest, the rules for writing and SQL queries with JDBC API are quite straightforward:
+                        </p>
+
+                        <p>
+                            <b>Step one</b>: Create an object of class <span class="text-class-name">Statement</span>
+                            that will be used to execute your querry to database.
+                        </p>
+                        <p>
+                            <b>Step two</b>: Execute your Statement. If you expect to get some data back use <span
+                                class="code">executeQuery()</span>
+                            method. If you expect no output then use <span class="code">execute()</span> method. If you
+                            want to update data stored in the database use <span class="code">executeUpdate()</span>
+                            method.
+                        </p>
+                        <p>
+                            <b>Step Three</b>:Work with data that you get from the table (if you need to). Data usually
+                            comes in an object
+                            called <span class="text-class-name">ResultSet</span>. It contains the values for all
+                            columns and rows retrieved from the
+                            database.
+
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>I will show how it works on the following three examples:
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Method 1 ( <span class="code">saveUser()</span> ):</p>
+
+                        <p class="file-name">
+                            UserServiceImpl.class:
+                        </p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    UserServiceImpl <span class="key-word">implements</span> UserService{ </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> Connection
+                                    connection<span class="key-word">; </span><span class="comment">// do not forget to
+                                        autowire the Connection we have created in the previous topic </span></p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> saveUser (User user) <span
+                                        class="key-word">throws</span> SQLException { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;String email = user.getEmail()<span
+                                        class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;String password = user.getPassword()<span
+                                        class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step one -
+                                        Creating statement </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Statement statement =
+                                    connection.createStatement() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String sql = <span
+                                        class="string">"INSERT INTO users VALUES(1,\'"</span> + email + <span
+                                        class="string">"\',\'"</span> + password + <span
+                                        class="string">"\')"</span><span class="key-word">; </span></p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step two -
+                                        Executing statement </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;statement.executeUpdate(sql)<span
+                                        class="key-word">; </span><span class="comment">// we use executeUpdate()
+                                        because we update the data stored in our database
+                                    </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p><span class="comment">// ... </span></p>
+                            </div>
+                        </div>
+
+                        <p><b>Side note:</b> We didn’t make our id column meaningful yet, so it does not really matter
+                            what
+                            value we put there.
+                        </p>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Method 2 ( <span class="code">findUser()</span> ):</p>
+
+                        <p class="file-name">
+                            UserServiceImpl.class:
+                        </p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User findUser (String
+                                    email) <span class="key-word">throws</span> SQLException { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step one -
+                                        Creating statement </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Statement statement =
+                                    connection.createStatement() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String sql = <span
+                                        class="string">"SELECT * FROM users WHERE email = \'"+ email+ "\'"</span><span
+                                        class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step two -
+                                        Executing statement </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ResultSet resultSet =
+                                    statement.executeQuery(sql) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//Step three -
+                                        Working with data </span></p>
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (resultSet.next()) </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                    <span class="key-word">new</span> User() <span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.id=
+                                    resultSet.getInt(1) <span class="key-word">; </span><span class="comment">// We get
+                                        data from column numbered 1 in integer form </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.email=
+                                    resultSet.getString(2) <span class="key-word">; </span><span class="comment">// We
+                                        get data from column numbered 2 in String form </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.password=
+                                    resultSet.getString(3) <span class="key-word">; </span><span class="comment">// We
+                                        get data from column numbered 3 in String form </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">return</span> user<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    <span class="key-word">null</span> <span class="key-word">; </span><span
+                                        class="comment">// returning null if no User was found. </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Method 3 (<span class="code">findAll()</span>):</p>
+                        <p class="file-name">
+                            UserServiceImpl.class:
+                        </p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> List&#60;User&#62;
+                                    findAll () <span class="key-word">throws</span> SQLException { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step one -
+                                        Creating statement </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Statement statement =
+                                    connection.createStatement() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String sql = <span
+                                        class="string">"SELECT * FROM users"</span><span class="key-word">; </span></p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step two -
+                                        Executing statement </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ResultSet resultSet =
+                                    statement.executeQuery(sql) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//Step three -
+                                        Working with data </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ArrayList&#60;User&#62; users = <span
+                                        class="key-word">new</span> ArrayList&#60;&#62;() <span class="key-word">;
+                                    </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">while</span>
+                                    (resultSet.next()) </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                    <span class="key-word">new</span> User() <span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.id=
+                                    resultSet.getInt(1) <span class="key-word">; </span><span class="comment">// We get
+                                        data from column numbered 1 in integer form </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.email=
+                                    resultSet.getString(2) <span class="key-word">; </span><span class="comment">// We
+                                        get data from column numbered 2 in String form </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.password=
+                                    resultSet.getString(3) <span class="key-word">; </span><span class="comment">// We
+                                        get data from column numbered 3 in String form </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;users.add(user)
+                                    <span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    users<span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Quick note. It is a good idea to put your statements into static final Strings so that you
+                            don’t make a mistake when writing a single query. I didn’t do it so that all steps would fit
+                            into one single method.
+                        </p>
+                    </div>
+
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Prepared Statements</h6>
+                        <div class="paragraph">
+                            <p> There is a problem with all 3 methods above. All of them are exposed to SQL Injection
+                                attacks. Imagine that someone will write this instead of his email:
+                            </p>
+
+                            <p class="centered">
+                                test@test.test’ OR 1=1 ; --
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                When a <span class="code">findUser()</span> method will be called an SQL code will look
+                                like this:
+                            <p class="centered">
+                                SELECT * FROM users WHERE email = ‘test@test.test’ OR 1=1 ; --’
+                            </p>
+
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                This SQL Statement will not return users with email test@test.test, but instead return
+                                all users and someone will get access to all our users.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> To protect ourselves from those kinds of attacks, we should use <span
+                                    class="text-class-name">PreparedStatement</span> class. They simply don’t allow SQL
+                                Injections to happen.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Now our three methods will look like this:
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Method 1 (<span class="code">saveUser()</span>):</p>
+
+                            <p class="file-name">
+                                UserServiceImpl.class:
+                            </p>
+
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> saveUser (User user) <span
+                                            class="key-word">throws</span> SQLException { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String email = user.email<span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String password =
+                                        user.password<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step one
+                                            - Creating statement </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PreparedStatement
+                                        preparedStatement = connection.prepareStatement(<span class="string">"INSERT
+                                            INTO users VALUES (1,?,?)"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// '?'
+                                            represents a parameter that we should pass </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;preparedStatement.setString(1,
+                                        email) <span class="comment"> // Annoyingly, enumeration starts from 1...</span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;preparedStatement.setString(2,
+                                        password) </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step two
+                                            - Executing statement </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;preparedStatement.executeUpdate()
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Method 2 (<span class="code">findUser()</span>):</p>
+
+                            <p class="file-name">
+                                UserServiceImpl.class:
+                            </p>
+
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User findUser
+                                        (String email) <span class="key-word">throws</span> SQLException{ </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step one
+                                            - Creating statement </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PreparedStatement
+                                        preparedStatement = connection.prepareStatement(<span class="string">"SELECT *
+                                            FROM users email=?"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;preparedStatement.setString(1,
+                                        email) </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step two
+                                            - Executing statement </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ResultSet resultSet =
+                                        preparedStatement.executeQuery() <span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//Step
+                                            three - Working with data </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (resultSet.next()) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user
+                                        = <span class="key-word">new</span> User() <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.id=
+                                        resultSet.getInt(1) <span class="key-word">; </span><span class="comment">// We
+                                            get data from column numbered 1 in integer form </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.email=
+                                        resultSet.getString(2) <span class="key-word">; </span><span class="comment">//
+                                            We get data from column numbered 2 in String form </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.password=
+                                        resultSet.getString(3) <span class="key-word">; </span><span class="comment">//
+                                            We get data from column numbered 3 in String form </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> user<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">null</span> <span
+                                            class="key-word">; </span><span class="comment">// returning null if no User
+                                            was found. </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Method 3 (<span class="code">findAll()</span>):</p>
+                            <p class="file-name">
+                                UserServiceImpl.class:
+                            </p>
+
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> List&#60;User&#62;
+                                        findAll () <span class="key-word">throws</span> SQLException{ </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step one
+                                            - Creating statement </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PreparedStatement
+                                        preparedStatement = connection.prepareStatement(<span class="string">"SELECT *
+                                            FROM users"</span>) </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step two
+                                            - Executing statement </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ResultSet resultSet =
+                                        preparedStatement.executeQuery() <span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//Step
+                                            three - Working with data </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ArrayList&#60;User&#62; users =
+                                        <span class="key-word">new</span> ArrayList&#60;&#62;() <span class="key-word">;
+                                        </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">while</span></span>
+                                        (resultSet.next()) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user
+                                        = <span class="key-word">new</span> User() <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.id=
+                                        resultSet.getInt(1) <span class="key-word">; </span><span class="comment">// We
+                                            get data from column numbered 1 in integer form </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.email=
+                                        resultSet.getString(2) <span class="key-word">; </span><span class="comment">//
+                                            We get data from column numbered 2 in String form </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.password=
+                                        resultSet.getString(3) <span class="key-word">; </span><span class="comment">//
+                                            We get data from column numbered 3 in String form </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;users.add(user)
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> users<span class="key-word">; </span><span
+                                            class="comment">// returning null if no  User was found. </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p><span class="text-class-name">PreparedStatements</span> are called prepared because you
+                                can create them and then use them whenever you need them, setting required parameters.
+                                That means you don’t really have to create them every time when you execute a query by
+                                calling an appropriate service method, but
+                                instead use those that you created before.
+                            </p>
+
+                            <p>
+                                Here is an exmaple for the <span class="code">saveUser()</span> method:
+                            </p>
+
+                            <p class="file-name">
+                                UserServiceImpl.class:
+                            </p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// Here are our PreparedStatements
+                                            object:
+                                        </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> PreparedStatement
+                                        saveUserPreparedStatement = connection.prepareStatement(<span
+                                            class="string">"INSERT INTO users VALUES (1,?,?)"</span>) </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> saveUser (User user) <span
+                                            class="key-word">throws</span> SQLException{ </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String email = user.email<span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String password =
+                                        user.password<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Now we
+                                            don't create a PreparedStatement every time we call this method. </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// We only
+                                            have to set parameters into the PreparedStatement: </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;saveUserPreparedStatement.setString(1,
+                                        email) </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;saveUserPreparedStatement.setString(2,
+                                        password) </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Step two
+                                            - Executing statement </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;saveUserPreparedStatement.execute()
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p> That does it for JDBC API. It is the most basic way of communicating with databases and
+                                it has its own drawbacks - it is very messy! Besides, other methods from the next 3
+                                pages make it easier to write SQL statements. The only good side of JDBC API is that is
+                                executed very rapidly.</p>
+                                <p> Now, however, we will leave JDBC API and wil move to JDBC Template.</p>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="nav-button" onclick="location.href='33.StartingWithDatabases.html'" type="button">
+                                Previous topic: Introduction to Databases
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='332.JDBCTemplate.html'" type="button">
+                                Next topic: JDBC Template
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

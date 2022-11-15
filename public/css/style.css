@@ -1,0 +1,185 @@
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    margin-bottom: 60px; /* Margin bottom by footer height */
+  }
+
+  body.bdy{
+      background-color: #d6d8d9 !important;
+  }
+
+
+  /* Footer */
+  .footer {
+    position:relative;
+    bottom: 0;
+    width: 100%;
+    height: auto; 
+    line-height: 60px;
+    background-color: #252525;
+  }
+
+  .logo-container{
+      margin: auto;
+      max-width: 240px;
+  }
+
+  .footer-link{
+     display: block;
+     text-align: center;
+  }
+
+  a.footer-link-title{
+    display: block;
+    text-align: center;
+    text-decoration-line: none;
+    color:#f2f2f4;
+  }
+
+  a:hover.footer-link-title{
+    color:#f2f2f4;
+  }
+
+  a.footer-link{
+      height: 40px;
+      text-decoration-line: none;
+      color:#a0a0a0;
+      
+  }
+
+  a:hover.footer-link{
+    color:#f2f2f4;
+  }
+
+/* Main */
+main{
+    height:fit-content;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    
+}
+
+/* Text */
+
+h4.section-title{
+    font-weight: bold;
+
+}
+
+/* h1.page-title{} */
+
+.sub-section-title{
+    text-decoration-line: underline;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+section{
+    margin-top: 1rem;
+    margin-bottom: 11rem;
+}
+
+.paragraph{
+
+    margin-bottom: 2rem;
+
+    font-family: Iowan Old Style, 'Times New Roman', Times, serif;
+    font-size: 18px;
+
+}
+
+.sub-section{
+    margin-top: 3rem;
+}
+
+.centered{
+    text-align: center;
+}
+
+/* links in text */
+a.text-link{
+    color:#203c96;
+}
+
+a:hover.text-link{
+    color:#152867;
+}
+
+a:visited.text-link{
+    color:#0e1b48;
+}
+
+ul.link-list a{
+    color:#203c96;
+}
+ul.link-list a:hover{
+    color:#152867;
+}
+ul.link-list a:visited{
+    color:#0e1b48;
+}
+
+/* images in text */
+div.text-image{
+    height: fit-content;
+    width: 100%;
+}
+
+div.text-image img{
+    width: 100%;
+    border: 3px solid #152867;
+}
+
+div.text-image p{
+    background-color: #203c96;
+    color: #ecfffa;
+    width: fit-content;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* bottom navigation buttons */
+.nav-button{
+    background-color: #203c96;
+    color: #ecfffa;
+
+    height: 100px;
+    width: 15em;
+
+    border-color: #152867;
+    border-radius: 12px;
+
+}
+
+button.nav-button:hover{
+    background-color: #152867;
+}
+
+button.nav-button:active{
+    background-color: #0e1b48;
+    color: #bfd2cb;
+}
+
+
+/* adverts */
+div.advert-h{
+    width: fit-content;
+    height: 100%;
+}
+
+div.advert-v{
+    width: 100%;
+    height: fit-content;
+
+    margin-bottom: 30px;
+}
+
+h1{
+    font-family: Palatino bold, serif;
+}
+
+

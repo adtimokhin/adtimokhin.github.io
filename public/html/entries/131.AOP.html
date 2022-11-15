@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | AOP and Spring AOP</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">AOP and Spring AOP</h1>
+                <section>
+                    <div class="paragraph">
+                        <p>Imagine that you want to have a shared functionality in many methods. Say, you want to log
+                            every method in
+                            your program.
+                            Would you want to waste your time to go to every method to write the same lines of code?</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Usually we don’t want to waste time duplicating the code that adds nothing to the methods’
+                            execution (like
+                            logging). To
+                            add functionality to every method without writing any additional code into them we use AOP.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">What is AOP?</h4>
+                    <div class="paragraph">
+                        <p>AOP stands for “Aspect-Oriented Programming”. It is a paradigm that is based on around
+                            aspects.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>You might be asking yourself: “Hey, what are those aspects you are talking about?”. Patience
+                            my friends. In a
+                            few
+                            minutes you will find the answer.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Say you want to have a special class that will be used to add the following lines into your
+                            log files:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Class named [...] was initialized with parameters [...] &#60;- this statement you want to
+                            write before the
+                            execution of a
+                            method.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Class named [...] returned value [...] &#60;- this statement you want to add after the
+                            method’s execution.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Aspect
+                            is that class that you can use to perform this logging action before, during and after the
+                            method’s
+                            execution.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Aspect can perform any action, but most commonly we log with it. Let’s try to create an
+                            aspect that will log
+                            the
+                            start and the end of all service methods we’ve made so far. </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Let’s waste no time and start writing our aspects!
+                        </p>
+                    </div>
+
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step One: Dependencies </h6>
+                        <div class="paragraph">
+                            <p>Whole Spring AOP can be found inside <a
+                                    href="https://mvnrepository.com/artifact/org.springframework/spring-aop"
+                                    class="text-link" target="_blank">this dependency</a>>.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p> Spring also makes use of an AOP library (that
+                                provides AOP functionality) called AspectJ.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>In order to work with AspectJ, Spring needs <a
+                                    href="https://mvnrepository.com/artifact/org.aspectj/aspectjweaver"
+                                    class="text-link" target="_blank">this dependency</a>.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Do the following: </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Add required dependencies </li>
+                                </ul>
+                            </ul>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">pom.xml</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                            ... --&#62;<br /></span></p><br />
+                                    <p></p>
+                                    <p><span
+                                            class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--AOP--&#62;<br /></span>
+                                    </p><br />
+                                    <p></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;dependency&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;groupId&#62;</span>org.springframework<span
+                                            class="xml-tag">&#60;/groupId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;artifactId&#62;</span>spring-aop<span
+                                            class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;version&#62;</span>${spring.version}<span
+                                            class="xml-tag">&#60;/version&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                    <p></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;dependency&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;groupId&#62;</span>org.aspectj<span
+                                            class="xml-tag">&#60;/groupId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;artifactId&#62;</span>aspectjweaver<span
+                                            class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;version&#62;</span>1.9.7<span
+                                            class="xml-tag">&#60;/version&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;scope&#62;</span>runtime<span
+                                            class="xml-tag">&#60;/scope&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                    <p></p>
+                                    <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                            ... --&#62;<br /></span></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Two: Configuration</h6>
+                        <div class="paragraph">
+                            <p>This is going to be the simplest configuration we have done so far. All we need is to
+                                tell Spring that we
+                                want to enable
+                                AOP by using the AspectJ library.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Do the following:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Create new AspectConfig class</li>
+                                    <li>Add @EnableAspectJAutoProxy annotation</li>
+                                    <li>Don’t forget to connect this config to the dispatcher servlet</li>
+                                </ul>
+                            </ul>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">AspectConfig.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Configuration</span> </p>
+                                    <p><span class="annotation">@EnableAspectJAutoProxy</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        AspectConfig { </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">WebAppInitializer.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Order</span> (1) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        WebAppInitializer <span class="key-word">extends</span>
+                                        AbstractAnnotationConfigDispatcherServletInitializer { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span>
+                                        Class&#60;?&#62;[] getServletConfigClasses () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">new</span>
+                                        Class[]{WebConfig.<span class="key-word">class</span>, PersistenceConfig.<span
+                                            class="key-word">class</span>, </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SecurityConfig.<span
+                                            class="key-word">class</span>, EmailConfig.<span
+                                            class="key-word">class</span>, AspectConfig.<span
+                                            class="key-word">class</span>}<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// </span></p>
+                                            <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>And that’s it!!</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Three: Writing Aspect class</h6>
+                        <div class="paragraph">
+                            <p>All AOP magic happens
+                                in Aspects. This is a simple class that is annotated with <span
+                                    class="text-annotation">@Aspect</span>
+                                annotation.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>I think we should create one aspect where we will perform logging actions in our
+                                application.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Do the following:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Create a new package “aspect”. There you will be storing all of your aspects
+                                    </li>
+                                    <li>Inside that packet create new class LoggingAspect</li>
+                                    <li>Annotate that class with @Aspect
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="paragraph">
+                            <div class="text-image">
+                                <p>Folder hierarchy:</p>
+                                <img src="../../images/entries/131/13.1Pic4.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">LoggingAspect.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Aspect</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        LoggingAspect { </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p> Inside any aspect you will find methods that will be invoked before/during/after
+                                execution of different
+                                methods.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>In order to create such methods let’s get familiar with some terminology.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">AOP Terminology</h4>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Aspect</h6>
+                        <div class="paragraph">
+                            <p>We already talked about what aspects are. They are classes that allow to perform some
+                                functionality when
+                                certain
+                                methods are at certain points of their execution cycle (e.g. only starting or already
+                                finishing)</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Advice</h6>
+                        <div class="paragraph">
+                            <p>Advice is what actually contains the aspect’s code to run. In the OOP equivalent, aspects
+                                are classes and
+                                advice are
+                                methods.</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Joinpoint</h6>
+                        <div class="paragraph">
+                            <p>This is a point in execution of your program (like method) where you can execute this
+                                additional code
+                                you’ve made in
+                                the aspect (i.e advice).</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Pointcut</h6>
+                        <div class="paragraph">
+                            <p>Pointcut tells the program in which joinpoints you call which aspect’s methods (advices).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <p>To be honest, it took me a very long time to understand what each of these things are.
+                            Hopefully, the code
+                            examples
+                            below will help you to get your head around this quicker.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Writing advices and pointcuts</h4>
+                    <div class="paragraph">
+                        <p>Don’t try to run the code that you will see in this section until you reach the next step.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Let’s create a pointcut that will be used to group together all methods inside the service
+                            classes:</p>
+                        <p class="file-name">LoggingAspect.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Aspect</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    LoggingAspect { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Pointcut</span> (<span
+                                        class="dev-comment"> /** Here we will tell which methods we want to log </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="dev-comment">* (in other words - what methods this pointcut should group)
+                                        **/</span>)</p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> logAllServiceMethods () { </p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="paragraph">
+                        <p>Pointcut method should not return anything.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            To refer to a pointcut in the aspect class we need to use the name of the pointcut’s method.
+                            In this case -
+                            <span class="code">logAllServiceMethods()</span>.
+
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>This is one way of creating advices:</p>
+                        <p class="file-name">LoggingAspect.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Aspect</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    LoggingAspect { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Pointcut</span> () </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> logAllServiceMethods () { </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Before</span> (<span
+                                        class="string">"logAllServiceMethods()"</span>) </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> logAllMethodsBeforeExecution () </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="paragraph">
+                        <p>You see that we have used <span class="text-annotation">@Before</span> annotation. Advices
+                            come in different
+                            types:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li><span class="text-annotation">@Before</span> - called before the joinpoint( the
+                                    execution of the
+                                    method that we want
+                                    to log)</li>
+                                <li><span class="text-annotation">@After</span> - called after the joinpoint (the
+                                    execution of the
+                                    method that we want
+                                    to log)</li>
+                                <li><span class="text-annotation">@AfterReturning</span> - called after the execution of
+                                    a method that
+                                    we log that
+                                    returns a value</li>
+                                <li><span class="text-annotation">@AfterTrowing</span> - called after throwing an
+                                    exception</li>
+                                <li><span class="text-annotation">@Around</span> - this aspect will be called instead of
+                                    running the
+                                    method. I will show
+                                    you how to use that in a second</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            I will give examples of each advice type below. They will only be used as examples, and you
+                            don’t have to
+                            copy them
+                            to your program.
+
+                        </p>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Before Advice</h6>
+                        <div class="paragraph">
+                            <p class="file-name">LoggingAspect.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Aspect</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        LoggingAspect { </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                    <p>&#160;&#160;&#160;&#160; </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                            class="key-word">final</span> <span class="key-word">static</span> Logger
+                                        logger = LoggerFactory.getLogger(LoggingAspect.<span class="key-word">class
+                                        </span>) <span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Before</span> (<span
+                                            class="string">"logAllServiceMethods()"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> logAllMethodsBeforeExecution (JoinPoint
+                                        joinPoint) </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// In this
+                                            case joinPoint is a method that will be called after execution of this
+                                            advice. </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Signature signature =
+                                        joinPoint.getSignature() <span class="key-word">; </span><span
+                                            class="comment">// this is the method's signature </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String methodName =
+                                        signature.getName() <span class="key-word">; </span><span class="comment">//
+                                            this is method's name </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.trace(<span
+                                            class="string">"Method {}
+                                            was called"</span>, methodName)<span class="key-word"> ;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="paragraph">
+                            <p>Notice how in the advice’s parameters we set an object of <span
+                                    class="text-class-name">JoinPoint</span>.
+                                This <span class="text-class-name">JoinPoint</span> is the method that will be executed
+                                as soon as the
+                                code for the advice
+                                will be executed.</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">After Advice</h6>
+                        <div class="paragraph">
+                            <p class="file-name">LoggingAspect.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Aspect</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        LoggingAspect { </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                    <p>&#160;&#160;&#160;&#160; </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                            class="key-word">final</span> <span class="key-word">static</span> Logger
+                                        logger = LoggerFactory.getLogger(LoggingAspect.<span class="key-word">class
+                                        </span>) <span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@After</span> (<span
+                                            class="string">"logAllServiceMethods()"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> logAllMethodsAfterExecution (JoinPoint
+                                        joinPoint) </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Signature signature =
+                                        joinPoint.getSignature() <span class="key-word">; </span><span
+                                            class="comment">// this is the method's signature </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String methodName =
+                                        signature.getName() <span class="key-word">; </span><span class="comment">//
+                                            this is method's name </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.trace(<span
+                                            class="string">"Method {}
+                                            has been terminated"</span>, methodName)<span class="key-word"> ;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-section">
+                            <h6 class="sub-section-title">AfterReturning Advice</h6>
+                            <div class="paragraph">
+                                <p class="file-name">LoggingAspect.class:</p>
+                                <div class="code-container">
+                                    <div class="code-block" style="overflow-y:auto;">
+                                        <p><span class="annotation">@Aspect</span> </p>
+                                        <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                            LoggingAspect { </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                        <p>&#160;&#160;&#160;&#160; </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                                class="key-word">final</span> <span class="key-word">static</span>
+                                            Logger
+                                            logger = LoggerFactory.getLogger(LoggingAspect.<span class="key-word">class
+                                            </span>) <span class="key-word">; </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="annotation">@AfterReturning</span>
+                                            (pointcut = <span class="string">"logAllServiceMethods()"</span>, returning
+                                            = <span class="string">"returnValue"</span>) </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                                class="key-word">void</span> logAllMethodsAfterReturning (JoinPoint
+                                            joinPoint, Object returnValue) </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Signature signature =
+                                            joinPoint.getSignature() <span class="key-word">; </span><span
+                                                class="comment">// this is the method's signature </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String methodName =
+                                            signature.getName() <span class="key-word">; </span><span class="comment">//
+                                                this is method's name </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.trace(<span
+                                                class="string">"Method {}
+                                                returned {}"</span>, methodName, returnValue.toString())<span
+                                                class="key-word"> ;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;} </p>
+                                        <p>} </p>
+                                    </div>
+                                </div>
+                                <div class="paragraph">
+                                    <p>Note that when you expect to have a returned value you have to specify the name
+                                        by which
+                                        you will refer
+                                        to it in the
+                                        annotation. You will also need to add the returned value with the same name to
+                                        the
+                                        method’s (advice’s)
+                                        arguments.</p>
+                                </div>
+                            </div>
+                            <div class="sub-section">
+                                <h6 class="sub-section-title">AfterThrowing Advice</h6>
+                                <div class="paragraph">
+                                    <p class="file-name">LoggingAspect.class:</p>
+                                    <div class="code-container">
+                                        <div class="code-block" style="overflow-y:auto;">
+                                            <p><span class="annotation">@Aspect</span> </p>
+                                            <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                                LoggingAspect { </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                                    class="key-word">final</span> <span class="key-word">static</span>
+                                                Logger logger = LoggerFactory.getLogger(LoggingAspect.<span
+                                                    class="key-word">class</span>) <span class="key-word">; </span></p>
+                                            <br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@AfterThrowing</span>
+                                                (pointcut = <span class="string">"logAllServiceMethods()""</span>,
+                                                throwing =
+                                                <span class="string">"exception"</span>)
+                                            </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                                    class="key-word">void</span> logAllMethodsAfterExceptionThrowing
+                                                (JoinPoint joinPoint, Throwable exception) { </p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Signature signature =
+                                                joinPoint.getSignature() <span class="key-word">; </span><span
+                                                    class="comment">// this is the signature of the method </span></p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String methodName =
+                                                signature.getName() <span class="key-word">; </span><span
+                                                    class="comment">// this is the name of the method </span></p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                                logger.error(<span class="string">"Method {} triggered an exception:
+                                                    {}"</span>, methodName,
+                                                exception.getMessage())<span class="key-word">; </span></p>
+                                            <p>&#160;&#160;&#160;&#160;} </p>
+                                            <p>} </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="paragraph">
+                                    <p>AfterThrowing Advice is very similar to AfterReturning Advice. But in the
+                                        AfterThrowing
+                                        Advice we have to
+                                        create a
+                                        variable for an exception (an object of class Throwable) that we want to catch.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="sub-section">
+                                <h6 class="sub-section-title">Around Advice</h6>
+                                <div class="paragraph">
+                                    <p class="file-name">LoggingAspect.class:</p>
+                                    <div class="code-container">
+                                        <div class="code-block" style="overflow-y:auto;">
+                                            <p><span class="annotation">@Aspect</span> </p>
+                                            <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                                LoggingAspect { </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                                    class="key-word">final</span> <span class="key-word">static</span>
+                                                Logger logger = LoggerFactory.getLogger(LoggingAspect.<span
+                                                    class="key-word">class</span>) <span class="key-word">; </span></p>
+                                            <br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Around</span> (<span
+                                                    class="string">"logAllServiceMethods()"</span>) </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                                    class="key-word">void</span> logAllMethodsAroundExecution
+                                                (ProceedingJoinPoint joinPoint) <span class="key-word">throws</span>
+                                                Throwable { </p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                                    ProceedingJoinPoint is a joinPoint that was not yet executed.
+                                                </span></p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                                    In this advice you must trigger its execution. </span></p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                                    Before JointPoint is initialised: </span></p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                                String methodName = joinPoint.getSignature().getName()<span
+                                                    class="key-word">; </span></p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                                logger.trace(<span class="string">"Method {} is about to be
+                                                    executed"</span>, methodName)<span class="key-word">;
+                                                </span></p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;long timeBeforeExecution
+                                                = System.currentTimeMillis() <span class="key-word">; </span></p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                                    Triggering the execution of the JoinPoint: </span></p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;joinPoint.proceed() <span
+                                                    class="key-word">; </span></p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                                    After JoinPoint was executed: </span></p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                                logger.trace(<span class="string">"Method {} was executed"</span>,
+                                                methodName)<span class="key-word">; </span></p>
+                                            <br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;long timeAfterExecution =
+                                                System.currentTimeMillis() <span class="key-word">; </span></p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;long timeOfExecution =
+                                                timeAfterExecution - timeBeforeExecution<span class="key-word">; </span>
+                                            </p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                                logger.trace(<span class="string">"Method {} took {} ms to
+                                                    execute"</span>, methodName,
+                                                timeOfExecution)<span class="key-word">; </span></p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;} </p>
+                                            <p>} </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="paragraph">
+                                    <p>Around advice allows us to execute some actions before <span
+                                            class="text-class-name">JoinPoint</span>
+                                        execution and
+                                        then to perform other actions after <span
+                                            class="text-class-name">JoinPoint</span> was
+                                        executed. In this
+                                        example,
+                                        the advice calculates the time it takes to run the method.</p>
+                                </div>
+                            </div>
+                            <div class="paragraph">
+                                <p>Let’s create an advice that we will use in our real application.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>I think we'll need three Advice:</p>
+                                <p> 1) Around Advice that will log the start and finish of the joinpoint execution. It
+                                    will also
+                                    tell us how
+                                    many
+                                    milliseconds it took to execute the joinpoint</p>
+                                <p> 2) AfterThrowing Advice that will log any errors that will be thrown</p>
+                                <p> 3) AfterReturning Advice that will log the returned value of each method</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>This is how we may approach creating these Advice:</p>
+                                <p class="file-name">LoggingAspect.class:</p>
+                                <div class="code-container">
+                                    <div class="code-block" style="overflow-y:auto;">
+                                        <p><span class="annotation">@Aspect</span> </p>
+                                        <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                            LoggingAspect { </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                                class="key-word">final</span> <span class="key-word">static</span>
+                                            Logger logger = LoggerFactory.getLogger(LoggingAspect.<span
+                                                class="key-word">class</span>) <span class="key-word">; </span></p>
+                                        <br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="comment">// 1) </span></p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="annotation">@Around</span> (<span
+                                                class="string">"logAllServiceMethods()"</span>) </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                                class="key-word">void</span> logAllMethodsAroundExecution
+                                            (ProceedingJoinPoint joinPoint) <span class="key-word">throws</span>
+                                            Throwable { </p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                                ProceedingJoinPoint is a joinPoint that was not yet executed. </span>
+                                        </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// In
+                                                this advice you must trigger its execution. </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                                Before JointPoint is initialised: </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                            String methodName = joinPoint.getSignature().getName()<span
+                                                class="key-word">; </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                            logger.trace(<span class="string">"Method {} is about to be
+                                                executed"</span>, methodName)<span class="key-word">; </span>
+                                        </p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;long timeBeforeExecution =
+                                            System.currentTimeMillis() <span class="key-word">; </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                                Triggering the execution of the JoinPoint: </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;joinPoint.proceed() <span
+                                                class="key-word">; </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                                After JoinPoint was executed: </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                            logger.trace(<span class="string">"Method {} was executed"</span>,
+                                            methodName)<span class="key-word">; </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;long timeAfterExecution =
+                                            System.currentTimeMillis() <span class="key-word">; </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;long timeOfExecution =
+                                            timeAfterExecution - timeBeforeExecution<span class="key-word">; </span></p>
+                                        <br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                            logger.trace(<span class="string">"Method {} took {} ms to execute"</span>,
+                                            methodName,
+                                            timeOfExecution)<span class="key-word">; </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;} </p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="comment">// 2) </span></p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="annotation">@AfterThrowing</span>
+                                            (pointcut = <span class="string">"logAllServiceMethods()"</span>, throwing =
+                                            <span class="string">"exception"</span>)
+                                        </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                                class="key-word">void</span> afterThrowingAdviceLogsError (JoinPoint
+                                            joinPoint, Throwable exception) { </p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Signature signature =
+                                            joinPoint.getSignature() <span class="key-word">; </span><span
+                                                class="comment">// this is the signature of the method </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String methodName =
+                                            signature.getName() <span class="key-word">; </span><span class="comment">//
+                                                this is the name of the method </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                            logger.error(<span class="string">"Method {} triggered an exception:
+                                                {}"</span>, methodName,
+                                            exception.getMessage())<span class="key-word">; </span></p>
+                                        <p>&#160;&#160;&#160;&#160;} </p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="comment">// 3) </span></p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="annotation">@AfterReturning</span>
+                                            (pointcut = <span class="string">"logAllServiceMethods()"</span>, returning
+                                            = <span class="string">"returnVal"</span>) </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                                class="key-word">void</span> afterReturningLogAllServiceMethods
+                                            (JoinPoint joinPoint, Object returnVal) { </p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Signature signature =
+                                            joinPoint.getSignature() <span class="key-word">; </span><span
+                                                class="comment">// this is the signature of the method </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String methodName =
+                                            signature.getName() <span class="key-word">; </span><span class="comment">//
+                                                this is the name of the method </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// I
+                                                want to display full information about the User, if User is returned
+                                            </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="key-word">if</span> (User.<span
+                                                class="key-word">class</span>.equals(returnVal.getClass())) { </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.debug(<span
+                                                class="string">"Method {} had returned User with
+                                                parameters: {}"</span> + methodName, ((User) returnVal).getInfo())<span
+                                                class="key-word">; </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<span
+                                                class="key-word">else</span>{ <span class="comment">// or otherwise
+                                                display standart message </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                            logger.debug(<span class="string">"Method {} returned object of class
+                                                {}:{}"</span> , methodName, returnVal.getClass().getName() ,
+                                            returnVal)<span class="key-word">;</span>
+                                            </span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                        <p>&#160;&#160;&#160;&#160;} </p>
+                                        <p>} </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="paragraph">
+                                <p>This pretty much concludes the advice options.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Back to Pointcut</h4>
+                    <div class="paragraph">
+                        <p>We will have a look at our point cut once again:</p>
+                        <p class="file-name">LoggingAspect.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Aspect</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    LoggingAspect { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Pointcut</span> (<span
+                                        class="dev-comment"> /** Here we will tell which methods we want to log </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="dev-comment">* (in other words - what methods this pointcut should group)
+                                        **/</span>)</p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> logAllServiceMethods () { </p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <p>Does it tell which methods we should log? No!</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Inside the parameters of the <span class="text-annotation">@Pointcut</span> annotation we set
+                            the “rule”, if
+                            you
+                            like, for pointcut to find methods (or joinpoints) that we will then log with our advice.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>The syntax for this rule is a weird one, not going to lie. It provides a lot of options on
+                            how to select
+                            certain
+                            joinpoints, but we are not going to go over all of them. As you start to use AOP, you will
+                            use primarily
+                            only one
+                            form of this syntax:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="centered">execution(access_modifier returned_type
+                            full.path.to.class.method_name(parameter_type))</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Let me show you an example:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="centered">execution(public com.adtimokhin.model.User
+                            com.adtimokhin.service.impl.UserServiceImpl.findUser(String))</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            This statement will match only to a public method <span class="code">findUser()</span>
+                            inside the <span class="text-class-name">UserServiceImpl</span> class. This method should
+                            take in <span class="text-class-name">String</span> and return <span
+                                class="text-class-name">User</span>.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>We can tell the pointcut which parts of this argument we don’t really care about - which can
+                            have any value.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>So, say this pointcut statement below:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="centered">execution(* com.adtimokhin.service.impl.*(..))</p>
+                    </div>
+
+
+
+
+
+                    <div class="paragraph">
+                        <p>This statement will be mapped to all joinpoints that:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>Have any access modifier and return any value (this is what this first asterisk
+                                    represents)</li>
+                                <li>Is inside the com.adtimokhin.service.impl package</li>
+                                <li>Have any method name</li>
+                                <li>Have any parameters taken in (this is what these .. stands for)</li>
+                            </ul>
+                        </ul>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="paragraph">
+                        <p> You can play around with this statement in any way you like. For our logging purposes,
+                            however, this second
+                            pointcut
+                            statement is totally sufficient.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>This is how you set the pointcut’s value:</p>
+                        <p class="file-name">LoggingAspect.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Aspect</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    LoggingAspect { </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Pointcut</span>(<span
+                                        class="string">"execution(* com.adtimokhin.service.impl.*(..))"</span>)</p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> logAllServiceMethods () { </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>If you want to learn more about this syntax you can have a read online. I found an <a
+                                href="https://www.baeldung.com/spring-aop-pointcut-tutorial" class="text-link"
+                                target="_blank">article</a> that I think summarizes
+                            everything very well.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Also I want to mention that advice annotations that we’ve used above can also have some weird
+                            syntax: we can
+                            set
+                            parameters for our advice. You will probably won’t need it for logging your application, but
+                            if you want to
+                            learn
+                            about it here is the link to the <a
+                                href="https://docs.spring.io/spring-framework/docs/4.3.15.RELEASE/spring-framework-reference/html/aop.html#aop-ataspectj-advice-params-generics"
+                                class="text-link" target="_blank">Spring documentation</a>.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Extra feature</h4>
+                    <div class="paragraph">
+                        <p>What if you need only one advice for a single pointcut? You can combine pointcut and advice
+                            like this:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">LoggingAspect.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Aspect</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    LoggingAspect { </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Before</span>(<span class="string">"execution(* com.adtimokhin.controller.*(..))"</span>)</p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> beforeEachControllerMethod (JoinPoint joinPoint)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// In this case
+                                        joinPoint is a method that will be called after execution of this advice.
+                                    </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Signature signature =
+                                    joinPoint.getSignature() <span class="key-word">; </span><span class="comment">//
+                                        this is the method's signature </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String methodName =
+                                    signature.getName() <span class="key-word">; </span><span class="comment">// this is
+                                        method's name </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        logger.info(<span class="string">"{} was called"</span>, joinPoint.getSignature().getName())<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">One last thing to mention</h4>
+
+                    <div class="paragraph">
+                        <p>If you want to explore AOP even further, I advise you to start from reading through <a
+                                href="https://www.eclipse.org/aspectj/doc/released/progguide/index.html"
+                                class="text-link" target="_blank">AspectJ documentation</a>
+                            . I think that it is a good place to start.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-xs-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='121.Logging.html'"
+                                    type="button">
+                                Previous topic: Logging
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+
+button.extra-section{
+    background-color:transparent;
+    color:#0e1b48;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+button.extra-section:hover{
+    color:#203c96;
+    text-decoration-line: underline;
+}
+
+div.extra-section-content{
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #0e1b48;
+    color: #bfd2cb;
+}
+
+    

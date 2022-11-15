@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | First Controller</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+<link href="../../css/extra-sections.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">First Controller</h1>
+                <section>
+                    <div class="paragraph">
+                        <p>And now finally we can begin creating some cool stuff!
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>
+                            Right now let’s do the following. Inside our news website we are going to have many webpages. We
+                            will want to have one for some general information about the project (our landing page) and
+                            a page where users can create an account for our website.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> So I say we create these two pages.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>
+                            Our landing page would be mapped to “/” url
+                        </p>
+                        <p>
+                            Our “create account” page will be mapped to “/sign_up” URL.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> You don’t have to go for the same URLs, you can choose your own, of course.
+                        </p>
+                    </div>
+
+                </section>
+
+                <section>
+
+                    <h4 class="section-title">Steps to create the pages</h4>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title"> Step One: Create controller
+                        </h6>
+                        <div class="paragraph">
+                            <p> A controller is a Java class that calls one of its methods when there is a request to
+                                our server. Inside the controller class we specify which method should be called on
+                                which URL mapping and HTTP request status (about those we will talk about in just a
+                                bit). We also define what that method will do.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> Do the following:
+                            </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>In the main folder ( <span>com.adtimokhin</span>) Create a folder called <span>controller</span> where we will store
+                                        all our controllers.</li>
+                                    <li>Inside that folder create Java class and give it some meaningful name. I will
+                                        go for <span>AuthController</span>
+                                    </li>
+                                    <li>Annotate your class with <span>@Controller</span>
+                                        annotation, which tells Spring that it is a controller class.
+                                    </li>
+                                </ul>
+                            </ul>
+                            <p>You should end up with something similar:</p>
+                            <p class="file-name">AuthController.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p> </p>
+                                    <p><span class="annotation">@Controller</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        AuthController { </p><br />
+                                    <p>} </p><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Two: create mappings for our two pages
+                        </h6>
+                        <div class="paragraph">
+                            <p> Inside our controller we need to create two methods that will be mapped to two separate
+                                URLs, so that we can show two different pages to our users.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> Every method that is called when a certain URL is typed should also be annotated. There are
+                                a few annotations that you may wish to use. For the purpose of this small project we will consider only two of
+                                them:
+                            </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li><span class="text-annotation">@GetMapping</span>
+                                    </li>
+                                    <li><span class="text-annotation">@PostMapping</span></li>
+
+                                </ul>
+                            </ul>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>We use <span class="text-annotation">@GetMapping</span> annotation when the action that
+                                is going to be carried is targeted to get client some data from server. Like returning a
+                                web page or returning some data from our database.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p><span class="text-annotation">@PostMapping</span> annotation is used when clients adds meaningful information to the server. Like when user gives data to update the context of
+                                our database. But note that even when using
+                                <span class="text-annotation">@PostMapping</span> annotation we still can return our
+                                client some data, like a webpage.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                Inside the parameters of both <span class="text-annotation">@GetMapping</span> and <span
+                                    class="text-annotation">@PostMapping</span> you should pass the actual mapping URL
+                                to which the method with such annotation should be called.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> If you want to understand this topic better read the following <a
+                                    href="31.FirstController.html#HTTP" class="text-link">extra-section</a></p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Now, let's deicde which annotations to use in our case. When a user enters “/” or “/sign_up” URL we don't expect any meaningful input from users, but we want to give them webpages. Thus, we
+                                should be using <span class="text-annotation">@GetMapping</span> annotation for both of these methods.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Do the following:
+                            </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Create a method for mapping our landing page.
+                                    </li>
+                                    <li>Create a method for mapping our sign up page.
+                                    </li>
+
+                                </ul>
+                            </ul>
+                            <p class="file-name">AuthController.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p> </p>
+                                    <p><span class="annotation">@Controller</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        AuthController { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@GetMapping</span> (<span
+                                            class="string">"/"</span>) <span class="comment">// this method will be
+                                            evoked when user types "/" into the url bar </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> index () {</p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Method
+                                            for our landing page. </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@GetMapping</span> (<span
+                                            class="string">"/sign_up"</span>) <span class="comment">// this method will
+                                            be evoked when user types "/sign_up" into the url bar </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> signUpGet () {</p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// Method
+                                            for our sign up functionality. </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Of course right now our methods do not return anything useful. So we will not see any
+                                landing or sign up pages. In fact, if you try to run the program you will run into an
+                                error when you try to go to “/sign_up” mapping.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> I will tell you how to fix it in the next section.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h1 class="display-3 text-center page-title">Extra sections</h1>
+                </section>
+                <section id="HTTP">
+                    <h4 class="section-title">Additional section on HTTP Methods</h4>
+                    <button type="button" class="extra-section">Expand/Roll up</button>
+                    <div class="extra-section-content">
+                        <div class="paragraph">
+                            <p>Get and Post are what is called HTTP methods.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>HTTP is protocol - a standard way computers communicate with each other.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>When you interact with a website, for example, by opening a new page or by filling in
+                                some form and pressing the “send” button you actually create an HTTP request.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> This request will let the server know that a specific user wants to perform some kind of
+                                action with a server.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p> And these “actions” are marked using HTTP methods.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Here is the list of HTTP methods that are commonly used and what they signal the server
+                                to do:
+                            </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li><b>GET</b> - get some data back to the user without updating the server’s
+                                        contents. That can be returning a HTML page
+
+                                    </li>
+                                    <li><b>POST</b> - add new data on the server. That can be updating contexts
+                                        of our database, for example.
+
+                                    </li>
+                                    <li>
+                                        <b>PUT</b> - update existing data on the server. 
+
+                                    </li>
+
+                                    <li>
+                                        <b>PATCH</b> - update the data stored on the server. Modify only part of the data. Say, change only one parameter (like name or age) stored in DB.
+                                    </li>
+
+                                    <li>
+                                        <b>DELETE</b> - delete some data from the server
+                                    </li>
+                                </ul>
+                            </ul>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>And you can ask yourself, shouldn’t we then be using annotations like:
+                            </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li><span class="text-annotation">@PutMapping</span>
+                                    </li>
+                                    <li><span class="text-annotation">@PatchMapping
+                                        </span></li>
+                                    <li><span class="text-annotation">@DeleteMapping
+                                        </span></li>
+
+                                </ul>
+                            </ul>
+
+                            <p>And the answer is yes, we should, but we will not.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> All of the HTTP methods above, apart from GET, can be said to perform the same function
+                                as the POST method. By default, HTML supports only GET and POST methods, and that is why
+                                we will not get into details of how to send, for example, DELETE requests.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> Thus, in our current application we will only be using GET and POST http requests and
+                                methods annotated with <span class="text-annotation">@GetMapping</span>, with <span class="text-annotation">@Postmapping</span> to handle these requests from
+                                users.
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="nav-button" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'" type="button">
+                                Previous topic: XML Configuration
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='32.CreatingFirstFTLPages.html'" type="button">
+                                Next topic: FTL Pages
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+      <!-- Scripts -->
+      <script>
+        var coll = document.getElementsByClassName("extra-section");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

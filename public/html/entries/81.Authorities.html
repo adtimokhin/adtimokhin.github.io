@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | Authorities</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">Authorities</h1>
+                <section>
+                    <div class="paragraph">
+                        <p> Sometimes you want to limit the number of people that can perform certain actions on your
+                            website. You want
+                            some of your
+                            users to see one context and enable others to perform some specialised actions with that
+                            content. for
+                            example.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>We have been touching on the idea that there are some users who are also authors of news
+                            articles on our
+                            platform.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>I want to define a special group of users that can create news - authors. I want to have only
+                            a limited
+                            number of users
+                            that can add new <span class="text-class-name"></span>News</span> objects.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Authorities and roles are here to help us with that.</p>
+                    </div>
+                </section>
+                <section>
+
+                    <h4 class="section-title">What are authorities and roles?</h4>
+                    <div class="paragraph">
+                        <p>Authorities give some of your users permission to use certain features of your application.
+                            For example, some
+                            users can
+                            read articles and others can write articles.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>In that example, READ and WRITE can be two authorities that we give to our users. By doing
+                            so, some will be
+                            able to read
+                            <span class="text-class-name">News</span> and others will be able to write them. Of course,
+                            we can combine
+                            the two and permit a single user to read and write
+                            news.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Authorities, in my understanding, are more of a special permit. They give some specific users
+                            access to
+                            functions that
+                            usually users should not access.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Roles are a group of authorities that users can be assigned. It is more of a general thing. A
+                            group of users
+                            will be
+                            able to perform certain actions that other groups can’t.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>For example, regular users will only be able to read news. But users-authors will be able to
+                            read and write
+                            news.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>In this application we won’t need to use any authorities, though. Those authorities will be a
+                            part of each
+                            role that we
+                            will create, and we will have to remember what each role can and can’t do. Of course, if you
+                            are creating a
+                            big and
+                            complex system assigning authorities is also a good idea. Working with authorities is almost
+                            identical to
+                            working with
+                            roles.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Setting roles</h4>
+
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step One: Creating roles</h6>
+                        <div class="paragraph">
+                            <p>We will start by creating a table for roles:
+                            </p>
+                            <div class="text-image">
+                                <p>SQL console:</p>
+                                <img src="../../images/entries/81/8.1.1Pic1.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p> As you see table has only two columns:</p>
+                            <p class="centered">
+                                <b>id</b><br />
+                                <b>role_name</b> - name of a role
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Now we need to create a model for this table:</p>
+                            <p class="file-name">Role.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Entity</span> </p>
+                                    <p><span class="annotation">@Table</span> (name = <span
+                                            class="string">"roles"</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span> Role
+                                        {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Id</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@GeneratedValue</span> (strategy
+                                        = GenerationType.IDENTITY) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                            class="key-word">int</span> id<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Column</span> (name = <span
+                                            class="string">"role_name"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String name<span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// getters and setters </span></p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">int</span> getId () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> id<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> setId (<span class="key-word">int</span> id) {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">this</span>.id= id<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String getName () {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> name<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> setName (String name) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">this</span>.name= name<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>Now let’s use our knowledge of the mappings once again. We will have a connection between
+                                <span class="text-class-name">Role</span> and <span class="text-class-name">User</span>.
+                                This is a One
+                                to Many relationship as <b>one</b> <span class="text-class-name">Role</span> will be
+                                used by <b>many</b>
+                                <span class="text-class-name">User</span> objects, and <b>many</b> <span
+                                    class="text-class-name">User</span>
+                                objects can have only <b>one</b> <span class="text-class-name">Role</span> each.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+
+
+
+
+                            <p>This is how we make this work:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li> Start by creating a new column in the “users” table, call it “role_id”. It
+                                        should be a column
+                                        with notnull
+                                        constraint</li>
+                                    <li> Make “role_id” column be a foreign key that is linked to the “id” of the
+                                        “roles” table</li>
+                                    <li> Create <span class="text-class-name">Role</span> object inside the <span
+                                            class="text-class-name">User</span>
+                                        entity and give it appropriate annotations</li>
+                                    <li> Create a List&#60;User&#62; inside the <span class="text-class-name">Role</span> entity
+                                            and give it
+                                            appropriate
+                                            annotations</li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                After completing the first two steps your “users” table will get a new column:
+
+                            </p>
+                            <div class="text-image">
+                                <p> users table:</p>
+                                <img src="../../images/entries/81/8.1.2Pic3.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p> After the third step your <span class="text-class-name">User</span> class will get a new
+                                variable:
+                            </p>
+                            <p class="file-name"> User.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span> User {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ...</span></p>
+                                    <p>&#160;&#160;&#160;&#160; </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@ManyToOne</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@JoinColumn</span> (name
+                                        = <span class="string">"role_id"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> Role
+                                        role<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ...</span></p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p> After completing the last step, <span class="text-class-name">Role</span> class will get
+                                a new variable:
+                            </p>
+
+                            <p class="file-name">Role.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span> Role {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@OneToMany</span>
+                                        (mappedBy = <span class="string">"role"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span>
+                                        List&#60;User&#62; users<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ...</span></p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p> Also, don’t forget to add appropriate getters and setters.</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+
+                        <h6 class="sub-section-title">Step Two: Working with Role class</h6>
+                        <div class="paragraph">
+                            <p>You see, by making roles into an entity we make it incredibly easy to map users and
+                                roles, especially
+                                when a single
+                                <span class="text-class-name">User</span> can have only one <span
+                                    class="text-class-name">Role</span>.
+                                But there is a
+                                downside to such a method. Now we need to create a service and a
+                                repository to work with <span class="text-class-name">Role</span> objects.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Another very common way of creating a <span class="text-class-name">Role</span> class is
+                                by setting an
+                                enum. Enum, for
+                                those who don't know, is a Java
+                                class that has a list of possible values for that class. By using an enum for Roles, we
+                                will be able to
+                                create a
+                                list of all possible roles. They won’t get lost or deleted, as the roles from the table
+                                can, and that is
+                                a major
+                                bonus.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>When using <span class="text-class-name">Role</span> entities we will need to fill in the
+                                “roles” table
+                                before launching
+                                our project into the web. Right
+                                now, we will do this manually.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>All role names start with: “ROLE_” and are followed by the actual role’s name.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>So, we will need to add the two roles we have into our database:</p>
+                            <div class="text-image">
+                                <p>role table:</p>
+                                <img src="../../images/entries/81/8.1.3Pic6.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p><b>ROLE_COMMON</b> - is a role that allows a user to read news.
+                            </p>
+                            <p>
+                                <b>ROLE_AUTHOR</b> - is a role that will allow some people to write news.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Let’s now create a service and a repository for our <span
+                                    class="text-class-name">Role</span> class. The
+                                service will
+                                not do much - it will only return
+                                an appropriate <span class="text-class-name">Role</span> for a name that we will set it.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                My <span class="text-interface-name">RoleService</span> looks like this:
+
+
+                            </p>
+                            <p class="file-name"> RoleService.inteface:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Service</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                        RoleService { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;Role getRole (String roleName)<span
+                                            class="key-word">;</span></p>
+                                    <p>&#160;&#160;&#160;&#160; </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>This is my <span class="text-interface-name">RoleRepository</span>:
+
+                            </p>
+
+                            <p class="file-name"> RoleRepository.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Repository</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                        RoleRepository <span class="key-word">extends</span> JpaRepository&#60;Role,
+                                        Integer&#62; { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;Role findByName (String roleName)<span
+                                            class="key-word">;</span></p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>And this is implementation of the <span class="text-interface-name">RoleService</span>:
+
+                            </p>
+
+                            <p class="file-name"> RoleServiceImpl.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        RoleServiceImpl <span class="key-word">implements</span> RoleService { </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> RoleRepository
+                                        roleRepository<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> Role getRole (String
+                                        roleName) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> roleRepository.findByName(roleName) <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                Because right now we don’t have many roles, and we are not planning to expand that list,
+                                we can put the
+                                two names of
+                                the <span class="text-class-name">Role</span> objects we have as static final constants,
+                                just like so:
+
+                            </p>
+
+                            <p class="file-name"> Role.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Entity</span> </p>
+                                    <p><span class="annotation">@Table</span> (name = <span
+                                            class="string">"roles"</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span> Role {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">static</span> <span class="key-word">final</span> String
+                                        ROLE_COMMON = <span class="string">"ROLE_COMMON"</span><span class="key-word">;
+                                        </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">static</span> <span class="key-word">final</span> String
+                                        ROLE_AUTHOR = <span class="string">"ROLE_AUTHOR"</span><span class="key-word">;
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p> Superb.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Now let’s set a <span class="text-class-name">Role</span> to <span
+                                    class="text-class-name">User</span>
+                                when they sign up
+                                to the website. That won’t be hard.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>This can be done through <span class="text-class-name">UserServiceImpl</span>.
+
+                            </p>
+
+                            <p class="file-name">UserServiceImpl.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        UserServiceImpl <span class="key-word">implements</span> UserService { </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserRepository
+                                        userRepository<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> PasswordEncoder
+                                        passwordEncoder<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> RoleService
+                                        roleService<span class="key-word">; </span><span class="comment">// don't forget
+                                            to autowire the service we've just created </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> saveUser (User user) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String encodedPassword =
+                                        passwordEncoder.encode(user.getPassword()) <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setPassword(encodedPassword)
+                                        <span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setRole(roleService.getRole(Role.ROLE_COMMON)
+                                        <span class="key-word">; </span><span class="comment">// setting the user's role
+                                            to a common user (i.e. not an author </span>) <span class="key-word">;
+                                        </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setEmailVerificationToken(emailTokenGenerator.generateToken())
+                                        <span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;userRepository.save(user) <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p> The commented lines are the new ones.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Now when we try to create a new <span class="text-class-name">User</span> they should
+                                have a ROLE_COMMON
+                                being set to
+                                them automatically:</p>
+
+                            <div class="text-image">
+                                <p>"users" table:</p>
+                                <img src="../../images/entries/81/8.1.4Pic12.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p>Wonderful.</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Three: Setting URL restrictions</h6>
+                        <div class="paragraph">
+                            <p> Remember how in the <span class="text-class-name">SecurityConfig</span> file we made it
+                                impossible for anonymous users
+                                to view and edit <span class="text-class-name">News</span>? Well, we
+                                are going to do almost the same thing now.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>For <span class="text-class-name">Role</span> class to be viewed by Spring as a class
+                                that can be used for the security
+                                purposes it should implement GrantedAuthority.interface.
+                            </p>
+
+                            <p class="file-name">Role.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Entity</span> </p>
+                                    <p><span class="annotation">@Table</span> (name = <span
+                                            class="string">"roles"</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span> Role
+                                        <span class="key-word">implements</span> GrantedAuthority {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                    <p>&#160;&#160;&#160;&#160; </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>There is only one method that we should implement; that is the <span
+                                    class="code">getAuthority()</span> method. It
+                                should return a String name
+                                of the role. Here is how we can implement this method:
+                            </p>
+
+                            <p class="file-name">Role.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Entity</span> </p>
+                                    <p><span class="annotation">@Table</span> (name = <span
+                                            class="string">"roles"</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span> Role
+                                        <span class="key-word">implements</span> GrantedAuthority {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String getAuthority
+                                        () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">this</span>.name<span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>I know, I know. The complexity of this method seems incomprehensible, but I know that you
+                                can understand it.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Now, while we are still in the <span class="text-class-name">Role</span> class, let’s
+                                create one more method. This
+                                method will return the name of the
+                                roles, but without the “ROLE_” part. We will need it for the <span
+                                    class="text-class-name">SecurityConfig</span> class.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>We can this method look something like this:</p>
+
+                            <p class="file-name">Role.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Entity</span> </p>
+                                    <p><span class="annotation">@Table</span> (name = <span
+                                            class="string">"roles"</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span> Role
+                                        <span class="key-word">implements</span> GrantedAuthority {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">static</span> String getRoleName (String fullName) </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> fullName.substring(<span
+                                            class="string">"ROLE_"</span>.length()) <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p> This method will take the full name of the <span class="text-class-name">Role</span>
+                                (like ROLE_COMMON or ROLE_AUTHOR)
+                                and return the part after the
+                                ROLE_. Of course, we are not validating the argument we get, but I hope you will use
+                                this method wisely and not
+                                cause any exceptions to pop up.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>And now, finally, we can get back to our beloved <span
+                                    class="text-class-name">SecurityConfig</span>. The only thing we
+                                want to do in this class is to
+                                tell Spring that only people with ROLE_AUTHOR can enter the “/news/add” URL.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>How do we do that? Well:</p>
+                            <p class="file-name">SecurityConfig.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Configuration</span> </p>
+                                    <p><span class="annotation">@EnableWebSecurity</span> </p>
+                                    <p><span class="annotation">@ComponentScan</span> (<span
+                                            class="string">"com.adtimokhin.security"</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        SecurityConfig <span class="key-word">extends</span>
+                                        WebSecurityConfigurerAdapter { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span> <span
+                                            class="key-word">void</span> configure (HttpSecurity http) <span
+                                            class="key-word">throws</span> Exception { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;http.authorizeRequests()
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                            class="string">"/news/add"</span>).hasRole(Role.getRoleName(Role.ROLE_AUTHOR))
+                                    </p>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="comment">// ... </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                    <br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                One thing to note is that the order in which you call these <span
+                                    class="code">antMatchers()</span> methods does matter.
+                                The first one will
+                                set the constraints of higher priority. That is why only users with ROLE_AUTHOR can
+                                enter “/news/add” URL and other
+                                authenticated users can’t (even though the second <span
+                                    class="code">antMatchers()</span> method tells that every
+                                authenticated users should
+                                be able to enter URL that begin with “/news/”).</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Fantastic. We have just set up the restrictions!</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Four: AuthenticationProvider</h6>
+                        <div class="paragraph">
+                            <p>If we have a look into our AuthProvider, we will see that we need to set a list of
+                                Authorities when creating a
+                                <span class="text-class-name">UsernamePasswordAuthentication</span> object:
+                            </p>
+                            <p class="file-name">AuthProvider.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        AuthProvider <span class="key-word">implements</span> AuthenticationProvider {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> Authentication
+                                        authenticate (Authentication authentication) <span
+                                            class="key-word">throws</span> AuthenticationException { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String email =
+                                        authentication.getName() <span class="key-word">; </span><span
+                                            class="comment">// we get the username parameter </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                        userService.findUser(email) <span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (user == <span class="key-word">null</span>) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        <span class="key-word">throw new</span>
+                                        AuthenticationCredentialsNotFoundException
+                                        (<span class="string">"User with such email was not detected"</span>) <span
+                                            class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String password =
+                                        authentication.getCredentials().toString()<span class="key-word">;</span> <span
+                                            class="comment">// we get
+                                            the credentials that we will turn into string </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (!passwordEncoder.matches(password, user.getPassword())) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        <span class="key-word">throw new</span> BadCredentialsException (<span
+                                            class="string">"Bad credentials"</span>) <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ArrayList&#60;GrantedAuthority&#62;
+                                        authorities = <span class="key-word">new</span> ArrayList&#60;&#62;() <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">new</span>
+                                        UsernamePasswordAuthenticationToken (user.getEmail(),
+                                        user.getPassword(), authorities)<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>Now when we have <span class="text-class-name">Role</span> , we can actually set them:
+                        </p>
+
+                        <p class="file-name">AuthProvider.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    AuthProvider <span class="key-word">implements</span> AuthenticationProvider {
+                                </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> Authentication
+                                    authenticate (Authentication authentication) <span class="key-word">throws</span>
+                                    AuthenticationException { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// .... </span>
+                                </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                        After all checks we can set the authentication token </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ArrayList&#60;GrantedAuthority&#62;
+                                    authorities = <span class="key-word">new</span> ArrayList&#60;&#62;()
+                                    <span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;authorities.add(user.getRole())
+                                    <span class="key-word">; </span><span class="comment">// and now we can
+                                        set authorities!! </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    <span class="key-word">new</span>
+                                    UsernamePasswordAuthenticationToken
+                                    (user.getEmail(), user.getPassword(), authorities)<span class="key-word">;</span>
+                                    </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                <p>} </p>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>Now the restriction for “/news/add” URL will work.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title"> Extra Step: Creating user with ROLE_AUTHOR</h4>
+                    <div class="paragraph">
+                        <p>
+                            Right now we have no way of getting our users to become authors. Every programmer should
+                            decide for themselves how
+                            they want to overcome this challenge. It is maybe wise to create a new feature that allows
+                            people to apply for the
+                            author role on the website, and then moderators of this app will accept and decline the
+                            requests. But this is
+                            complicated and we will not use any of the new technologies. So, I will not waste our time
+                            doing this.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Instead, I will add a button that will make people become authors by clicking on it. I just
+                            want to show you how we
+                            can change a <span class="text-class-name">Role</span> object associated with a given <span
+                                class="text-class-name">User</span> object. I am more than sure that you can come up
+                            with a more
+                            clever way of triggering that action.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Do the following:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>
+                                    Inside the UserService create a new method that will change the <span
+                                        class="text-class-name">User</span>’s <span class="text-class-name">Role</span>
+                                    to the one that has been requested.</li>
+                                <li>Inside the NewsController will create a POST method changeRolePost() that will be
+                                    used to call the method that I
+                                    have created in the UserService just a second ago.</li>
+                                <li>Inside the allNews.ftl create a new form that will contain CSRF token and the submit
+                                    button. When the submit button
+                                    is clicked, a new POST method changeRolePost() will be triggered.</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p>It will all look like this:
+
+                        </p>
+
+                        <p class="file-name"> UserService.interface:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Service</span> </p>
+                                <p><span class="annotation">@Transactional</span> (readOnly = <span
+                                        class="key-word">true</span>) </p>
+                                <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                    UserService { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Transactional</span> <span
+                                        class="comment">// don't forget the @Transactional annotation </span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">void</span> changeRole (User user,
+                                    String roleName) <span class="key-word">;</span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">UserServiceImp.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    UserServiceImpl <span class="key-word">implements</span> UserService { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                        class="key-word">void</span> changeRole (User user, String roleName) {
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Role role =
+                                    roleService.getRole(roleName) <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (role == <span class="key-word">null</span>)
+                                    { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">return</span> <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setRole(role) <span
+                                        class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;userRepository.save(user)
+                                    <span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>&#160;&#160;&#160;&#160; </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="paragraph">
+                        <p class="file-name">NewsController.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Controller</span> </p>
+                                <p><span class="annotation">@RequestMapping</span> (<span class="string">"news"</span>)
+                                </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    NewController { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                        <p> </p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="annotation">@PostMapping</span> (<span
+                                                class="string">"/change-role"</span>) </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String
+                                            changeRolePost () { </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                            contextProvider.getUser() <span class="key-word">; </span></p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="key-word">if</span> (user == <span class="key-word">null</span>)
+                                            { </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="key-word">return</span> <span
+                                                class="string">"redirect:/news/"</span><span class="key-word">; </span>
+                                        </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;userService.changeRole(user,
+                                            Role.ROLE_AUTHOR)<span class="key-word">;</span> </p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="key-word">return</span> <span
+                                                class="string">"news/allNews"</span><span class="key-word">; </span></p>
+                                        <p>&#160;&#160;&#160;&#160;} </p><br />
+                                        <p> </p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                        <p> </p>
+                                        <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <div class="text-image">
+                            <p>allNews.ftl:</p>
+                            <img src="../../images/entries/81/8.1.5Pic20.png" class="mx-auto d-block">
+                    </div>
+                    </div>
+                    <div class="paragraph">
+                        <p>Ta da! Now we have a button that turns people into authors. How cool is that?</p>
+                    </div>
+                    <div class="paragraph">
+
+                        <div class="text-image">
+                            <p>Before the button was pressed:</p>
+                            <img src="../../images/entries/81/8.1.6Pic21.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <p>Note. This is what is stored in the role table:
+
+                        </p>
+                        <p><b>role_id:</b></p>
+                        <p class="centered">1 is ROLE_COMMON<br />
+                            2 is ROLE_AUTHOR</p>
+                    </div>
+                    <div class="paragraph">
+                        <div class="text-image">
+                            <p>The button:</p>
+                            <img src="../../images/entries/81/8.1.7Pic22.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <p>Here is the same <span class="text-class-name">User</span> looks after the button was
+                            clicked:</p>
+                        <div class="text-image">
+                            <p>user table:</p>
+                            <img src="../../images/entries/81/8.1.8Pic23.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="paragraph">
+                        <p> Topic of authorities and roles, I hope, is not too complicated. I have introduced you to the
+                            most basic way
+                            of
+                            working with them and hopefully it should be enough to start using them.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Next we will move on to the topic of web exception handling.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="nav-button" onclick="location.href='71.MappingPartOne.html'" type="button">
+                                Previous topic: Mappings. Part Two
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='91.ExceptionHandling.html'" type="button">
+                                Next topic: Exception Handling
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

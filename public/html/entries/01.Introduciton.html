@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | Introduction</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">About the site</h1>
+                <section>
+                    <h4 class="section-title">Introduction to this course</h4>
+                    <div class="paragraph">
+                        <p>Welcome to Some Spring Stuff.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Tell me, do you want to learn how to create projects that can make the use of the web?</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> On this website we will try to learn the basics of Spring Framework by creating a small
+                            project
+                            step by step. I will guide you through all the steps required to create the project from
+                            launching your IDE up to the last lines of code.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p> Together we will write a very simple news portal. The platform will allow verified users
+                            to view all news we have to display on our website and to add their own.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> This little tutorial is targeted at people who got basic knowledge of Java and fundamental
+                            programming skills. If you don’t feel that you are quite
+                            familiar with what those are, I strongly encourage you to learn some Java before
+                            attempting this course.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> I also have to say that if you are already an experienced Spring developer this course
+                            will <b>not</b> be useful to you either. </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> The idea is of Some Spring Stuff is to give you basic knowledge of something more complex
+                            than simple for-loops and if-statements. The hope is that you would gain enough of
+                            fundamental skills in order to create simple real-life projects starting from scratch.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> After following through the whole course you will have a decent understanding of
+                            technologies such as:</p> <br />
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>Spring MVC
+                                </li>
+                                <li>Inversion of Control
+                                </li>
+                                <li>Maven
+                                </li>
+                                <li>XML files
+                                </li>
+                                <li>Apache FreeMarker Template engine
+                                </li>
+                                <li>SQL
+                                </li>
+                                <li>JDBC
+                                </li>
+                                <li>Hibernate ORM
+                                </li>
+                                <li>Jpa Repositories
+                                </li>
+                                <li>Basics of Spring Security
+                                </li>
+                                <li>Logging with log4j and slf4j
+                                </li>
+                                <li>Basics of Spring AOP
+                                </li>
+                                <li>Java Mail API
+                                </li>
+                                <li>JUnit 5
+                                </li>
+
+                            </ul>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Why bother reading through this site?</h4>
+                    <div class="paragraph">
+                        <p>I know that starting to learn a new technology can be very hard. </p>
+                    </div>
+                    <div class="paragraph">
+                        <p> I remember when I started learning Spring I had many questions. It was not an easy job
+                            to understand what is going on, and I think that there are two reasons for that:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>1. It does not make any sense what people say.</p>
+                        <p> When I was listening to other programmers explaining to me how something works I
+                            couldn’t understand what was going on. It was due to my lack of understanding of what
+                            some technologies are capable of. But when that understanding had been developed, the
+                            words those programmers were saying magically began making a lot of sense.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> One of the goals of this course is to give you this entry point into Spring development.
+                            I want to explain to you the fundamentals in the words that would make sense. Because
+                            when you will be familiar with them you will be able to start looking deeper into more
+                            complex topics with an ease.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>2. I don’t know what I am supposed to learn.</p>
+                        <p> Like every science has a lot of blocks it is made of, programming is an environment that
+                            makes use of a lot of ideas and technologies. And for me it is not usually a problem of
+                            identifying which technologies I would want to use in my project, but instead what
+                            technologies there are? What else can I do with the technologies I already know? What
+                            other major ideas I need to be aware of to become a better programmer?</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> I find it very handy to have some kind of a roadmap. I will try my best to put one
+                            together that will be useful to you.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> If you also think that finding an answer to such questions is relevant, I welcome you to
+                            read through the website.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="section-title">How to follow this tutorial:</h4>
+                    <div class="paragraph">
+                        <p> Each page will contain a detailed description of what steps we need to take to get
+                            closer to our goal of creating the news portal. Each of these pages will also contain
+                            plenty of information about technologies that you need to know to be able to complete
+                            the appropriate stage of this course.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Some of the pages will also contain links to other, more in depth, topics. Those topics you
+                            don’t need to know to be able to do the stage you are working on, but if you desire to
+                            understand what you are programming a bit better I advise you to read through them as well.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            I have to apologise in advance as the first part of this course will be very heavily
+                            based on theory. That will all be a necessary information that you need before you will
+                            be able to understand what is going on in the course. I tried to keep it as short as
+                            possible.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">We are almost ready to begin!</h4>
+                    <div class="paragraph">
+                        <p>
+                            Before we can start our learning I have to tell you a few things.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Firstly, I am not a professional Spring programmer. I learned this framework in 2020 and
+                            since then I have been creating my own small projects. I most certainly won’t be able to
+                            get into all the depth of every single question there is about Spring and back-end
+                            development. However, I have an advantage. As I was also going through this path of learning
+                            Spring, I know what are the topics that are convoluted and hard to get your head around.
+                            This, I hope, should prevent you from spending days trying to understand how something works
+                            and why. I will not use any complex terminology, and will describe everything as clear as I
+                            can.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Second of all, I have to admit that I have never attempted creating such tutorials
+                            before. I strongly encourage you to contact me via email, or use any contact from the footer
+                            of any page. I will try to update the
+                            information on the site so that this course becomes more useful.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Now with all that said, I think that we are ready to start.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <!-- <div class="paragraph">
+                            <p>
+
+                            </p>
+                         </div> -->
+                    <h4 class="section-title"> What is Spring Framework?</h4>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">1.What is a framework</h6>
+                        <div class="paragraph">
+                            <p>
+                                Let’s start talking about what a framework is. A framework is a collection of
+                                written code that lets you make use of functionality without worrying how it is
+                                written. It is almost the same as using libraries that you didn’t write yourself.
+                                But there is a difference!
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                When you use a library you usually call some functions that you need to be carried
+                                in your own code. You make use of prewritten functions in your own code.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                Framework on the other hand has so much of the prewritten code that the way you code
+                                will change. Framework will have realized some aspects and now you don’t have to
+                                know how they function under the hood. Just for example:
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                We might have a framework that makes it very easy for us to work with text files.
+                                The framework for us will establish the connection with the file, have multiple ways
+                                of writing in the data (left to write, up to down, write on other language, etc),
+                                analyse data for us in a manner that we want (for example count number of certain
+                                letters in a text, or translate the text to other language) and many other things.
+                                We won’t need to create tons of code to work with files, as the framework has done
+                                it all for us. Now when using this framework we don’t have to worry how to work with
+                                a text file, but instead we will need to worry how to use the framework that
+                                interacts with files.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">2.What is the Spring Framework</h6>
+                        <div class="paragraph">
+                            <p>
+                                So, what is the Spring Framework? It is a framework that lets us create web
+                                applications very easily. With its help, we can create a software that will be used to
+                                interact with data send online. It will take care of things like how to analyse the
+                                request our application gets from the user and many other things. We as web
+                                developers will need to know how to configure Spring and how to make use of its
+                                functionality to create useful web applications.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                With all that said, let's jump into creating our news portal, so that we can learn
+                                Spring Framework!
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-xs-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='11.SetUpIntellij.html'"
+                                type="button">
+                                Next topic: Setting up IDE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

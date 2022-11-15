@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | IDE Setup</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">Setting up IDE</h1>
+                <section>
+                    <div class="paragraph">
+                        <p>Before we begin writing any code we need to do some basic set up.</p>
+                    </div>
+                    <h4 class="section-title">Downloading IDE</h4>
+                    <div class="paragraph">
+                        <p>
+                            Every project starts with a “Create a Project” button. So, to be able to start writing any
+                            code we will need to set up our IDE. Spring is a framework that works with java enterprise
+                            edition (or Java EE for short), and we will need IDE that supports Java EE.
+                            The choice of IDE for development is a choice that every programmer has to make themself and
+                            I cannot tell you which one is better. My preferred one, though, is Intellij Idea. I find it
+                            more intuitive to use. Another common option is Eclipse.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>One big difference between Intellij and Eclipse is that Eclipse is free to develop Java EE
+                            applications and Intellij Idea isn’t. But again, I find Intellij Idea more easy to use.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Here are the links you can follow to download Intellij Idea and Eclipse IDEs</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Intellij IDEA: <br />
+                            <a href="https://www.jetbrains.com/idea/download/"
+                                target="_blank" class="text-link">https://www.jetbrains.com/idea/download/</a>
+                        </p>
+                        <p><b>Note:</b> To work with Spring you will need Intellij IDEA Ultimate.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Eclipse:<br />
+                            <a href="https://www.eclipse.org/downloads/"
+                                target="_blank" class="text-link">https://www.eclipse.org/downloads/</a>
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>For all of the future examples I will be using Intellij Idea.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Creating simple Java EE project</h4>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step One: Create a basic project from archetype.</h6>
+                        <div class="paragraph">
+                            <p>
+                                The process of initializing a Java EE-based project is almost identical to the creation
+                                of any other Java project. However, the easiest way to create a project is by using an
+                                archetype.
+                                An archetype is a carcass for a project that will be automatically generated when you
+                                finish the setup in your IDE. That is especially useful as the program will generate
+                                most of
+                                required files for you.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Do the following:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Select <span class="text-button">"Maven"</span> option on the left</li>
+                                    <li>Select <span class="text-button">“Create from archetype"</span> option on the
+                                        right</li>
+                                    <li>Select archetype called <span
+                                            class="text-button">“maven-archetype-webapp”</span></li>
+                                </ul>
+                            </ul>
+                            <div class="text-image">
+                                <p>Here is how you can find the "Create from archetype" oiption:</p>
+                                <img src="../../images/entries/11/1.1.1Arhcetype.png" class="mx-auto d-block">
+                            </div>
+                            <div class="text-image">
+                                <p>After selecting, enter your groupId and ArtifactId:</p>
+                                <img src="../../images/entries/11/1.1.2Artifact.png" class="mx-auto d-block">
+                            </div>
+                            <div class="text-image">
+                                <p>After you finish setting up your project, you will see something like this on your
+                                    screen:</p>
+                                <img src="../../images/entries/11/1.1.3Project.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                My congratulations! You have set up a very basic Java EE project. Next, let's add up
+                                folders that we will need in our projecy.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> If you want to know how exactly the project we’ve created using the archetype differs
+                                from other maven-based projects, you may have a look at this <a
+                                    href="12.SettingUpMaven.html#archetype" target="_blank" class="text-link">page</a>.
+
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                But I advise you to do so after reading the next session which is on Maven.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Two: creating a folder hierarchy in the project</h6>
+                        <div class="paragraph">
+                            <p>
+                                Right now we only have a few files and a folder called <span class="code">webapp</span>
+                                under our <span class="code">main</span> folder.
+                                We will not focus on the files that are present in those folders now, but instead we
+                                will focus on the folders themselves.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Usually you will have 3 folders under your <span class="code">main</span> folder:</p>
+                            <p>1. Folder <span class="code">webapp</span> is a folder that stores files associated with
+                                running the application.
+                                In there you can store the following categories of
+                                files:
+                            </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Static content like HTML files (those files that do no get updated)</li>
+                                    <li>JavaScript files</li>
+                                    <li>CSS files</li>
+                                    <li>Dynamic content - files that can change their content while the application runs
+                                        (we
+                                        will have a look at them in greater depth later)</li>
+                                    <li>Web.xml file (we will talk about it later)</li>
+                                    <li>Servlet and config files (we will also talk about them later in the course)</li>
+                                    <li>Jar files (library files)</li>
+                                </ul>
+                            </ul>
+                            <div class="text-image">
+                                <p>One of the ways to organize the <span>webapp</span> folder is shown
+                                    below:</p>
+                                <img src="../../images/entries/11/1.1.4Diagram.png" class="mx-auto d-block">
+                            </div>
+                            <p>[taken from <a href="https://www.h2kinfosys.com/blog/web-application-package-structure/"
+                                    target="_blank" class="text-link">
+                                    https://www.h2kinfosys.com/blog/web-application-package-structure/</a> ]</p>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>2. Folder <span class="code">resources</span> is where you store your properties
+                                and configuration files. In
+                                our course the only files that we will be storing in this folder are <b>.properties</b> files
+                                (we will talk about them a bit later).
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>3. Last folder is the <span class="code">java</span> folder. Under it you will be
+                                storing all your java
+                                code.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Now, let’s add those folders into our project.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Create <span class="code">java</span> and <span class="code">resources</span> folders
+                                under the <span class="code">main</span> directory.</p>
+                            <div class="text-image">
+                                <p>You should end up with something like this:</p>
+                                <img src="../../images/entries/11/1.1.5Structure.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p>Common practice is to create in your <span class="code">java</span> folder a folder
+                                hierarchy that mimics your
+                                groupId. For example, my groupId is com.adtimokhin, so I will create the such hierarchy:
+                            </p>
+
+                            <p>
+                                main<br />
+                                &#160;&#160;&#160; |-- java<br />
+                                &#160;&#160;&#160;&#160;&#160;&#160; |-- com<br />
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |-- adtimokhin<br />
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |-- all other
+                                files and folders
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Now we are finished with setting up our directory hierarchy.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="paragraph">
+                        <p>
+                            I know that there are many things that don’t make a lot of sense, but as we will go through
+                            the course you will understand them. Right now, however, I want us to set up all other
+                            components needed in order to be able to at least run the code.</p>
+                    </div>
+                </section>
+
+                <!-- 
+                        <div class="paragraph">
+                        <p></p>
+                    </div>
+                 -->
+
+
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="nav-button" onclick="location.href='01.Introduciton.html'" type="button">
+                                Previous topic:<br /> Introduction to Spring Framework
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='12.SettingUpMaven.html'"
+                                type="button">
+                                Next topic:<br /> Getting familiar with Maven
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+.code{
+    background-color: #303036;
+    color: #ecfffa;
+}
+
+.text-class-name{
+    /*background-color: #303036;*/
+    color: #1e99d3;
+}
+
+.text-annotation{
+    background-color: #303036;
+    color: #b5b500;
+}
+
+.text-xml-tag{
+    background-color: #303036;
+    color:#649b28;
+}
+
+.text-button{
+    background-color: #303036;
+    color: #F9A012;
+}
+
+.text-file-name{
+    /*background-color: #303036;*/
+    color: rgb(164, 97, 15);
+}
+
+.text-folder-name{
+    /*background-color: #303036;*/
+    color: rgb(121, 28, 28);
+}
+
+.text-interface-name{
+    /*background-color: #303036;*/
+    color: #0b8c07;
+}

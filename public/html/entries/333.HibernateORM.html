@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | Hibernate ORM</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">Hibernate ORM</h1>
+                <section>
+                    <h4 class="section-title">What is ORM</h4>
+                    <div class="paragraph">
+                        <p>Let’s have a look how we made method 3 to work in JDBC Template example:
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Method 3 (<span class="code">findAll()</span>):</p>
+
+                        <p class="file-name">
+                            UserServiceImpl.class:
+                        </p>
+
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span>
+                                    List&#60;User&#62; findAll() { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    jdbcTemplate.query(<span class="string">"SELECT * FROM users"</span>, new
+                                    BeanPropertyRowMapper&#60;&#62;(User.<span class="key-word">class</span>))<span
+                                        class="key-word">;</span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Instead of working with every single column that we get for a single entity from our query,
+                            we make our program to map all of that information into our <span
+                            class="text-class-name"><span class="text-class-name">User</span></span> class.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>That is handy, isn’t it?
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p> ORM stands for “Object Relational Mapping”. And we can say that what we have done in that
+                            method 3 above is ORM. We map all information from the database straight into <span
+                                class="text-class-name"><span class="text-class-name">User</span></span> objects.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>But there is a better version of ORM that we can use to make our life even easier.
+                        </p>
+                    </div>
+
+                </section>
+
+                <section>
+                    <h4 class="section-title">Hibernate ORM</h4>
+                    <div class="paragraph">
+                        <p>Hibernate is a library that is commonly used with Spring. It gives a certain amount of
+                            functionality, such as ORM and validation. We will come to use Hibernate Validation very soon,
+                            but for now let’s focus on Hibernate ORM.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Let’s set Hibernate ORM and then look at how to work with it.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="section-title">How to work with Hibernate ORM</h4>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step One: Add dependencies
+                        </h6>
+                        <div class="paragraph">
+                            <p> Spring needs one <a class="text-link"
+                                    href="https://mvnrepository.com/artifact/org.springframework/spring-orm"
+                                    target="_blank">dependency</a> to work with ORM in general.</p>
+                            <p>To work with Hibernate ORM itself we also require another <a class="text-link"
+                                    href="https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core"
+                                    target="_blank">dependency</a></p>
+                            <p>
+                                If you use Java version of 9 or above you would also need another <a class="text-link"
+                                    href="https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api"
+                                    target="_blank">dependency</a> to get rid of errors.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Do the folowing:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Get 2 or 3 of the dependencies above.</li>
+                                </ul>
+                            </ul>
+
+                            <p class="file-name">
+                                pom.xml:
+                            </p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br /></span></p>
+                                    <br />
+                                    <p></p>
+                                    <p>&#160;&#160;&#160;<span class="xml-tag">&#60;dependency&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;groupId&#62;</span>org.springframework<span
+                                            class="xml-tag">&#60;/groupId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;artifactId&#62;</span>spring-orm<span
+                                            class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;version&#62;</span>${spring.version}<span
+                                            class="xml-tag">&#60;/version&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                    <p></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;dependency&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;groupId&#62;</span>org.hibernate.orm<span
+                                            class="xml-tag">&#60;/groupId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;artifactId&#62;</span>hibernate-core<span
+                                            class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;version&#62;</span>6.0.0.Alpha8<span
+                                            class="xml-tag">&#60;/version&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                    <p></p>
+                                    <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                            You may need this dependency --&#62;<br /></span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;dependency&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;groupId&#62;</span>javax.servlet<span
+                                            class="xml-tag">&#60;/groupId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;artifactId&#62;</span>javax.servlet-api<span
+                                            class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;version&#62;</span>4.0.1<span
+                                            class="xml-tag">&#60;/version&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;scope&#62;</span>provided<span
+                                            class="xml-tag">&#60;/scope&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                    <p></p>
+                                    <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br /></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-class">
+                        <h6 class="sub-section-title">Step Two: Configure Hibernate in the configuration file</h6>
+                        <div class="paragraph">
+                            <p>
+                                We need to add only one bean into our <span
+                                    class="text-class-name">PersistenceConfig</span> - that is a bean of class
+                                <span class="text-class-name">LocalSessionFactoryBean</span>
+
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                That class will be used to establish sessions with our database. Class <span
+                                    class="text-class-name">Session</span> is making use
+                                of our old friend <span class="text-class-name">Connection</span> class.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> We will use <span class="text-class-name">LocalSessionFactoryBean</span> to pass our
+                                queries to the database and get the entities.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                We need to create a bean of class <span
+                                    class="text-class-name">LocalSessionFactoryBean</span>. We need to set two
+                                parameters
+                                to that bean:
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p><b>datasource</b> - that is an object that contains all information needed to establish
+                                connection with database.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p><b>packagesToScan</b> - that is a path to a directory with our entities (like <span class="text-class-name"><span class="text-class-name">User</span></span>)
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Do the following:
+                            </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Create bean of class <span
+                                        class="text-class-name">LocalSessionFactoryBean</span>.</li>
+                                </ul>
+                            </ul>
+
+                            <p class="file-name">PersistenceConfig.class</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Bean</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span>
+                                        LocalSessionFactoryBean getLocalSessionFactoryBean (DataSource dataSource) </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;LocalSessionFactoryBean
+                                        localSessionFactoryBean = <span class="key-word">new</span>
+                                        LocalSessionFactoryBean() <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;localSessionFactoryBean.setDataSource(dataSource)
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;localSessionFactoryBean.setPackagesToScan(<span
+                                            class="string">"com.adtimokhin.model"</span>) <span class="key-word">;
+                                        </span> <span class="comment"> // that is a base folder where all models can be found.</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> localSessionFactoryBean </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Now, I have to tell you something. Hibernate ORM is making a use of transaction
+                                management. It is a topic that we will cover with on the next page, or otherwise this section would become too long. So, I will add a few lines
+                                of code here and there that would make Hibernate ORM work. I will tell you where they
+                                are and I promise that we will cover all of that in the next section.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Inside the <span class="text-class-name">PersistenceConfig</span> we need to add the following:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Add <span class="text-annotation">@EnableTransactionManagment</span> annotation
+                                    </li>
+
+                                    <p class="file-name">PersistenceConfig.class</p>
+                                    <div class="code-container">
+                                        <div class="code-block" style="overflow-y:auto;"><br />
+                                            <p> </p>
+                                            <p><span class="annotation">@Configuration</span> </p>
+                                            <p><span class="annotation">@PropertySource</span> (<span
+                                                    class="string">"classpath:persistence properties"</span>) </p>
+                                            <p><span class="annotation">@EnableTransactionManagement</span>
+                                                <span class="comment">// this is the annotation that enables
+                                                    transactions. </span>
+                                            </p>
+                                            <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                                PersistenceConfig { </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                            <p>} </p><br />
+                                            <p> </p>
+                                        </div>
+                                    </div>
+
+
+                                    <li>Add <span class="text-class-name">JpaTransactionManager</span> bean</li>
+                                    <p class="file-name">PersistenceConfig.class</p>
+                                    <div class="code-container">
+                                        <div class="code-block" style="overflow-y:auto;"><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="comment">// </span></p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Bean</span>
+                                            </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span>
+                                                JpaTransactionManager transactionManager (EntityManagerFactory
+                                                entityManagerFactory) { </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;JpaTransactionManager
+                                                transactionManager = <span class="key-word">new</span>
+                                                JpaTransactionManager() <span class="key-word">; </span></p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;transactionManager.setEntityManagerFactory(entityManagerFactory)
+                                                <span class="key-word">; </span>
+                                            </p>
+                                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                    class="key-word">return</span> transactionManager<span
+                                                    class="key-word">; </span></p>
+                                            <p>&#160;&#160;&#160;&#160;} </p><br />
+                                            <p> </p>
+                                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                            <br />
+                                            <p> </p>
+                                        </div>
+                                    </div>
+
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Three: Modify our <span class="text-class-name">User</span> class</h6>
+                        <div class="paragraph">
+                            <p>
+                                As from now on we will directly be using entities to work with our database it is now
+                                the time to modify our <span class="text-class-name"><span class="text-class-name">User</span></span> class.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>In the setup that we will be using, every entity class, like the <span class="text-class-name"><span class="text-class-name">User</span></span> class, will be
+                                mapped to a single table.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> To show Spring that <span class="text-class-name"><span class="text-class-name">User</span></span> is indeed an entity we need to add two annotations to the
+                                class:
+                            </p>
+
+                            <p>
+                                <span class="text-annotation">@Entity</span> - tells Spring that this class is
+                                entity<br />
+                                <span class="text-annotation">@Table</span> - tells Spring to what table the entity is
+                                mapped.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Now our <span class="text-class-name"><span class="text-class-name">User</span></span> class looks like this:</p>
+
+                            <div class="text-image">
+                                <p>Declaration of the User.class:</p>
+                                <img src="../../images/entries/333/3.3.2.1Pic4.png" class="mx-auto d-block">
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>There are two problems that we need to solve.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Intellij IDEA underlines “users” table as undetected. We need to specify the datasource
+                                we are using so that the error goes away.
+                            </p>
+
+                            <div class="text-image">
+                                <img src="../../images/entries/333/3.3.2.2Pic5.png" class="mx-auto d-block">
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <div class="text-image">
+                                <img src="../../images/entries/333/3.3.2.3Pic6.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                Next Intellij underlines <span class="text-class-name"><span class="text-class-name">User</span></span> class with red as it
+                                does not have a primary key (an id, in other words).
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> Each entity should have a unique access attribute for referencing that entity in that and other
+                                tables.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> Let’s start solving that problem by setting our id column as a primary key in our table
+                                users.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Go ahead and tick all the boxes for the id attribute in the instrument for visual update
+                                of the tables:
+                            </p>
+
+                            <div class="text-image">
+                                <p>Modifying the table "users":</p>
+                                <img src="../../images/entries/333/3.3.2.4Pic7.png" class="mx-auto d-block">
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                Inside <span class="text-class-name"><span class="text-class-name">User</span></span> class we need to annotate our id
+                                parameter with two annotations:
+                            </p>
+                            <p>
+                                <span class="text-annotation">@Id</span> - tells Spring that this variable is in fact an
+                                id<br />
+                                <span class="text-annotation">@GeneratedValue</span> - tells the session provider (in
+                                this case - Hibernate) how to generate ids for this entity.
+
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>We will select the Identify strategy for generating ids for <span class="text-class-name">User</span>s. If you want to know
+                                how they are different go ahead and try reading java documentation for enum
+                                <span class="text-class-name">GenerationType</span>.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Now our <span class="text-class-name"><span class="text-class-name">User</span></span> class is done:
+                            </p>
+                            <p class="file-name">User.class</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Entity</span> </p>
+                                    <p><span class="annotation">@Table</span> (name = <span
+                                            class="string">"users"</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span> User {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Id</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@GeneratedValue</span> (strategy
+                                        = GenerationType.IDENTITY) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">int</span> id<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String email<span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String password<span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">//constructors </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User () { </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// Getters and Setters </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">int</span> getId () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> id<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> setId (<span class="key-word">int</span> id) {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">this</span>.id= id<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String getEmail () {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> email<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> setEmail (String email) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">this</span>.email= email<span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String getPassword
+                                        () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> password<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> setPassword (String password) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">this</span>.password= password<span class="key-word">;
+                                        </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Four: Create a new implementation for working with Hibernate
+                            ORM</h6>
+                        <div class="paragraph">
+                            <p>
+                                I want you to create a new implementation of <span
+                                    class="text-interface-name">UserService</span> interface without deleting the old
+                                one. I want to show you something.
+
+                            </p>
+
+                            <p class="file-name">UserServiceHibernateORMImpl.class</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;"><br />
+                                    <p> </p>
+                                    <p><span class="dev-comment">/**<br />&#160;* @author adtimokhin<br />&#160;*
+                                            03.08.2021<br />&#160;**/</span></p><br />
+                                    <p> </p>
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        UserServiceHibernateORMImpl <span class="key-word">implements</span> UserService
+                                        { </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> saveUser (String email, String password) { </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User findUser
+                                        (String email) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">null</span> <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> List&#60;User&#62;
+                                        findAll () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">null</span> <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p>
+                                    <p>} </p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Please, don’t forget <span class="text-annotation">@Transactional</span> annotation:
+                            </p>
+                            <p class="file-name">UserServiceHibernateORMImpl.class</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;"><br />
+                                    <p> </p>
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="annotation">@Transactional</span> (readOnly = <span
+                                            class="key-word">true</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        UserServiceHibernateORMImpl <span class="key-word">implements</span> UserService
+                                        { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>} </p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                Now we have two beans that implement <span
+                                    class="text-interface-name">UserService</span>. That causes some problems because
+                                now
+                                Spring won’t know which implementation to use in <span
+                                    class="text-class-name">AuthController</span> when autowiring the
+                                    <span
+                                    class="text-interface-name">UserService</span>. But the solution is simple, my friends. We need to add an extra annotation
+                                on our <span
+                                class="text-interface-name">UserService</span> variable in <span class="text-class-name">AuthController</span>:
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                <span class="text-annotation">@Qualifier</span> - tells what id(or name) bean should it
+                                use for the dependency injection at that part of the code.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>The id or name of the bean is usually set manually (like when creating beans inside XML
+                                files), or the name is set automatically to be equal to the name of the class.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>So, let’s go ahead and add <span class="text-annotation">@Qualifier</span> annotation
+                                into <span class="text-class-name">AuthController</span>:
+                            </p>
+                            <p class="file-name">AuthController.class</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;"><br />
+                                    <p> </p>
+                                    <p><span class="annotation">@Controller</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        AuthController { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Qualifier</span> (<span
+                                            class="string">"userServiceHibernateORMImpl"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserService
+                                        userService<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>} </p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Now when this is out of the way let’s write some queries using Hibernate ORM!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="sub-class">
+                        <h6 class="sub-section-title">Step Four: The three methods.
+                        </h6>
+                        <div class="paragraph">
+                            <p> Hibernate does not use SQL. Instead it is
+                                making use of its own query language called HQL (Hibernate Query Language). It will
+                                look somewhat similar to SQL but there will be some obvious differences.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> If you would wish to use Hibernate ORM you will need this: <a class="text-link"
+                                    href="https://docs.jboss.org/hibernate/orm/4.0/manual/en-US/html/queryhql.html"
+                                    target="_blank">https://docs.jboss.org/hibernate/orm/4.0/manual/en-US/html/queryhql.html
+                                </a> <br />This is a manual on how to use HQL.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>So, as usual I will show you how we work with HQL on the examples.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Method 1 (<span class="code">saveUser()</span>):</p>
+                            <p class="file-name">
+                                UserServiceHibernateORMImpl.class:
+                            </p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;"><br />
+                                    <p> </p>
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="annotation">@Transactional</span> (readOnly = <span
+                                            class="key-word">true</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        UserServiceHibernateORMImpl <span class="key-word">implements</span> UserService
+                                        { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> SessionFactory
+                                        sessionFactory<span class="key-word">; </span></p><br />
+                                    <p> &#160;&#160;&#160;&#160;<span class="comment">// This is unusual, but this is how we will access current session - through a special method.</span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> Session
+                                        currentSession () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> sessionFactory.getCurrentSession() <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Transactional</span> <span
+                                            class="comment">// this is transactional stuff </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> saveUser (String email, String password) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user = <span
+                                            class="key-word">new</span> User() <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setEmail(email) <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setPassword(password) <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        currentSession().save(user)<span class="key-word">;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>} </p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="paragraph">
+                            <p>
+                                We need to inject a <span class="text-class-name">SessionFactory</span> so that we can
+                                get <span class="text-class-name">Session</span> (which is basically the same as <span
+                                    class="text-class-name">Connection</span>) to send our queries.
+                            </p>
+                        </div>
+
+
+                        <div class="paragraph">
+                            <p>Method itself is very basic: we create an object of class <span class="text-class-name">User</span> and save it by calling
+                                save() method on our Session.
+                            </p>
+                        </div>
+
+
+                        <div class="paragraph">
+                            <p>Method 2 (<span class="code">findUser()</span>):</p>
+                            <p class="file-name">
+                                UserServiceHibernateORMImpl.class:
+                            </p>
+
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;"><br />
+                                    <p> </p>
+                                    <p><span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User findUser
+                                        (String email) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Query&#60;User&#62; q =
+                                        currentSession ().createQuery(<span class="string">"FROM User WHERE email =
+                                            :email"</span>, User.<span class="key-word">class</span>)<span
+                                            class="key-word">;</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        q.setParameter(<span class="string">"email"</span>, email)<span
+                                            class="key-word">;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> q.list().stream().findAny().orElse(<span
+                                            class="key-word">null</span>)<span class="key-word">;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p><span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>To create almost any query we call a method called <span
+                                    class="code">createQuery()</span>. Inside its parameters we set the HQL request and
+                                class of entity that we are expecting to get.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> There you can also see how to set parameters into the Hibernate Query.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>As before we get a list of objects, so we need to cast it to one or to null (if no <span
+                                    class="text-class-name"><span class="text-class-name">User</span></span> with such email was found).
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Method 3 (<span class="code">findAll()</span>):</p>
+
+                            <p class="file-name">
+                                UserServiceHibernateORMImpl.class:
+                            </p>
+
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;"><br />
+                                    <p> </p>
+                                    <p><span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;<span class="key-word">public</span>
+                                        List&#60;User&#62; findAll () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> currentSession().
+                                        createQuery(<span class="string">"FROM User"</span>, User.<span
+                                            class="key-word">class</span>).list()<span
+                                            class="key-word">;</span><span class="comment"> // casting to
+                                            List&#60;User&#62; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p><span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>You don’t necessarily have to set any parameters to your query, so you can return the results directly.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>And that is pretty much it for the Hibernate ORM.<br/>
+                                We now have to talk about the last two methods: JPA and JPA Repositories. But as they are quite similar we will talk about them on the same page.
+                                </p>
+                        </div>
+                        
+
+                    </div>
+                </section>
+
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="nav-button" onclick="location.href='332.JDBCTemplate.html'" type="button">
+                                Previous topic: JDBC Template
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='334.JPA.html'" type="button">
+                                Next topic: JPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | Maven Introduction</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/extra-sections.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+<!-- Navigation bar -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-sm-12">
+            <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                 style="background-color: #203c96;">
+                <div class="container-fluid">
+                    <p class="navbar-brand">Some Spring Stuff </p>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarScroll">
+                        <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                            style="--bs-scroll-height: 100px;">
+                            <!--                                <li class="nav-item">-->
+                            <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                            <!--                                </li>-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Project's structure
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                </ul>
+                            </li>
+                            <!--                                <li class="nav-item">-->
+                            <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                            <!--                                </li>-->
+                            <!--                                <li class="nav-item">-->
+                            <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                            <!--                                </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="d-none d-md-block col-md-2">
+        </div>
+    </div>
+</div>
+
+
+<main role="main" class="container">
+
+    <div class="row">
+        <!-- Main content body -->
+        <div class="col-md-10 col-xs-12">
+            <h1 class="display-3 text-center page-title">Maven</h1>
+            <section>
+                <h4 class="section-title">Start working with Maven</h4>
+                <div class="paragraph">
+                    <p>In general terms, Maven is a framework which makes the process of compiling a project very
+                        simple. Maven is responsible for compiling the code after we press the green start button.
+                        We will
+                        not get much deeper into what Maven is. For the purpose of this project only opperation with
+                        Maven that we will
+                        need to do is to add dependencies into a file called <span
+                                class="text-file-name">pom.xml</span>
+                    </p>
+                </div>
+
+                <div class="paragraph">
+                    <p><span class="text-file-name">pom.xml</span> is a file that contains information needed to
+                        build a project. In this file you can
+                        specify packaging type, different maven plugins and (more importantly to us) you can add all
+                        dependencies you need.</p>
+                </div>
+                <div class="sub-section">
+                    <h6 class="sub-section-title">What is a dependency</h6>
+                    <div class="paragraph">
+                        <p>Dependency allows you to get access in our own
+                            program to the code that was written by others. By adding a dependency you will gain
+                            access to the code with a functionality
+                            you need without a need to write that code by yourself. That is a handy thing. Besides,
+                            Spring - is a framework, which means that in order to use it you need to get code for it
+                            somewhere.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="sub-section">
+                    <h6 class="sub-section-title">Organization of pom.xml file</h6>
+                    <div class="paragraph">
+                        <p>At its core, <span class="text-file-name">pom.xml</span> file is a xml file. We will get
+                            to know this type of file pretty
+                            soon, but for now I will just say that xml files are files that contain a list of
+                            properties. Those properties can be used by many parts of a program.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>These properties range from something relatively unimportant for the execution of our
+                            program (like the name of the developer who has created this project) to the most
+                            fundamental properties (like what version of Java we use in our project).</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p><span class="text-file-name">pom.xml</span> stores information for compiling and
+                            executing the program.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>The format in which that information is stored is simple:</p>
+                        <p class="centered"><b>&#60;Name of a property&#62;</b> Data <b>&#60;/Name of a
+                            property&#62;</b></p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Sometimes we put tags inside another tags to symbolise that they are grouped together.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Tags can get more complex, but we will not consider that now.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>What is more important, is that now we are able to find where we can store our
+                            dependencies.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>In the <span class="text-file-name">pom.xml</span> file there is a tag <span
+                                class="text-xml-tag">&#60;dependencies&#62;&#60;/dependencies&#62;</span>, and
+                            inside it we can put our own dependencies!</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h4 class="section-title">Where to find dependencies?</h4>
+                <div class="paragraph">
+                    <p>Dependencies are downloaded when you specify all information needed inside the
+                        <span class="text-xml-tag">&#60;dependencies&#62;&#60;/dependencies&#62;</span> tags. We can
+                        get that information from this website:
+                    </p>
+                    <a href="https://mvnrepository.com/" target="_blank"
+                       class="text-link">https://mvnrepository.com/</a>
+                </div>
+                <div class="paragraph">
+                    <p>Now, let’s try to download a dependency that we will need in the future.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h6 class="sub-section-title">Step One: Search for a dependency you need</h6>
+                    <div class="paragraph">
+                        <p>For this example we will download a dependency that will allow us in the future to work
+                            with
+                            Spring MVC. The dependency is called <span> spring-webmvc </span></p>
+                    </div>
+
+                    <div class="text-image">
+                        <p>Find the dependency by entering its name:</p>
+                        <img src="../../images/entries/12/1.2.1MVNREPO.png" class="mx-auto d-block">
+                    </div>
+                    <div class="paragraph">
+                        <p>Click on the first option.</p>
+                    </div>
+                </div>
+
+                <div class="sub-section">
+                    <h6 class="sub-section-title">Step Two: copy the dependency into the project</h6>
+                    <div class="paragraph">
+                        <p>Currently on your screen you have some information about spring-webmvc dependency. There
+                            you
+                            will see a very big table.</p>
+                    </div>
+                    <div class="text-image">
+                        <img src="../../images/entries/12/1.2.3Table.png" class="mx-auto d-block">
+                    </div>
+                    <div class="paragraph">
+                        <p>That table contains links to many versions of the code. The newer versions appear at the
+                            top of the table. Every version is also accompanied by some information. For example,
+                            whether this version is stable (if it is it will not say "alpha" or "beta" next to it)
+                            and how many people use this exact version in their
+                            projects.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>When you follow this tutorial there may be another version of Spring. It is a good idea
+                            to take the last stable version of the code.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>If you want to understand how release versions work you can read it <a href="#version"
+                                                                                                  class="text-link">here</a>.
+                            Let's get back to the topic.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Click at the newest stable version (in my case it is 5.3.9).</p>
+                        <div class="text-image">
+                            <p>You will get into a page that looks like this:</p>
+                            <img src="../../images/entries/12/1.2.2Closer.png" class="mx-auto d-block">
+                        </div>
+                        <p>There at the bottom where it says “Maven” you will see some xml tags.</p>
+                        <p>Copy those tags.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Now paste them into our <span class="text-file-name">pom.xml</span> file between
+                            <span class="text-xml-tag">&#60;dependencies&#62;&#60;/dependencies&#62;</span> tags.
+                        </p>
+                        <p class="file-name">pom.xml</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span></p>
+                                <br/>
+                                <p></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="xml-tag">&#60;dependencies&#62;</span></p>
+                                <br/>
+                                <p></p>
+                                <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                            This dependency is added automatically if we've used the "archetype
+                                            approach" --&#62;<br/></span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;dependency&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;groupId&#62;</span>junit<span
+                                        class="xml-tag">&#60;/groupId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;artifactId&#62;</span>junit<span
+                                        class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;version&#62;</span>4.11<span
+                                        class="xml-tag">&#60;/version&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;scope&#62;</span>test<span
+                                        class="xml-tag">&#60;/scope&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;/dependency&#62;</span></p><br/>
+                                <p></p><br/>
+                                <p></p>
+                                <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                            This is the spring-webmvc dependency that we have copied
+                                            --&#62;<br/></span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;dependency&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;groupId&#62;</span>org.springframework<span
+                                        class="xml-tag">&#60;/groupId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;artifactId&#62;</span>spring-webmvc<span
+                                        class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;version&#62;</span>5.3.9<span
+                                        class="xml-tag">&#60;/version&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;/dependency&#62;</span></p><br/>
+                                <p></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="xml-tag">&#60;/dependencies&#62;</span></p>
+                                <br/>
+                                <p></p>
+                                <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span></p>
+                            </div>
+                        </div>
+
+
+                        <p>
+                            At the bottom right you will be asked by maven if you would like to import changes.
+                            Press the “import” option. When you press “import” you are letting your computer
+                            download all the files associated with that dependency.
+
+                        </p>
+
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Bravo! You have downloaded your first dependency. All other dependencies are downloaded
+                            in a similar manner.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Now let’s set up a server!</p>
+                    </div>
+
+
+                </div>
+            </section>
+
+            <section>
+                <h1 class="display-3 text-center page-title">Extra sections</h1>
+            </section>
+            <!-- Extra sections -->
+            <section id="version">
+                <h4 class="section-title">How to understand release versions</h4>
+                <button type="button" class="extra-section">Expand/Roll up</button>
+                <div class="extra-section-content">
+                    <section>
+                        <div class="paragraph">
+                            <p>Let me also tell you what the version number means. Usually it is made out of 3
+                                numbers.
+                                For example:</p>
+                            <p class="centered">
+                                5.3.9</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                When programmers update the code they may wish to show that new functions
+                                have been added. In that case, the version of the program will change. If a change
+                                was small (for example some minor bugs were fixed) then only the last number will
+                                increase. If some more significant changes was made (for example some new
+                                possibilities
+                                were added to the code) then the middle number will increase and the last one will
+                                drop to 0. If the change was very big (for example a major release) then the first
+                                number will change and all others will drop to 0.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>So when there will be a big update in Spring they may decide to publish a version
+                                5.4.0 straight after 5.3.9</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>If after that Spring developers would want to to publish a major release they might
+                                publish it under the number 6.0.0</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>The latest version of Spring there is when I write these words is Spring 5. It is
+                                possible that in future major updates will lead to change in opperation of Spring,
+                                and most the information in this tutorial will
+                                simply become irrelevant, but probably not all of it. So watch out.</p>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <section id="trick">
+                <h4 class="section-title">Read this if you want to learn a useful trick for maven</h4>
+                <button type="button" class="extra-section">Expand/Roll up</button>
+                <div class="extra-section-content">
+                    <section>
+                        <div class="paragraph">
+                            <p>Inside your <span class="text-file-name">pom.xml</span> file there are tags <span
+                                    class="text-xml-tag">&#60;properties&#62;&#60;/properties&#62;</span> Between
+                                them there will be already a few other tags:
+                            </p>
+                            <p class="file-name">
+                                pom.xml
+                            </p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span></p>
+                                    <br/>
+                                    <p></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="xml-tag">&#60;properties&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;project.build.sourceEncoding&#62;</span>UTF-8<span
+                                            class="xml-tag">&#60;/project.build.sourceEncoding&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;maven.compiler.source&#62;</span>1.7<span
+                                            class="xml-tag">&#60;/maven.compiler.source&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;maven.compiler.target&#62;</span>1.7<span
+                                            class="xml-tag">&#60;/maven.compiler.target&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="xml-tag">&#60;/properties&#62;</span>
+                                    </p><br/>
+                                    <p></p>
+                                    <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p>You can add your custom tags in between <span
+                                    class="text-xml-tag">&#60;properties&#62;&#60;/properties&#62;</span> tags.
+                                Those tags that you will add can be used inside the
+                                pom.xml file.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Let’s create a tag that we will use to define the version of Spring that we are using
+                                (most of the Spring dependencies will be of the same version).</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Inside &#60;properties&#62;
+                                &#60;/properties&#62; tags create a pair of tags :</p>
+                            <p class="centered text-xml-tag"> &#60;spring.version&#62;&#60;/spring.version&#62;</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>In between put the version number of your Spring dependencies (for me it is 5.3.9).
+                            </p>
+                            <p class="file-name">
+                                pom.xml
+                            </p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span></p>
+                                    <br/>
+                                    <p></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="xml-tag">&#60;properties&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;project.build.sourceEncoding&#62;</span>UTF-8<span
+                                            class="xml-tag">&#60;/project.build.sourceEncoding&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;maven.compiler.source&#62;</span>1.7<span
+                                            class="xml-tag">&#60;/maven.compiler.source&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;maven.compiler.target&#62;</span>1.7<span
+                                            class="xml-tag">&#60;/maven.compiler.target&#62;</span></p>
+                                    <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                                The new bit of code --&#62;<br/></span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;spring.version&#62;</span>5.3.9<span
+                                            class="xml-tag">&#60;/spring.version&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="xml-tag">&#60;/properties&#62;</span>
+                                    </p><br/>
+                                    <p></p>
+                                    <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Now we can use this property in many of our Spring-related dependencies. To use your
+                                own tag write:
+                            </p>
+
+                            <p class="centered">
+                                <b>${tag.name}</b>
+                            </p>
+
+                            <p>
+                                where you need it. Now your Spring dependencies will look something like this:
+                            </p>
+
+                            <p class="file-name">
+                                pom.xml
+                            </p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span></p>
+                                    <br/>
+                                    <p></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;dependency&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;groupId&#62;</span>org.springframework<span
+                                            class="xml-tag">&#60;/groupId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;artifactId&#62;</span>spring-webmvc<span
+                                            class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                    <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                                This is how you may use it in the spring-webmvc dependency
+                                                --&#62;<br/></span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;version&#62;</span>${spring.version}<span
+                                            class="xml-tag">&#60;/version&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;/dependency&#62;</span></p><br/>
+                                    <p></p>
+                                    <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </section>
+
+            <section id="archetype">
+                <h4 class="section-title">Why do we use archetype to create a project</h4>
+                <button type="button" class="extra-section">Expand/Roll up</button>
+                <div class="extra-section-content">
+                    <section>
+                        <div class="paragraph">
+                            <p>As promised, we will talk about what exactly was added to the pom.xml file when we
+                                had used an archetype to create it.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>When you create a project without an archetype it will look different:</p>
+                            <div class="text-image">
+                                <p>File structure:</p>
+                                <img src="../../images/entries/12/1.2.8FileStructure.png" class="mx-auto d-block">
+                            </div>
+
+                            <div class="text-image">
+                                <p>Your usual pom.xml:</p>
+                                <img src="../../images/entries/12/1.2.9POM.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>You see that everything looks a bit odd. There is no <span class="code">webapp</span>
+                                folder, and pom.xml has much less code in it.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>I will not touch on the file structure, but I will talk about the pom.xml.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Project that we have created with help of the archetype maven-archetype-webapp has
+                                some important parts to it:</p>
+                        </div>
+
+                        <div class="sub-section">
+                            <h6 class="sub-section-title">WAR packaging</h6>
+                            <div class="paragraph">
+                                <p>You see how in our <span class="text-class-name">News</span>Site project we have
+                                    <span class="text-xml-tag">&#60;packaging&#62;&#60;/packaging&#62;</span> tags
+                                    that have war between them:
+                                </p>
+                                <p class="file-name">
+                                    pom.xml
+                                </p>
+                                <div class="code-container">
+                                    <div class="code-block" style="overflow-y:auto;">
+                                        <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span>
+                                        </p>
+                                        <p>&#160;&#160;&#160;</p>
+                                        <p>&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;groupId&#62;</span>com.adtimokhin<span
+                                                class="xml-tag">&#60;/groupId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;artifactId&#62;</span>newsSite<span
+                                                class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;version&#62;</span>1.0-SNAPSHOT<span
+                                                class="xml-tag">&#60;/version&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;packaging&#62;</span>war<span
+                                                class="xml-tag">&#60;/packaging&#62;</span></p><br/>
+                                        <p></p>
+                                        <p>&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;name&#62;</span>newsSite Maven Webapp<span
+                                                class="xml-tag">&#60;/name&#62;</span></p><br/>
+                                        <p></p>
+                                        <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p>
+                                    These <span class="text-xml-tag">&#60;packaging&#62;&#60;/packaging&#62;</span>
+                                    tags tell how the project should be
+                                    compiled. That means, how
+                                    the project’s code will be treated. WAR is one of the ways to compile the
+                                    code in java. WAR is used for the web applications. Maven will know that you
+                                    will make a use of technologies that are relevant to the web development
+                                    when you use WAR packaging. For instance, <span class="code">WEB-INF</span>
+                                    folder that we have
+                                    inside the <span class="code">webapp</span> folder is relevant to the web
+                                    development and is not
+                                    present in standart java projects. WAR packaging will make sure that <span
+                                        class="code">WEB-INF</span>
+                                    folder are treated as a component of your web application. That is the main
+                                    point for us. Though there are other differences between WAR and JAR (common way
+                                    for compiling Java code).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="sub-section">
+                            <h6 class="sub-section-title">Maven plugins</h6>
+                            <div class="paragraph">
+                                <p>There is a very big part in the archetype-generated pom.xml file that is not
+                                    present in the other:</p>
+                                <p class="file-name">
+                                    pom.xml
+                                </p>
+                                <div class="code-container">
+                                    <div class="code-block" style="overflow-y:auto;">
+                                        <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span>
+                                        </p><br/>
+                                        <p></p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="xml-tag">&#60;build&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;finalName&#62;</span>newsSite<span
+                                                class="xml-tag">&#60;/finalName&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;pluginManagement&#62;</span><span
+                                                class="comment">&#60;!-- lock down plugins versions to avoid using
+                                                    Maven defaults (may be moved to parent pom) --&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;plugins&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;artifactId&#62;</span>maven-clean-plugin<span
+                                                class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;version&#62;</span>3.1.0<span
+                                                class="xml-tag">&#60;/version&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/plugin&#62;</span></p>
+                                        <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                                    see
+                                                    http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging
+                                                    --&#62;<br/></span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;artifactId&#62;</span>maven-resources-plugin<span
+                                                class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;version&#62;</span>3.0.2<span
+                                                class="xml-tag">&#60;/version&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;artifactId&#62;</span>maven-compiler-plugin<span
+                                                class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;version&#62;</span>3.8.0<span
+                                                class="xml-tag">&#60;/version&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;artifactId&#62;</span>maven-surefire-plugin<span
+                                                class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;version&#62;</span>2.22.1<span
+                                                class="xml-tag">&#60;/version&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;artifactId&#62;</span>maven-war-plugin<span
+                                                class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;version&#62;</span>3.2.2<span
+                                                class="xml-tag">&#60;/version&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;artifactId&#62;</span>maven-install-plugin<span
+                                                class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;version&#62;</span>2.5.2<span
+                                                class="xml-tag">&#60;/version&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;artifactId&#62;</span>maven-deploy-plugin<span
+                                                class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;version&#62;</span>2.8.2<span
+                                                class="xml-tag">&#60;/version&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/plugins&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/pluginManagement&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;plugins&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;groupId&#62;</span>org.apache.maven.plugins<span
+                                                class="xml-tag">&#60;/groupId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;artifactId&#62;</span>maven-compiler-plugin<span
+                                                class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;configuration&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;source&#62;</span>8<span
+                                                class="xml-tag">&#60;/source&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;target&#62;</span>8<span
+                                                class="xml-tag">&#60;/target&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/configuration&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/plugin&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                                class="xml-tag">&#60;/plugins&#62;</span></p>
+                                        <p>&#160;&#160;&#160;&#160;<span class="xml-tag">&#60;/build&#62;</span></p>
+                                        <br/>
+                                        <p></p>
+                                        <p><span class="comment">&#160;&#160;&#160;&#60;!-- ... --&#62;<br/></span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>This part is used for specifying different plugins that we might want to use for our
+                                maven. Maven plugins are what really Maven is used for. Plugins can control the
+                                creation
+                                of <b>.war</b> files, can be used to compile the code, can be used to create
+                                documentation for the file and many other things.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>We can decide not to specify Maven plugins like on this example:</p>
+                            <div class="text-image">
+                                <p>
+                                    Some other pom.xml
+                                </p>
+                                <img src="../../images/entries/12/1.2.9POM.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>However, plugins are still used by Maven (otherwise the project could not run). But
+                                when we do
+                                specify them we gain a control over what plugins to use and we can even configure
+                                them.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>So, using the maven archetypes is very handy, and I encourage you to use them when
+                                possible so that you don’t mess up your code because you forgot to add properties
+                                for <b>.war</b> packaging,
+                                for example.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+        <!-- adverts -->
+<!--        <div class="col-md-2 col-xs-12">-->
+<!--            <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                <p>FCGHVIUOJ</p>-->
+<!--            </div>-->
+<!--            <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                <p>FCGHVIUOJ</p>-->
+<!--            </div>-->
+<!--            <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                <p>FCGHVIUOJ</p>-->
+<!--            </div>-->
+<!--            <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                <p>FCGHVIUOJ</p>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+
+
+    <!-- Bottom navigation panel -->
+    <div class="col-12">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <button class="nav-button" onclick="location.href='11.SetUpIntellij.html'" type="button">
+                        Previous topic:<br/> Setting up IDE
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button class="nav-button mx-auto d-block" onclick="location.href='13.SettingUpServer.html'"
+                            type="button">
+                        Next topic:<br/> Setting up Tomcat Server
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- photo -->
+            <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                <div class="logo-container">
+                    <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                </div>
+            </div>
+            <!-- Other action buttons -->
+            <div class="col-md-4 col-sm-2 col-xs-6">
+                <a href="#" class="footer-link-title">Contact</a>
+                <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                   class="footer-link">LinkedIn</a>
+                <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+            </div>
+
+            <div class="col-md-4 col-sm-3 col-xs-6">
+                <a href="#" class="footer-link-title">Terms & policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Scripts -->
+<script>
+    var coll = document.getElementsByClassName("extra-section");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
+</body>
+
+</html>

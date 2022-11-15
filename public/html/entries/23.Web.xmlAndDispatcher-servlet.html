@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | XML configuration</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">web.xml and dispatcher-servlet.xml</h1>
+                <section>
+                    <h4 class="section-title">Let’s write a few configuration files!</h4>
+                    <div class="paragraph">
+                        <p>Now I will show how to create two configuration files necessary for the
+                            application's opperation. I will start by showing how to write them in XML. That way you can
+                            understand how similar the two methods really are.</p>
+                    </div>
+                </section>
+                <section>
+
+                    <h4 class="section-title">web.xml</h4>
+                    <div class="paragraph">
+                        <p>Inside the <span class="text-folder-name">WEB-INF</span> folder we have a XML file <span
+                                class="text-file-name">web.xml</span>. That is a file that Spring uses to
+                            create a few object types needed to run our web application.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>One of such types is servlets.</p>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">What is a servlet?</h6>
+                        <div class="paragraph">
+                            <p>A server will get requests from users and send them responses. Servlets are Java objects
+                                that handle requests by identifying what URL they have and based on that passing them to
+                                different methods (which we will be creating) to carry out the action.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                In basic applications, there is only one servlet that is mapped to work with all URLs -
+                                it is called dispatcher servlet.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Let’s create the one servlet that we will need.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="section-title">Steps for writing required xml configuration files.</h4>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step One: Add required dependency</h6>
+
+                        <div class="paragraph">
+                            <p>To get needed functionality for java servlets to operate we need an extra dependency.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Do the following:</p>
+                            <ul class="ustyled-list">
+                                <ul>
+                                    <li>Add <a class="text-link"
+                                            href="https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api"
+                                            target="_blank">javax.servlet-api dependency</a> to your poxm.xml</li>
+                                </ul>
+                            </ul>
+                        </div>
+
+                        <div class="paragraph">
+                            <p class="file-name">pom.xml:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p>&#160;<span class="xml-tag">&#60;dependency&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;groupId&#62;</span>javax.servlet<span
+                                            class="xml-tag">&#60;/groupId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;artifactId&#62;</span>javax.servlet-api<span
+                                            class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;version&#62;</span>4.0.1<span
+                                            class="xml-tag">&#60;/version&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;scope&#62;</span>provided<span
+                                            class="xml-tag">&#60;/scope&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="xml-tag">&#60;/dependency&#62;</span></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Two: Create servlet</h6>
+                        <div class="paragraph">
+                            <p>Inside web.xml file (which you should find in <span class="code">WEB-INF</span>
+                                folder)write the following:</p>
+                            <div class="text-image">
+                                <p>This is how your web.xml file should look like now:</p>
+                                <img src="../../images/entries/23/2.3.1AddingServletTags.png" class="mx-auto d-block">
+                            </div>
+
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                We will not touch on the <span
+                                    class="text-xml-tag">&#60;web-app&#62;&#60;/web-app&#62;</span> tags. We are now
+                                interested in information in between <span
+                                    class="text-xml-tag">&#60;servlet&#62;&#60;/servlet&#62;</span> tags.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>What we have created in the <span class="text-file-name">web.xml</span> is a servlet of a
+                                class <span class="text-class-name">DispatcherServlet</span> with the
+                                name “dispatcher”.</p>
+
+                            <p>Pretty self-explanatory.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                <span class="text-xml-tag">&#60;load-on-startup&#62;&#60;/load-on-startup&#62;</span>
+                                tags identify the priority in which the servlets are loaded into
+                                Spring Container. However, be aware that if you want to specifically tell Spring to
+                                load your servlet when your application starts, put an integer greater or equal to 0
+                                in between the <span
+                                    class="text-xml-tag">&#60;load-on-startup&#62;&#60;/load-on-startup&#62;</span>
+                                tags.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Three: Add mapping for dispatcher servlet</h6>
+                        <div class="paragraph">
+                            <p>Write the following code to add the mapping which the servlet will work with:</p>
+                            <div class="text-image">
+                                <p>This is how your web.xml file should look like now:</p>
+                                <img src="../../images/entries/23/2.3.2Servlet-mappingTagsAdded.png"
+                                    class="mx-auto d-block">
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Mapping of a servlet is basically a number of URLs to which this exact servlet will
+                                react.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                <span class="text-xml-tag">&#60;url-pattern&#62;&#60;/url-pattern&#62;</span>
+                                tags identify what URL should start with so that it will be mapped by our
+                                dispatcher servlet. If we put “/” then the servlet will be mapped to all urls.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>This is basically it for the <span class="text-file-name">web.xml</span> file. Now we
+                                need to create a separate xml file for
+                                our servlet.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Four: Create dispatcher-servlet.xml file</h6>
+                        <div class="paragraph">
+                            <p>Inside
+                                <span class="text-folder-name">WEB-INF</span> create a new file and name it
+                                <span class="text-file-name"><u>dispatcher-servlet.xml</u></span>. It is important that
+                                the filename starts with the name of the servlet, or else Spring will not identify that
+                                file as a servlet configuration file.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Select “Spring Config” option to create a Spring configuration file for our servlet.</p>
+                            <div class="text-image">
+                                <img src="../../images/entries/23/2.3.3SelectSpringConfigFileInNEWOption.png"
+                                    class="mx-auto d-block">
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>You should end up with a file that looks something like this:</p>
+                            <div class="text-image">
+                                <p>dispatcher-servlet.xml:</p>
+                                <img src="../../images/entries/23/2.3.4EmptyDispatcher-servletFile.png"
+                                    class="mx-auto d-block">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Five: add required tags inside dispatcher-servlet.xml</h6>
+                        <div class="paragraph">
+                            <p>In order for our application to run we will add two tags inside <span
+                                    class="text-xml-tag">&#60;bean&#62;&#60;/bean&#62;</span> tags.</p>
+
+                            <div class="text-image">
+                                <p>dispatcher-servlet.xml:</p>
+                                <img src="../../images/entries/23/2.3.5DispatcherServletPic2.png"
+                                    class="mx-auto d-block">
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                <b><span class="text-xml-tag">&#60;mvc:annotation-driven/&#62;</span></b> is a tag that
+                                enables us to use special annotations like:
+                            </p>
+                            <p class="text-annotation centered">
+                                @Component, @Repository, @Service, @Controller
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> <b><span class="text-xml-tag">&#60;context:component-scan
+                                        base-package=”...”/&#62;</span></b> is a tag that tell Spring where we will have
+                                our files with annotations mentioned above.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>We have already seen annotation <span class="text-annotation">@Component</span>. Others
+                                we will cover later in the course.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>
+                                We have created a fully functioning servlet.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Next, I will rewrite these configuration files with Java. I wrote those two in XML just
+                                to show you how XML works. If you wish to turn the two configuration files we wrote now
+                                into Java configs that is how you can do it:</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="section-title">Steps for writing required Java configuration files.</h4>
+
+
+                    <div class="paragraph">
+                        <p> Please, before attempting this part of the course, complete the previous section about
+                            writing the same files using XML. The first step is definately the one to complete, as it
+                            adds needed dependencies.</p>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step One: Create WebAppInitializer class</h6>
+                        <div class="paragraph">
+                            <p> Create a package called <span class="text-folder-name">config</span> inside your base
+                                package (in my case that is <span class="text-foler-name">com.adtimokhin</span>). That
+                                <span class="text-folder-name">config</span> folder is the package where you
+                                will store java configuration files.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p><span class="text-class-name">WebAppInitializer</span> class should extend <span
+                                    class="text-class-name">AbstractAnnotationConfigDispatcherServletInitializer</span>
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Also do not forget to override methods. You should end up with a class that looks like
+                                this:</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p class="file-name">WebAppInitializer.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;"><br />
+                                    <p> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        WebAppInitializer <span class="key-word">extends</span>
+                                        AbstractAnnotationConfigDispatcherServletInitializer { </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span>
+                                        Class&#60;?&#62;[] getRootConfigClasses () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">new</span>
+                                        Class[0]<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span>
+                                        Class&#60;?&#62;[] getServletConfigClasses () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">new</span>
+                                        Class[0]<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span> String[]
+                                        getServletMappings () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">new</span>
+                                        String[0]<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p><span class="text-class-name">AbstractAnnotationConfigDispatcherServletInitializer</span>
+                                class performs the role of <span class="text-file-name">web.xml</span> file.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> <span class="code">getServletMappings()</span> - method that contains all the mapping
+                                starters to which this servlet will
+                                respond. Let’s put there our only url from web.xml:</p>
+
+                            <p class="file-name">getServletMappings() in WebAppInitializer.class:</p>
+
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span> String[]
+                                        getServletMappings () { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">new</span>
+                                        String[]{<span class="string">"/"</span>}<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Inside <span class="code">getServletConfigClasses()</span> we will specify configuration
+                                files that we will create for our dispatcher servlet. But currently we don't have any.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Method <span class="code">getRootConfigClasses()</span> we will not talk about in this
+                                course.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>We forgot to tell Spring that we want this servlet to be the first to be loaded into
+                                Spring Context. To do so, we need to add an annotation <span
+                                    class="text-annotation">@Order</span>
+                
+        
+                                .Just like this:</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p class="file-name">declaration of WebAppInitializer.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Order</span> (1) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        WebAppInitializer <span class="key-word">extends</span>
+                                        AbstractAnnotationConfigDispatcherServletInitializer { </p>
+                                    <p><span class="comment">// ... </span></p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Number 1 does the same as 1 in <span class="text-xml-tag">&#60;load-on-startup&#62;
+                                    &#60;/load-on-startup&#62;</span>tag from <span class="text-file-name">web.xml</span></p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Now let’s add those special tags from <span class="text-file-name">dispatcher-servlet.xml</span> file.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Two: Create WebConfig class</h6>
+                        <div class="paragraph">
+                            <p>This configuration class will do some of the functionality that we would have done inside
+                                <span class="text-file-name">dispatcher-servlet.xml</span> file.
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Every Java configuration file should be annotated with <span
+                                    class="text-annotation">@Configuration</span>. Otherwise Spring will not view that
+                                file as config.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p><span class="text-class-name">WebConfig</span> should implement <span
+                                    class="text-class-name">WebMvcConfigurer</span></p>
+                            <p class="file-name">WebConfig.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p> </p>
+                                    <p><span class="annotation">@Configuration</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        WebConfig <span class="key-word">implements</span> WebMvcConfigurer { </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="paragraph">
+                            <p>To add the functionality that tags from the <span class="text-file-name">dispatcher-servlet.xml</span> file are giving us, we
+                                need to add 2 annotations:</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> <span class="text-annotation">@EnableWebMvc</span> - it does the same as <span
+                                    class="text-xml-tag">
+                                    &#60;mvc:annotation-driven/&#62;</span><br />
+                                <span class="text-annotation">@ComponentScan(basePackages = "com.adtimokhin")</span> -
+                                it does the same as
+                                <span class="text-xml-tag">
+                                    &#60;context:component-scan base-package="com.adtimokhin"/&#62;</span>
+                            </p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Now your <span class="text-class-name">WebConfig</span> class looks like this:</p>
+                            <p class="file-name">WebConfig.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p> </p>
+                                    <p><span class="annotation">@Configuration</span> </p>
+                                    <p><span class="annotation">@EnableWebMvc</span> </p>
+                                    <p><span class="annotation">@ComponentScan</span> (basePackages = <span
+                                            class="string">"com.adtimokhin"</span> ) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        WebConfig <span class="key-word">implements</span> WebMvcConfigurer {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Three: make our dispatcher servlet use WebConfig class</h6>
+                        <div class="paragraph">
+                            <p>To make <span class="text-class-name">WebConfig</span> be used as an actual configuration file by our dispatcher servlet we
+                                need to add it to a list of configuration files of the servlet!</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Inside <span class="text-class-name">WebAppInitializer</span> there is a method called
+                                <span class="code">getServletConfigClasses()</span>. Let’s add our <span
+                                    class="text-class-name">WebConfig</span> to there:
+                            </p>
+
+                            <p class="file-name">WebAppInitializer.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;"><br />
+                                    <p> </p>
+                                    <p><span class="comment">// ...</span> </p>
+                                    <p>&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span>
+                                        Class&#60;?&#62;[] getServletConfigClasses () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">new</span>
+                                        Class[]{WebConfig.class}<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p><span class="comment">// ... </span></p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>Now we are all done!</p>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="nav-button" onclick="location.href='22.ConfigurationFiles.html'" type="button">
+                                Previous topic: Configuration Files
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='31.FirstController.html'" type="button">
+                                Next topic: First Controller
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

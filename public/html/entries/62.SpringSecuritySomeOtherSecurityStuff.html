@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | Spring Security. Part Two</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+<!-- Navigation bar -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-sm-12">
+            <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                 style="background-color: #203c96;">
+                <div class="container-fluid">
+                    <p class="navbar-brand">Some Spring Stuff </p>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarScroll">
+                        <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                            style="--bs-scroll-height: 100px;">
+                            <!--                                <li class="nav-item">-->
+                            <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                            <!--                                </li>-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Project's structure
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                    <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                </ul>
+                            </li>
+                            <!--                                <li class="nav-item">-->
+                            <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                            <!--                                </li>-->
+                            <!--                                <li class="nav-item">-->
+                            <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                            <!--                                </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="d-none d-md-block col-md-2">
+        </div>
+    </div>
+</div>
+
+
+<main role="main" class="container">
+
+    <div class="row">
+        <!-- Main content body -->
+        <div class="col-md-10 col-xs-12">
+            <h1 class="display-3 text-center page-title">Spring Security. Some other security stuff</h1>
+            <section>
+                <h4 class="section-title">What will we cover?</h4>
+                <div class="paragraph">
+                    <p>I want to talk about 4 other security features that we might want to use in our applications:
+                    </p>
+                    <ul class="list-unstyled">
+                        <ul>
+                            <li>Logout of users
+                            </li>
+                            <li>Handling "forbidden" error</li>
+                            <li>Encrypting passwords</li>
+                            <li>CSRF protection
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h4 class="section-title">Logout</h4>
+                <div class="paragraph">
+                    <p>
+                        Logout is something that Spring Security handles for us. When we logout the
+                        authentication token will no longer be valid.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p> Spring allows us to configure the logout option inside our <span
+                            class="text-file-name">SecurityConfig</span> file.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>This is how it is done:
+                    </p>
+                    <p class="file-name">SecurityConfig.class:</p>
+
+                    <div class="code-container">
+                        <div class="code-block" style="overflow-y:auto;"><br/>
+                            <p></p>
+                            <p><span class="annotation">@Configuration</span></p>
+                            <p><span class="annotation">@EnableWebSecurity</span></p>
+                            <p><span class="annotation">@ComponentScan</span> (<span
+                                    class="string">"com.adtimokhin.security"</span>) </p>
+                            <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                SecurityConfig <span class="key-word">extends</span>
+                                WebSecurityConfigurerAdapter { </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span> <span
+                                    class="key-word">void</span> configure (HttpSecurity http) <span
+                                    class="key-word">throws</span> Exception { </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;http.authorizeRequests() </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                    class="string">"/news/*" </span>)
+                                .authenticated()</p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                    class="string">"/*" </span>)
+                                .permitAll()</p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                .and()</p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                .formLogin()</p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.loginPage(<span
+                                    class="string">"/login" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.loginProcessingUrl(<span
+                                    class="string">"/login/process" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.usernameParameter(<span
+                                    class="string">"username" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.passwordParameter(<span
+                                    class="string">"password" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.failureUrl(<span
+                                    class="string">"/login?error=true” </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.and()
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logout()
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logoutUrl(<span
+                                    class="string">"/logout" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logoutSuccessUrl(<span
+                                    class="string">"/" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.and()
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.csrf()
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.disabled()<span
+                                    class="key-word">; </span>
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;} </p>
+                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br/>
+                            <p>} </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="paragraph">
+                    <p><span class="code">logout()</span> - provides logout support
+                    </p>
+                    <p>
+                        <span class="code">logoutUrl()</span> - tells Spring what URLs triggers the logout
+                        functionality
+                    </p>
+                    <p>
+                        <span class="code">logoutSuccessUrl() </span> - the URL to which the user will be redirected
+                        after a successful logout.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>Let’s add the logout functionality onto our FTL pages. I want to make users be able to logout
+                        only from the “/news” URL. For that I will update the <span
+                                class="text-file-name">allNews.ftl</span>:
+                    </p>
+                    <div class="text-image">
+                        <p>allNews.ftl:</p>
+                        <img src="../../images/entries/62/6.2.1Pic9.png" class="mx-auto d-block">
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h4 class="section-title">Handling "forbidden" error</h4>
+                <div class="paragraph">
+                    <p> Let’s say that we have a page that only anonymous users can view. Commonly, you would want
+                        only anonymous users to access the login page. Thus, our configuration will change to
+                        something like this:
+                    </p>
+                    <p class="file-name">SecurityConfig.class:</p>
+                    <div class="code-container">
+                        <div class="code-block" style="overflow-y:auto;">
+                            <p><span class="annotation">@Configuration</span></p>
+                            <p><span class="annotation">@EnableWebSecurity</span></p>
+                            <p><span class="annotation">@ComponentScan</span> (<span class="string">"com.adtimokhin.security"</span>)
+                            </p>
+                            <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                SecurityConfig <span class="key-word">extends</span>
+                                WebSecurityConfigurerAdapter { </p><br/>
+                            <p></p>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span> <span
+                                    class="key-word">void</span> configure (HttpSecurity http) <span
+                                    class="key-word">throws</span> Exception { </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;http.authorizeRequests() </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                    class="string">"/news/*" </span>)
+                                .authenticated()</p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                    class="string">"/login" </span>)
+                                .anonymous()<span class="comment"> // This is new line of configuration </span></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                    class="string">"/*" </span>)
+                                .permitAll()</p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                    class="comment">// And the rest as before ... </span></p>
+                            <p>&#160;&#160;&#160;&#160;} </p>
+                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br/>
+                            <p>} </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="paragraph">
+                    <p>What will we see when an authenticated user tries to enter the “/login” URL? Well, you can
+                        check it yourself, but it will probably give you an error 403 - forbidden:
+                    </p>
+                    <div class="text-image">
+                        <img src="../../images/entries/62/6.2.2Pic3.png" class="mx-auto d-block">
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>I don’t know about you, but I don’t find this page that interesting for a common user to look
+                        at. It is useful in the development stage and all, but we will eventually need to change
+                        this to something more user friendly.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>One option is to redirect the user to a page that he/she has access to. This can also be
+                        configured through the <span class="text-class-name">SecurityConfig</span>. It is done like
+                        this:
+                    </p>
+                    <p class="file-name">SecurityConfig.class:</p>
+                    <div class="code-container">
+                        <div class="code-block" style="overflow-y:auto;"><br/>
+                            <p></p>
+                            <p><span class="annotation">@Configuration</span></p>
+                            <p><span class="annotation">@EnableWebSecurity</span></p>
+                            <p><span class="annotation">@ComponentScan</span> (<span
+                                    class="string">"com.adtimokhin.security"</span>) </p>
+                            <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                SecurityConfig <span class="key-word">extends</span>
+                                WebSecurityConfigurerAdapter { </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span> <span
+                                    class="key-word">void</span> configure (HttpSecurity http) <span
+                                    class="key-word">throws</span> Exception { </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;http.authorizeRequests() </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                    class="string">"/news/*" </span>)
+                                .authenticated()</p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                    class="string">"/*" </span>)
+                                .permitAll()</p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                .and()</p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                .formLogin()</p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.loginPage(<span
+                                    class="string">"/login" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.loginProcessingUrl(<span
+                                    class="string">"/login/process" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.usernameParameter(<span
+                                    class="string">"username" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.passwordParameter(<span
+                                    class="string">"password" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.failureUrl(<span
+                                    class="string">"/login?error=true” </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.and()
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logout()
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logoutUrl(<span
+                                    class="string">"/logout" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logoutSuccessUrl(<span
+                                    class="string">"/" </span>)
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.and()
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.exceptionHandling()
+                                <span class="comment">// this is a new line</span>
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.accessDeniedPage(<span
+                                    class="string">"/news/"</span>) <span class="comment">// this is a new
+                                        line</span>
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.and()
+                            </p>
+
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.csrf()
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.disabled()<span
+                                    class="key-word">; </span>
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;} </p>
+                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br/>
+                            <p>} </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p><span class="code">exceptionHandling()</span> - is a method that lets Spring know that we
+                        want to use its integrated excepting handling capabilities. </p>
+                </div>
+                <div class="paragraph">
+                    <p><span class="code">accessDeniedPage()</span> - method tells to what url the user should be
+                        redirected instead of getting shown the 403 page.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h4 class="section-title">Password Encryption</h4>
+
+                <div class="paragraph">
+                    <p> If you go to your user table you will see that anyone who has access to the table can easily
+                        read users’ passwords:
+                    </p>
+                    <div class="text-image">
+                        <p> "users" table:</p>
+                        <img src="../../images/entries/62/6.2.3Pic5.png" class="mx-auto d-block">
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Users of your application will not be very happy about it.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>We can encrypt the passwords so that no one who can view the table can see passwords.</p>
+                </div>
+                <div class="paragraph">
+                    <p>There is an encoder that we can use - a <span
+                            class="text-interface-name">PasswordEncoder</span>. This is an interface that encodes
+                        passwords. We will, therefore, use an implementation of that interface called
+                        <span class="text-class-name">BCryptPasswordEncoder</span>. We will need to create a bean
+                        inside our <span class="text-class-name">SecurityConfig</span>:
+                    </p>
+                    <p class="file-name">
+                        SecurityConfig.class:
+                    </p>
+                    <div class="code-container">
+                        <div class="code-block" style="overflow-y:auto;">
+                            <p><span class="annotation">@Configuration</span></p>
+                            <p><span class="annotation">@EnableWebSecurity</span></p>
+                            <p><span class="annotation">@ComponentScan</span> (<span class="string">"com.adtimokhin.security"</span>)
+                            </p>
+                            <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                SecurityConfig <span class="key-word">extends</span>
+                                WebSecurityConfigurerAdapter { </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Bean</span></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> PasswordEncoder
+                                getPasswordEncoder () { </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                <span class="key-word">new</span>
+                                BCryptPasswordEncoder(10) <span class="key-word">; </span>
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;} </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br/>
+                            <p></p>
+                            <p>} </p><br/>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Strength parameter tells how strong the encoding will be. The bigger the number the harder it
+                        will be to crack the password, but it will also take more time to encrypt and decrypt.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p> I will not go into details of how this encoder encrypts the passwords. It is not an easy
+                        topic. But if you are keen to learn more, I cannot stop you. Try to start by reading this
+                        <a class="text-link" target="_blank"
+                           href="https://en.wikipedia.org/wiki/Bcrypt">Wikipedia article on Bcrypt</a>.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>Back to Spring though. Now we have an instrument to encode and decode our passwords. Let’s
+                        use it.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>We need to encrypt passwords when creating a user. We do that in the implementation of our
+                        <span class="text-class-name">UserService</span>:
+                    </p>
+                    <p class="file-name">
+                        UserServiceImpl.class:
+                    </p>
+                    <div class="code-container">
+                        <div class="code-block" style="overflow-y:auto;">
+                            <p><span class="annotation">@Component</span></p>
+                            <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                UserServiceImpl <span class="key-word">implements</span> UserService { </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserRepository
+                                userRepository<span class="key-word">; </span></p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> PasswordEncoder
+                                passwordEncoder<span class="key-word">; </span></p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                    class="key-word">void</span> saveUser (User user) { </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String encodedPassword =
+                                passwordEncoder.encode(user.getPassword()) <span class="key-word">; </span></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setPassword(encodedPassword)
+                                <span class="key-word">; </span>
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;userRepository.save(user) <span
+                                    class="key-word">; </span></p>
+                            <p>&#160;&#160;&#160;&#160;} </p><br/>
+                            <p></p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br/>
+                            <p></p>
+                            <p>} </p><br/>
+                            <p></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="paragraph">
+                    <p>We need to use our <span class="text-interface-name">PasswordEncoder</span> to see if the
+                        password passed in the login form matches the
+                        encoded one. We do that in the <span class="code">authenticate()</span> method inside our
+                        <span class="text-class-name">AuthProvider</span>. So, let’s
+                        update the code for that method as well:
+                    </p>
+                    <p class="file-name">AuthProvider.class:</p>
+                    <div class="code-container">
+                        <div class="code-block" style="overflow-y:auto;">
+                            <p><span class="annotation">@Component</span></p>
+                            <p><span class="key-word">public</span> <span class="key-word">class</span> AuthProvider
+                                <span class="key-word">implements</span> AuthenticationProvider {
+                            </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserService
+                                userService<span class="key-word">; </span></p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> PasswordEncoder
+                                passwordEncoder<span class="key-word">; </span></p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> Authentication
+                                authenticate (Authentication authentication) <span class="key-word">throws</span>
+                                AuthenticationException { </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String email =
+                                authentication.getName() <span class="key-word">; </span><span class="comment">// we
+                                        get the username parameter </span></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                userService.findUser(email) <span class="key-word">; </span></p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                (user == <span class="key-word">null</span>) { </p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                    class="key-word">throw new</span> AuthenticationCredentialsNotFoundException
+                                (<span class="string">"User with such email was not detected"</span>)<span
+                                        class="key-word">; </span></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String password =
+                                authentication.getCredentials().toString() <span class="key-word">; </span><span
+                                        class="comment">// we get the credentials that we will turn into string </span>
+                            </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                (!passwordEncoder.matches(password, user.getPassword())) { <span
+                                        class="comment">&#160;// this is how we can compare encrypted and not encrypted
+                                        passwords.</span></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                    class="key-word">throw new</span> BadCredentialsException (<span
+                                    class="string">"Bad
+                                        credentials"</span>)<span class="key-word">; </span></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ArrayList&#60;GrantedAuthority&#62;
+                                authorities = <span class="key-word">new</span> ArrayList&#60;&#62;() <span
+                                        class="key-word">; </span></p>
+                            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                <span class="key-word">new</span>
+                                UsernamePasswordAuthenticationToken(user.getEmail(),
+                                user.getPassword(), authorities)<span class="key-word">; </span>
+                            </p>
+                            <p>&#160;&#160;&#160;&#160;} </p><br/>
+                            <p></p>
+                            <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                            <p>} </p><br/>
+                            <p></p><br/>
+                            <p></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="paragraph">
+                    <p><span class="code">matches()</span> is a method that checks if a raw String matches the
+                        encoded one.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>Now passwords in our database are complex to read:
+                    </p>
+                    <div class="text-image">
+                        <p>"users" table:</p>
+                        <img src="../../images/entries/62/6.2.4Pic10.png" class="mx-auto d-block">
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>This covers the password encryption.
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h4 class="section-title">CSRF protection</h4>
+                <div class="paragraph">
+                    <p> CSRF stands for Cross-Site Request Forgery. It is a type of an online attack.
+                        When you publish your web project you will probably have forms in it that will be sent to
+                        your application with some user details (POST HTTP requests). Every form triggers a certain
+                        types of action to be performed. Some of these forms can only be accessed by authenticated
+                        users.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p> Imagine someone created a website that copies forms from your website.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p> If the user will be authenticated on your website and activated a form on that malicious
+                        website, a certain actiong can be triggered to be performed on your website, though the user
+                        didn't intend it (like transferring money to other account, if yours website is a bank).
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p> There is a way to protect our application from such attacks. To each form we send we need to
+                        attach a unique key (called token) that will be generated whenever a new form is sent. This
+                        token serves as a way to prove that user sends form from your website, because the server
+                        will keep track of active tokens. That
+                        will mean that after the token has been used it will no longer be valid.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p> It is very easy to implement such functionality in Spring. Spring will handle the creation
+                        and handling of the CSRF tokens. We only need to add the CSRF tokens to all of our forms.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p> So, let’s do it.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>We will start by removing the last three lines from our <span class="text-class-name">SecurityConfig</span>
+                        that were responsible for blocking CSRF protection.
+                    </p>
+                    <p class="file-name">
+                        SecurityConfig.class:
+                    </p>
+                    <div class="code-container">
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;"><br/>
+                                <p></p>
+                                <p><span class="annotation">@Configuration</span></p>
+                                <p><span class="annotation">@EnableWebSecurity</span></p>
+                                <p><span class="annotation">@ComponentScan</span> (<span
+                                        class="string">"com.adtimokhin.security"</span>) </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    SecurityConfig <span class="key-word">extends</span>
+                                    WebSecurityConfigurerAdapter { </p><br/>
+                                <p></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span> <span
+                                        class="key-word">void</span> configure (HttpSecurity http) <span
+                                        class="key-word">throws</span> Exception { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;http.authorizeRequests() </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                        class="string">"/news/*" </span>)
+                                    .authenticated()</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                        class="string">"/*" </span>)
+                                    .permitAll()</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    .and()</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    .formLogin()</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.loginPage(<span
+                                        class="string">"/login" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.loginProcessingUrl(<span
+                                        class="string">"/login/process" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.usernameParameter(<span
+                                        class="string">"username" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.passwordParameter(<span
+                                        class="string">"password" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.failureUrl(<span
+                                        class="string">"/login?error=true” </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.and()
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logout()
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logoutUrl(<span
+                                        class="string">"/logout" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logoutSuccessUrl(<span
+                                        class="string">"/" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.and()
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.exceptionHandling()
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.accessDeniedPage(<span
+                                        class="string">"/news/"</span>)<span
+                                        class="key-word">; </span>
+                                </p>
+
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br/>
+                                <p>} </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="paragraph">
+                    <p>By default CSRF protection is enabled.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>Now we need to add CSRF tokens to <b>all</b> of our forms:
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <div class="text-image">
+                        <p>login.ftl:
+                        </p>
+                        <img src="../../images/entries/62/6.2.5Pic11.png" class="mx-auto d-block">
+                    </div>
+
+                </div>
+                <div class="paragraph">
+                    <div class="text-image">
+                        <p>signUp.ftl form:
+                        </p>
+                        <img src="../../images/entries/62/6.2.6Pic12.png" class="mx-auto d-block">
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <div class="text-image">
+                        <p>createNews.ftl form:
+                        </p>
+                        <img src="../../images/entries/62/6.2.7Pic13.png" class="mx-auto d-block">
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Logout is also a POST HTTP method. When we use csrf protection we need to send a CSRF token
+                        for that action. Hence, all logout links we now need to replace with forms like these:
+                    </p>
+
+                    <div class="text-image">
+                        <img src="../../images/entries/62/6.2.8Pic14.png" class="mx-auto d-block">
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <h4 class="section-title">One slight improvement
+                </h4>
+                <div class="paragraph">
+                    <p> While testing the system we have so far, I found that after logging in we are directed to
+                        the landing page. I want it to change so that we get redirected to “/news/” URL. It is very
+                        easy to implement. We need to add a single line in our <span
+                                class="text-class-name">SecurityConfig</span>:
+                    </p>
+
+                    <p class="file-name">SecurityConfig.class:</p>
+
+                    <div class="code-container">
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;"><br/>
+                                <p></p>
+                                <p><span class="annotation">@Configuration</span></p>
+                                <p><span class="annotation">@EnableWebSecurity</span></p>
+                                <p><span class="annotation">@ComponentScan</span> (<span
+                                        class="string">"com.adtimokhin.security"</span>) </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    SecurityConfig <span class="key-word">extends</span>
+                                    WebSecurityConfigurerAdapter { </p><br/>
+                                <p></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span> <span
+                                        class="key-word">void</span> configure (HttpSecurity http) <span
+                                        class="key-word">throws</span> Exception { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;http.authorizeRequests() </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                        class="string">"/news/*" </span>)
+                                    .authenticated()</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.antMatchers(<span
+                                        class="string">"/*" </span>)
+                                    .permitAll()</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    .and()</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    .formLogin()</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.loginPage(<span
+                                        class="string">"/login" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.loginProcessingUrl(<span
+                                        class="string">"/login/process" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.usernameParameter(<span
+                                        class="string">"username" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.passwordParameter(<span
+                                        class="string">"password" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.failureUrl(<span
+                                        class="string">"/login?error=true” </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.defaultSuccessUrl(<span
+                                        class="string">"/news/</span>) <span class="comment"> // this will redirect us to "/news/" page after successful loging in.</span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.and()
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logout()
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logoutUrl(<span
+                                        class="string">"/logout" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.logoutSuccessUrl(<span
+                                        class="string">"/" </span>)
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.and()
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.exceptionHandling()
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.accessDeniedPage(<span
+                                        class="string">"/news/"</span>)<span
+                                        class="key-word">; </span>
+                                </p>
+
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br/>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <!-- adverts -->
+<!--        <div class="col-md-2 col-xs-12">-->
+<!--            <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                <p>FCGHVIUOJ</p>-->
+<!--            </div>-->
+<!--            <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                <p>FCGHVIUOJ</p>-->
+<!--            </div>-->
+<!--            <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                <p>FCGHVIUOJ</p>-->
+<!--            </div>-->
+<!--            <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                <p>FCGHVIUOJ</p>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+
+
+    <!-- Bottom navigation pannel -->
+    <div class="col-12">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <button class="nav-button" onclick="location.href='61.SpringSecurityIntroduction.html'" type="button">
+                        Previous topic: Spring Security. Introduction
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button class="nav-button mx-auto d-block" onclick="location.href='71.MappingPartOne.html'"
+                            type="button">
+                        Next topic: Mappings. Part One
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- photo -->
+            <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                <div class="logo-container">
+                    <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                </div>
+            </div>
+            <!-- Other action buttons -->
+            <div class="col-md-4 col-sm-2 col-xs-6">
+                <a href="#" class="footer-link-title">Contact</a>
+                <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                   class="footer-link">LinkedIn</a>
+                <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+            </div>
+
+            <div class="col-md-4 col-sm-3 col-xs-6">
+                <a href="#" class="footer-link-title">Terms & policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

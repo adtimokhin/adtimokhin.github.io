@@ -1,0 +1,56 @@
+.code-block p{
+    white-space: nowrap; 
+    margin-bottom: 0px;
+    color: #ecfffa; /** default code colour*/
+    width: fit-content;
+}
+
+div.code-container{
+    background-color: #303036;
+    margin-top: 0px;
+    margin-bottom: 5px;
+
+    border: 3px solid #152867;
+}
+.key-word{
+    color: #ff8a00;
+}
+
+.annotation{
+    color: #d0d100;
+}
+
+.xml-tag{
+    color: #649b28;
+}
+
+.string{
+    color: #008f8f;
+}
+
+.comment{
+    color: #b0b0b0;
+}
+
+.dev-comment{
+    color: #649b28;
+}
+
+p.file-name{
+    background-color: #203c96;
+    color: #ecfffa;
+    width: fit-content;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+/* code references inside text */
+
+span.code-block{
+    /*background-color: #212146;*/
+    color: honeydew; 
+    width: fit-content;
+    height: auto;
+    border-radius: 2px; 
+}

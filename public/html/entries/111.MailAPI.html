@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | Mail API</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">Mail API</h1>
+                <section>
+                    <div class="paragraph">
+                        <p> You can send emails, interact with the emails received and work with your email dropbox. And
+                            you may do all
+                            of that
+                            inside Spring code!</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Sometimes you want to be able to interact with emails. Like when you want to verify users’
+                            emails.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>We will have a look at how to implement the feature, and we will also have a quick overview
+                            of how to work
+                            with the
+                            email API.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">API. What is it?</h4>
+                    <div class="paragraph">
+                        <p>
+                            API stands for Application Programming Interface. When you write your program you may find
+                            it useful to
+                            interact with
+                            other applications. API lets you get some functionality done by other, external programs so
+                            that your
+                            project can
+                            perform more complex actions. I am referring to functionality such as Google Maps (you can
+                            add them into
+                            your project
+                            and set some points) or Whatsapp API (you can send and receive Whatsapp messages in other
+                            applications).</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Remember the JPA we have used to access the database? Well, JPA stands for Java Persistence
+                            API. We don’t
+                            necessarily
+                            need to know how JPA repositories function, we just need to know what they do - they return
+                            data from the
+                            database as
+                            objects.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">What Java Mail API?</h4>
+                    <div class="paragraph">
+                        <p>This API provides you with a way to interact with an email account. You will connect an email
+                            to your Java
+                            code and then
+                            Java Mail API will do actions like sending emails when you tell it to and analysing received
+                            messages.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">How Mail APIs work</h4>
+                    <div class="paragraph">
+                        <p>JavaMail API has 3 main classes:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>1) Session</p>
+                        <p>
+                            <span class="text-class-name">Session</span> allows you to establish a connection with your
+                            email account.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>2) Message</p>
+                        <p>
+
+                            This class is abstract but its implementations are used to create messages that you will be
+                            sending. There
+                            you will
+                            specify the title, body and the recipients of your message.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>3) Transport</p>
+
+                        <p>This class is used to transport messages. This is its main use.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>By the help of these 3 classes you will be able to send and receive messages.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">How to create a Session object</h4>
+                    <div class="paragraph">
+                        <p>We will not bother writing pure Java EE code for creating Sessions and Messages right now
+                            because Spring will
+                            help us do
+                            it.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>We will need to specify the following properties for our <span
+                                class="text-class-name">Session</span> object
+                            to be able
+                            to access the email:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p><b>Authentication</b> (which in our case will contain password and the username for our email
+                            account)<br />
+                            <b>Protocol</b> used (on this in just a second)<br />
+                            <b>Port</b> used<br />
+                            <b>Host</b>
+                        </p>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Protocols</h6>
+                        <div class="paragraph">
+                            <p>We need different protocols to send and receive emails. A protocol is a standard way of
+                                communication
+                                between computers
+                                or programs. There are 4 main mail transportation protocols: SMTP, POP, IMAP, NNTP. But
+                                we need only to
+                                be aware of what
+                                two of them do for this tutorial. If you want to learn more, you can search on these
+                                topics by yourself.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p><b>SMTP</b> - Simple Mail Transport Protocol. This protocol is used to send mails without
+                                attachments and
+                                HTML code.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p><b>POP</b> - Post Office Protocol. Used to receive emails. This protocol will copy
+                                messages from an email
+                                server (like gmail)
+                                and then delete them, so that only the final client (in this case - our application)
+                                will have them.</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Host</h6>
+                        <div class="paragraph">
+                            <p>This is a server that provides you with access to your email service with the desired
+                                protocol. We will
+                                touch on this in
+                                greater detail as the last step in this section of the tutorial.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>You can search the host that you need for a certain email provider and certain protocol.
+                                Say, for Gmail
+                                SMTP host will
+                                be smpt.gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Port used</h6>
+                        <div class="paragraph">
+                            <p>Each protocol uses its own port to communicate with other computers. It is important to
+                                send appropriate
+                                data using the
+                                correct port.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>You can search online what port your smtp email provider uses to send emails. For
+                                example, gmail uses
+                                port number 465
+                                for SSL connection (we will discuss SSL soon).</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="paragraph">
+                        <p>Let’s start writing some actual code.</p>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step One: Add dependencies</h6>
+                        <div class="paragraph">
+                            <p>JavaMail API uses this dependency:<a
+                                    href="https://mvnrepository.com/artifact/com.sun.mail/javax.mail" target="_blank"
+                                    class="text-link">https://mvnrepository.com/artifact/com.sun.mail/javax.mail</a></p>
+                        </div>
+                        <div class="paragraph">
+                            <p>What to do:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Add javax.mail dependency of the latest stable version</li>
+                                </ul>
+                            </ul>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">pom.xml:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                            ... --&#62;<br /></span></p><br />
+                                    <p></p>
+                                    <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                            JavaMail API --&#62;<br /></span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;dependency&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;groupId&#62;</span>com.sun.mail<span
+                                            class="xml-tag">&#60;/groupId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;artifactId&#62;</span>javax.mail<span
+                                            class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;version&#62;</span>1.6.2<span
+                                            class="xml-tag">&#60;/version&#62;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="xml-tag">&#60;/dependency&#62;</span></p>
+                                    <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                            ... --&#62;<br /></span></p><br />
+                                    <p></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Two: Configuration</h6>
+                        <div class="paragraph">
+                            <p>We will use a class that Spring provides to create a <span
+                                    class="text-class-name">Session</span> object
+                                and send our
+                                messages. Class <span class="text-class-name">JavaMailSender</span> includes <span
+                                    class="text-class-name">Session</span> and <span
+                                    class="text-class-name">Transport</span> classes
+                                needed to send
+                                emails with JavaMail API.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Do the following:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Create a new EmailConfig class</li>
+                                    <li>Create a bean of JavaMailSender class</li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">EmailConfig.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Configuration</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        EmailConfig { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Bean</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> JavaMailSender
+                                        getJavaMailSender () </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Three: Create the JavaMailSender bean</h6>
+                        <div class="paragraph">
+                            <p>We need to pass the parameters to the <span class="text-class-name">JavaMailSender</span>
+                                class that it
+                                will use to
+                                create <span class="text-class-name">Session</span>. Those are:
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <ul class="list-unstyled">
+                                <ul>
+
+                                    <li>Username</li>
+                                    <li>Password</li>
+                                    <li>Port</li>
+                                    <li>Protocol</li>
+                                    <li>Host name</li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                Quick note: username and password are used to create an authentication object so that
+                                the connection can
+                                be
+                                opened, and
+                                usually you need to create an object of <span
+                                    class="text-class-name">javax.mail.Authenticator</span>
+                                where you
+                                set your
+                                authentication. However, we don’t have to do it when using Spring’s <span
+                                    class="text-class-name">JavaMailSender</span>.
+
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p> <span class="text-class-name">JavaMailSender</span> allows to set us most of the
+                                parameters by calling
+                                the
+                                specialised
+                                methods:</p>
+
+                            <p class="file-name">EmailConfig.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Configuration</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        EmailConfig { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Bean</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> JavaMailSender
+                                        getJavaMailSender () {</p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;JavaMailSenderImpl javaMailSender
+                                        = <span class="key-word">new</span> JavaMailSenderImpl() <span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.setHost(<span
+                                            class="string">"smtp gmail com"</span>) <span class="key-word">;
+                                        </span><span class="comment">// setting smtp host </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.setUsername(<span
+                                            class="string">"example@example com"</span>) <span class="key-word">;
+                                        </span><span class="comment">// setting username </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.setPassword(<span
+                                            class="string">"***************"</span>) <span class="key-word">;
+                                        </span><span class="comment">// setting password for the email account </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.setPort(465)<span
+                                            class="key-word">;
+                                        </span><span class="comment"> // setting port</span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.setProtocol(<span
+                                            class="string">"smtp"</span>) <span class="key-word">; </span><span
+                                            class="comment">// setting the protocol </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Properties properties =
+                                        javaMailSender.getJavaMailProperties() <span class="key-word">; </span><span
+                                            class="comment">// some properties have to be set by Properties object
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;properties.setProperty(<span
+                                            class="string">"mail.smtp.auth"</span>, <span class="string">"true"</span>)
+                                        <span class="key-word">;</span> <span class="comment"> // this property tells
+                                            that we have configured </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="comment">// the authentication details so that connection can be
+                                            established </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> javaMailSender<span class="key-word">;
+                                        </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                You might also find it useful to create a new email.properties file where you will store
+                                your properties
+                                for
+                                easier
+                                access (as we have done with the persistence.properties):</p>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">email.properties:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="comment"># We can set any names to these properties: </span></p>
+                                    <p><span class="key-word">mail.host</span>=<span
+                                            class="string">smtp.gmail.com</span></p>
+                                    <p><span class="key-word">mail.username</span>=<span
+                                            class="string">example@example.com</span></p>
+                                    <p><span class="key-word">mail.password</span>=<span
+                                            class="string">************</span></p>
+                                    <p><span class="key-word">mail.port</span>=<span class="string">465</span></p>
+                                    <p><span class="key-word">mail.protocol</span>=<span class="string">smtp</span></p>
+                                    <p><span class="key-word">mail.smtp.auth</span>=<span class="string">true</span></p>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">EmailConfig.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Configuration</span> </p>
+                                    <p><span class="annotation">@PropertySource</span> (<span
+                                            class="string">"classpath:email.properties"</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        EmailConfig { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span> (<span
+                                            class="string">"${mail.host}"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span>
+                                        String host<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span>
+                                        (<span class="string">"${mail.username}"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String
+                                        username<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span> (<span
+                                            class="string">"${mail.password}"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String
+                                        password<span class="key-word">; </span></p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span> (<span
+                                            class="string">"${mail.port}"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span>
+                                        <span class="key-word">int</span>
+                                        port<span class="key-word">; </span>
+                                    </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span>
+                                        (<span class="string">"${mail.protocol}"
+                                        </span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span>
+                                        String protocol<span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span>
+                                        (<span class="string">"${mail.smtp.auth}"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span>
+                                        String auth<span class="key-word">;
+                                        </span></p><br />
+                                    <p> </p>
+
+                                    <br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Bean</span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span>
+                                        JavaMailSender
+                                        getJavaMailSender
+                                        () {</p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;JavaMailSenderImpl
+                                        javaMailSender =
+                                        <span class="key-word">new</span>
+                                        JavaMailSenderImpl()
+                                        <span class="key-word">;
+                                        </span>
+                                    </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.setHost(host)
+                                        <span class="key-word">;
+                                        </span><span class="comment">//
+                                            setting smtp
+                                            host </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.setUsername(username)
+                                        <span class="key-word">;
+                                        </span><span class="comment">//
+                                            setting
+                                            username
+                                        </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.setPassword(password)
+                                        <span class="key-word">;
+                                        </span><span class="comment">//
+                                            setting
+                                            password for
+                                            the email
+                                            account
+                                        </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.setPort(port)
+                                        setting port
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.setProtocol(protocol)
+                                        <span class="key-word">;
+                                        </span><span class="comment">//
+                                            setting the
+                                            protocol
+                                        </span>
+                                    </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Properties
+                                        properties =
+                                        javaMailSender.getJavaMailProperties()
+                                        <span class="key-word">;
+                                        </span><span class="comment">//
+                                            some
+                                            properties
+                                            have to be
+                                            set by
+                                            Properties
+                                            object
+                                        </span>
+                                    </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;properties.setProperty(<span
+                                            class="string">"mail.smtp.auth"</span>, auth)
+                                        <span class="key-word">;</span> <span class="comment"> // this property tells
+                                            that we have configured </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="comment">// the authentication details so that connection can be
+                                            established </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span>
+                                        javaMailSender<span class="key-word">;
+                                        </span></p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;}
+                                    </p><br />
+                                    <p> </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                Don’t forget to add this configuration file to our dispatcher servlet’s configuration:
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">WebAppInitializer.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Order</span> (1) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        WebAppInitializer <span class="key-word">extends</span>
+                                        AbstractAnnotationConfigDispatcherServletInitializer { </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span>
+                                        Class&#60;?&#62;[] getServletConfigClasses () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">new</span>
+                                        Class[]{WebConfig.<span class="key-word">class</span>, PersistenceConfig.<span
+                                            class="key-word">class</span>, </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SecurityConfig.<span
+                                            class="key-word">class</span>, EmailConfig.<span
+                                            class="key-word">class</span>}<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title"> Step Four: Create an email sending method</h6>
+                        <div class="paragraph">
+                            <p>It is not that hard. Let’s start off by creating a new util class that we will use to
+                                send emails. I will
+                                call it <span class="text-class-name">SimpleEmailSender</span>. In this class I will
+                                have one single
+                                method: <span class="code">sendEmailVerificationEmail()</span>, that we will use to send
+                                verification
+                                emails to our users so they
+                                can prove that their emails are real.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Do the following:
+                            </p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Create SimpleEmailSender class inside your util folder</li>
+                                    <li>Create sendEmailVerificationEmail() method inside SimpleEmailSender class</li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">SimpleEmailSender.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        SimpleEmailSender { </p><br />
+                                    <p> </p>
+                                    <p><span class="dev-comment">&#160;&#160;&#160;&#160;/**<br />&#160;&#160;&#160;&#160;&#160;*
+                                            @param recipient is {@link com.adtimokhin.model.User} to which we will send
+                                            our verification letter<br />&#160;&#160;&#160;&#160;&#160;**/</span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> sendEmailVerificationEmail (User recipient) {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>The bean that we have created in the last step (<span
+                                    class="text-class-name">JavaMailSender</span>) can
+                                also be used to
+                                generate a message with some pre-filled information, like the <span
+                                    class="text-class-name">Session</span> object.
+
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p> This is how it’s done:</p>
+                            <p class="file-name">SimpleEmailSender.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        SimpleEmailSender { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> JavaMailSender
+                                        javaMailSender<span class="key-word">; </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p><span class="dev-comment">&#160;&#160;&#160;&#160;/**<br />&#160;&#160;&#160;&#160;&#160;*
+                                            @param recipient is {@link com.adtimokhin.model.User} to which we will send
+                                            our verification letter<br />&#160;&#160;&#160;&#160;&#160;**/</span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> sendEmailVerificationEmail (User recipient) {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MimeMailMessage message =
+                                        javaMailSender.createMimeMessage() <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p> MIME is a protocol that allows setting extensions to emails. With MIME you are able to
+                                add attachments
+                                to your message
+                                like audio, video, text documents.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>MIME can be, and usually is, used instead of SMTP.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>However, <span class="text-class-name">MimeMessage</span> class also works with SMTP and
+                                that is why we
+                                will be using it
+                                to create SMTP mails.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Now, back to the code. Here is how you can set different parameters of the email:</p>
+                            <p class="file-name">SimpleEmailSender.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        SimpleEmailSender { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> JavaMailSender
+                                        javaMailSender<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span> (<span
+                                            class="string">"${mail.username}"</span>) <span class="comment">//
+                                            apparently, we can access the .properties file from other parts of the
+                                            application </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String email<span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p><span class="dev-comment">&#160;&#160;&#160;&#160;/**<br />&#160;&#160;&#160;&#160;&#160;*
+                                            @param recipient is {@link com.adtimokhin.model.User} to which we will send
+                                            our verification letter<br />&#160;&#160;&#160;&#160;&#160;**/</span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> sendEmailVerificationEmail (User recipient) {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MimeMessage message =
+                                        javaMailSender.createMimeMessage() <span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.addFrom(<span
+                                            class="key-word">new</span> InternetAddress[]{new InternetAddress
+                                        (email))<span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.addRecipient(Message.RecipientType.TO
+                                        ,<span class="key-word">new</span> InternetAddress (recipient))<span
+                                            class="key-word">; </span> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// You have
+                                            to pass an object of InternetAddress to be able to send email </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                            Message.RecipientType.TO specifies that the address that you have passed is
+                                            actually a prime recipient </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setSubject(<span
+                                            class="string">"Email verification"</span>) </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setText(<span
+                                            class="string">"We want you to verify your email!"</span>) </p><br />
+                                    <p> </p>
+
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p> If you are keen to learn more about MIME mails, I have found a <a
+                                    href="https://www.javatpoint.com/example-of-sending-attachment-with-email-using-java-mail-api"
+                                    target="_blank" class="text-link">tutorial</a> for you on that. It is quite
+                                straightforward.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>And we send our email just like that:</p>
+
+                            <p class="file-name">SimpleEmailSender.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        SimpleEmailSender { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> JavaMailSender
+                                        javaMailSender<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span> (<span
+                                            class="string">"${mail.username}"</span>) <span class="comment">//
+                                            apparently, we can access the .properties file from other parts of the
+                                            application </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String email<span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p><span class="dev-comment">&#160;&#160;&#160;&#160;/**<br />&#160;&#160;&#160;&#160;&#160;*
+                                            @param recipient is {@link com.adtimokhin.model.User} to which we will send
+                                            our verification letter<br />&#160;&#160;&#160;&#160;&#160;**/</span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> sendEmailVerificationEmail (User recipient) {
+                                    </p>
+                                    <p> <span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; // ...
+                                        </span></p>
+
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.send(messgae)<span
+                                            class="key-word">;</span></p><br />
+                                    <p> </p>
+
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p> <span class="text-class-name">MimeMessage</span> is a class from javax.mail . So it is
+                                the actual class
+                                that we use to
+                                create MIME messages that is supported by Java EE. But Spring has its own class for MIME
+                                messages called
+                                <span class="text-class-name">MimeMailMessage</span>. This is how you can rewrite the
+                                class above using
+                                <span class="text-class-name">MimeMailMessage</span>:
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">SimpleEmailSender.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        SimpleEmailSender { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> JavaMailSender
+                                        javaMailSender<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span> (<span
+                                            class="string">"${mail.username}"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String
+                                        email<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p><span class="dev-comment">&#160;&#160;&#160;&#160;/**<br />&#160;&#160;&#160;&#160;&#160;*
+                                            @param recipient is {@link com.adtimokhin.model.User} to which we
+                                            will send our verification
+                                            letter<br />&#160;&#160;&#160;&#160;&#160;**/</span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> sendEmailVerificationEmail (User
+                                        recipient) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MimeMailMessage message =
+                                        <span class="key-word">new</span>
+                                        MimeMailMessage(javaMailSender.createMimeMessage()) <span class="key-word">;
+                                        </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setFrom(email)
+                                        <span class="key-word">; </span><span class="comment">// this is how we
+                                            set the sender now </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setTo(recipient.getEmail())
+                                        <span class="key-word">; </span><span class="comment">// this is how you
+                                            set recipients now </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setSubject(<span
+                                            class="string">"Email verification"</span>) <span class="key-word">;
+                                        </span><span class="comment">// this is going to be the subject of your
+                                            email</span> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setText(<span
+                                            class="string">"We want you to verify your email!"</span>) <span
+                                            class="key-word">; </span> <span class="comment">// this text will be in
+                                            your email's body</span> </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.send(message.getMimeMessage())
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                <span class="text-class-name">MimeMailMessage</span> is a class that allows you to
+                                interact with MIME
+                                messages in a more
+                                civilized manner. No need to create <span class="text-class-name">InternetAddress</span>
+                                objects to send
+                                your emails.
+                                Yay, I guess.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>And also no exceptions are thrown with that class.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                But it gets tricky when you want to create or send <span
+                                    class="text-class-name">MimeMailMessage</span>
+                                messages.</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Five: SMTP provider</h6>
+                        <div class="paragraph">
+                            <p>When you try to send an email right now you will run into an error like this:</p>
+                            <div class="text-image">
+                                <p>Error message:</p>
+                                <img src="../../images/entries/111/10.1.1Pic13.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p>What does it mean? It means that we didn’t set our email provider to let us use side
+                                programs to interact
+                                with email.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>It is relatively easy to fix, as most of the email service providers have a special page
+                                where they talk
+                                about it. Here
+                                is one for <a href="https://support.google.com/mail/answer/7126229?hl=en"
+                                    target="_blank" class="text-link">gmail platform.</a></p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">SSL​​</h4>
+                    <div class="paragraph">
+                        <p>I think it is also time to speak about SSL.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            SSL - Secure Sockets Layer. This is a protocol that is commonly used all over the internet
+                            to ensure
+                            security in data
+                            transmission. Basically it works by a server, for example, owning a SSL certificate that
+                            proves that the
+                            server is
+                            trustworthy. Before any data is transmitted, an SSL certificate is sent so that the other
+                            computer can check
+                            that the
+                            server is trustworthy. Only after that data transmission can begin. SSL also ensures that
+                            data is encrypted
+                            using
+                            asynchronous encoding (you can search on this, but it is not that important to what we are
+                            doing now).</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Websites should own the SSL certificate in order to establish secure network connection with
+                            their users.
+                            Your
+                            organisation should purchase the SSL certificate from a company that issues them.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>You should not transmit any sensitive data without the connection being protected by SSL
+                            protocol or better
+                            (the other
+                            common and more secure option is TLS protocol).</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>SSL protocol can also be used with SMTP.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>So when using a SMTP, POP or IMAP server make sure that it has SSL or TLS security.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">How do we tell JavaMail to use SSL?</h4>
+                    <div class="paragraph">
+                        <p>There is a secure version of the SMTP protocol called SMTPS (‘s’ stands for ‘secure’, like in
+                            HTTPS). When we
+                            create a
+                            <span class="text-class-name">Session</span> object (or <span
+                                class="text-class-name">JavaMailSender</span>)
+                            we need it
+                            to use SMTPS and use SSL protection. So, here are the changes that we need to perform:
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">email.properties:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="key-word">mail.host</span>=<span class="string">smtp.gmail.com</span>
+                                </p>
+                                <p><span class="key-word">mail.username</span>=<span
+                                        class="string">example@example.com</span></p>
+                                <p><span class="key-word">mail.password</span>=<span class="string">************</span>
+                                </p>
+                                <p><span class="key-word">mail.port</span>=<span class="string">465</span></p>
+                                <p><span class="key-word">mail.protocol</span>=<span class="string">smtps</span><span
+                                        class="comment"># update protocol</span></p>
+                                <p><span class="key-word">mail.smtp.auth</span>=<span class="string">true</span></p>
+                                <p><span class="comment"># add a new property:</span></p>
+                                <p><span class="key-word">mail.smtp.ssl.enable</span>=<span class="string">true</span>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <p>Add new lines into the EmailConfig as well:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">EmailConfig.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Configuration</span> </p>
+                                <p><span class="annotation">@PropertySource</span> (<span
+                                        class="string">"classpath:email.properties"</span>) </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    EmailConfig { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span> (<span
+                                        class="string">"${mail.smtp.ssl.enable}"</span>) </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String
+                                    sslEnable<span class="key-word">; </span></p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Bean</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span>
+                                    JavaMailSender getJavaMailSender () </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;Properties properties =
+                                    javaMailSender.getJavaMailProperties() <span class="key-word">;
+                                    </span></p>
+                                <p>&#160;&#160;&#160;&#160;properties.setProperty(<span
+                                        class="string">"mail.smtp.auth"</span>, auth) <span class="key-word">; </span>
+                                </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// New part: </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;properties.setProperty(<span
+                                        class="string">"mail.smtp.ssl.enable"</span>, sslEnable)<span class="key-word">;
+                                    </span> <span class="comment">// telling
+                                        JavaMail to use SSL</span> </p>
+                                <br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    javaMailSender<span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>} </p><br />
+                                <p> </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Now when we try to send an email it all should work just fine:</p>
+                        <div class="text-image">
+                            <p>email dropbox:</p>
+                            <img src="../../images/entries/111/10.1.2Pic20.png" class="mx-auto d-block">
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>That should summarize the basics of JavaMail API. I also wanted to tell you that you will not
+                            always use
+                            google's SMTP
+                            host (which is, I remind you, smtp.gmail.com). Sometimes your server provider will give you
+                            one, or you may
+                            choose an
+                            external mail server (like Apache James server). All of them use different SMTP hosts and
+                            use different
+                            ports.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            If you want to find out more, here is the link to <a
+                                href="https://james.apache.org/server/3/quick-start.html" target="_blank"
+                                class="text-link">Apache James
+                                Server Quick Start Guide</a>. Maybe it will help you.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title"> Additional Thing: Implementing email verification feature</h4>
+                    <div class="paragraph">
+                        <p>We have learned the hardest part - how to create and send emails, and I have no doubts that
+                            you will be able
+                            to create
+                            an email verification system on your own. However, I want to show you how I would approach
+                            this task. Maybe
+                            you will
+                            find it useful to have an example to refer to.</p>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step One: Add a new field to the User entity.</h6>
+                        <div class="paragraph">
+                            <p>I want to create a new field that will be used to store an email verification token.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>When the user will verify their email this field will be set to null, indicating that the
+                                email was
+                                verified.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Do the following:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Create a new column inside the “users” table. Name this column “verification”
+                                    </li>
+                                    <li>
+                                        Add appropriate field to the User Java class</li>
+                                    <li>Add getters and setters</li>
+                                </ul>
+                            </ul>
+
+                        </div>
+                        <div class="paragraph">
+                            <div class="text-image">
+                                <p>
+                                    my alterations to the “users” table:
+                                </p>
+                                <img src="../../images/entries/111/10.1.3Pic21.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">User.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Entity</span> </p>
+                                    <p><span class="annotation">@Table</span> (name = <span
+                                            class="string">"users"</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span> User {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Column</span> (name = <span
+                                            class="string">"verification"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String
+                                        emailVerificationToken<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160; </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Two: Updating UserService and UserRepository</h6>
+                        <div class="paragraph">
+                            <p>Do the following:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Add the two new methods to the UserService</li>
+                                    <li>Implement the methods in the UserServiceImpl</li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">UserService.interface:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Service</span> </p>
+                                    <p><span class="annotation">@Transactional</span> (readOnly = <span
+                                            class="key-word">true</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                        UserService { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                    <p>&#160;&#160;&#160;&#160; </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Transactional</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">void</span>
+                                        removeEmailVerificationToken (User user) <span class="key-word">; </span></p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Transactional</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">void</span>
+                                        addEmailVerificationToken(User user)
+                                        <span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">UserServicesImpl.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        UserServiceImpl <span class="key-word">implements</span> UserService { </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> addEmailVerificationToken (User user) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setEmailVerificationToken(emailTokenGenerator.generateToken())
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;userRepository.save(user) <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> removeEmailVerificationToken (User user) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setEmailVerificationToken(<span
+                                            class="key-word">null</span>) <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;userRepository.save(user) <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                I have also modified the <span class="code">saveUser()</span> method so that the token
+                                is added at the
+                                same time as we
+                                generate a <span class="text-class-name">User</span>:</p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">UserServicesImpl.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        UserServiceImpl <span class="key-word">implements</span> UserService { </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> saveUser (User user) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String encodedPassword =
+                                        passwordEncoder.encode(user.getPassword()) <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setPassword(encodedPassword)
+                                        <span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setRole(roleService.getRole(Role.ROLE_COMMON))
+                                        <span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//Setting a
+                                            token </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setEmailVerificationToken(<span
+                                            class="string">"Some token"</span>)<span class="key-word">; </span> </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;userRepository.save(user) <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                I want my <span class="text-interface-name">UserService</span> to be able to set and
+                                remove the email
+                                verification token
+                                of each user. I will create two methods:</p>
+                        </div>
+                        <div class="paragraph">
+                            <p><span class="code">addEmailVerificationToken()</span> - we’ll call this when we create a
+                                new <span class="text-class-name">User</span><br />
+                                <span class="code">removeEmailVerificationToken()</span> - we’ll call this when email is
+                                verificated
+                            </p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Step Three: Making a util that will generate email verification
+                            tokens</h6>
+                        <div class="paragraph">
+                            <p>We need a class that will create our email verification tokens. In my scenario the tokens
+                                will be a
+                                string of 30 random
+                                numbers and letters (both lower- and uppercase).</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>I will not go into the details how my method of creating the tokens work, but I will show
+                                you the code:
+                            </p>
+                            <p class="file-name">EmailTokenGenerator.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        EmailTokenGenerator { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">static</span> <span class="key-word">final</span> <span
+                                            class="key-word">int</span> TOKEN_SIZE = 30<span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> Random random =
+                                        <span class="key-word">new</span> Random() <span class="key-word">; </span>
+                                    </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> int[] asciis<span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> EmailTokenGenerator
+                                        () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// this is
+                                            a list of all possible ascii values that we might use int the token
+                                            generation process </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ArrayList&#60;Integer&#62;
+                                        integers = <span class="key-word">new</span> ArrayList&#60;&#62;() <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 48<span class="key-word">; </span>i &#60;
+                                        58<span class="key-word">; </span>i++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;integers.add(i)
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 65<span class="key-word">; </span>i &#60;
+                                        91<span class="key-word">; </span>i++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;integers.add(i)
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 97<span class="key-word">; </span>i &#60;
+                                        123<span class="key-word">; </span>i++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;integers.add(i)
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;asciis = <span
+                                            class="key-word">new</span> int[integers.size() <span class="key-word">;
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 0<span class="key-word">; </span>i &#60;
+                                        asciis.length<span class="key-word">; </span>i++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;asciis[i]
+                                        = integers.get(i) <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String generateToken
+                                        () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;StringBuilder tokenBuilder = <span
+                                            class="key-word">new</span> StringBuilder() <span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// building a
+                                            token </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 0<span class="key-word">; </span>i &#60;
+                                        TOKEN_SIZE<span class="key-word">; </span>i++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;tokenBuilder.append(addRandomCharacter
+                                        ()) <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                        generateToken() <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> char
+                                        addRandomCharacter () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> (char)
+                                        asciis[random.nextInt(asciis.length - 1)]<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>I also want to make the tokens be all unique, so that there are no two users with the
+                                same token.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>I will achieve this by checking if the token is present in the database after it was
+                                generated. For this
+                                I will also
+                                require a new method in the <span class="text-interface-name">UserService</span> that
+                                will return a list
+                                of all email
+                                verification tokens that are present in the system:</p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">UserService.interface:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Service</span> </p>
+                                    <p><span class="annotation">@Transactional</span> (readOnly = <span
+                                            class="key-word">true</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                        UserService { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Transactional</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;List&#60;String&#62; getAllEmailVerificationTokens()
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">
+                                UserRepository.interface:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Repository</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                        UserRepository <span class="key-word">extends</span>
+                                        JpaRepository&#60;User,Integer&#62; { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p>
+                                    <p>&#160;&#160;&#160;&#160; <span class="dev-comment">/**</span></p>
+                                    <p>&#160;&#160;&#160;&#160; <span class="dev-comment">* @return a list of Users with
+                                            email verification token not equal to null</span></p>
+                                    <p>&#160;&#160;&#160;&#160; <span class="dev-comment">**/</span></p>
+                                    <p>&#160;&#160;&#160;&#160;List&#60;User&#62;
+                                        findAllByEmailVerificationTokenIsNotNull() <span class="key-word">; </span></p>
+                                    <br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">UserServiceImpl.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        UserServiceImpl <span class="key-word">implements</span> UserService { </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> List&#60;String&#62;
+                                        getAllEmailVerificationTokens () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;List&#60;User&#62; users =
+                                        userRepository.findAllByEmailVerificationTokenIsNotNull() <span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (users == <span class="key-word">null</span>) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">null</span> <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;List&#60;String&#62; tokens =
+                                        <span class="key-word">new</span> ArrayList&#60;&#62;() <span class="key-word">;
+                                        </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (User user : users) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;tokens.add(user.getEmailVerificationToken())
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> tokens<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>And now this is how our token-generating routine looks:</p>
+                            <p class="file-name">EmailTokenGenerator.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        EmailTokenGenerator { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserService
+                                        userService<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">static</span> <span class="key-word">final</span> <span
+                                            class="key-word">int</span> TOKEN_SIZE = 30<span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> Random random =
+                                        <span class="key-word">new</span> Random() <span class="key-word">; </span>
+                                    </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> int[] asciis<span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> EmailTokenGenerator
+                                        () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// this is
+                                            a list of all possible ascii values that we might use int the token
+                                            generation process </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ArrayList&#60;Integer&#62;
+                                        integers = <span class="key-word">new</span> ArrayList&#60;&#62;() <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 48<span class="key-word">; </span>i &#60;
+                                        58<span class="key-word">; </span>i++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;integers.add(i)
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 65<span class="key-word">; </span>i &#60;
+                                        91<span class="key-word">; </span>i++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;integers.add(i)
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 97<span class="key-word">; </span>i &#60;
+                                        123<span class="key-word">; </span>i++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;integers.add(i)
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;asciis = <span
+                                            class="key-word">new</span> int[integers.size() <span class="key-word">;
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 0<span class="key-word">; </span>i &#60;
+                                        asciis.length<span class="key-word">; </span>i++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;asciis[i]
+                                        = integers.get(i) <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String generateToken
+                                        () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;StringBuilder tokenBuilder =
+                                        <span class="key-word">new</span> StringBuilder() <span class="key-word">;
+                                        </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// building
+                                            a token </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 0<span class="key-word">; </span>i &#60;
+                                        TOKEN_SIZE<span class="key-word">; </span>i++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;tokenBuilder.append(addRandomCharacter
+                                        ()) <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String token =
+                                        tokenBuilder.toString() <span class="key-word">; </span><span class="comment">//
+                                            the newly created token </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// checking
+                                            if the token is unique </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;List&#60;String&#62; tokensUsed =
+                                        userService.getAllEmailVerificationTokens() <span class="key-word">; </span></p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (tokensUsed == <span class="key-word">null</span>) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> token<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">for</span>
+                                        (<span class="key-word">int</span> i = 0<span class="key-word">; </span>i &#60;
+                                        TOKEN_SIZE<span class="key-word">; </span>i++) { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;char
+                                        currentTokenChar = token.charAt(i) <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;List&#60;String&#62;
+                                        subListOfTokensUsed = <span class="key-word">new</span> ArrayList&#60;&#62;()
+                                        <span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">for</span> (<span class="key-word">int</span> j = 0<span
+                                            class="key-word">; </span>j &#60; tokensUsed.size() <span class="key-word">;
+                                        </span>j++) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String
+                                        tokenUsed = tokensUsed.get(j) <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">if</span> (tokenUsed.charAt(i) == currentTokenChar) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;subListOfTokensUsed.add(tokenUsed)
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">if</span> (subListOfTokensUsed.size() == 0) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="comment">// token is unique and thus can be used </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> token<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">if</span>
+                                        (subListOfTokensUsed.size() == Math.pow((TOKEN_SIZE - i), asciis.length)) {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="comment">// we need to create new token </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> generateToken() <span class="key-word">;
+                                        </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;tokensUsed
+                                        = subListOfTokensUsed<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// if we
+                                            didn't manage to create a unique token, we have to try again </span></p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> generateToken() <span class="key-word">;
+                                        </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> char
+                                        addRandomCharacter () { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> (char)
+                                        asciis[random.nextInt(asciis.length - 1)]<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p><br />
+                                    <p> </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title"> Step Four: Sending the verification emails</h6>
+                        <div class="paragraph">
+                            <p>In the verification email we will pass a link to a URL that will be used to verificate
+                                the email.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Do the following:</p>
+                            <ul class="list-unstyled">
+                                <ul>
+                                    <li>Create a GET mapping handler that will extract from the url the email
+                                        verification token</li>
+                                    <li>Create a method in the UserService to verify the email if the token is valid
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">UserRepository.interface:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Repository</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                        UserRepository <span class="key-word">extends</span>
+                                        JpaRepository&#60;User,Integer&#62; { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="dev-comment"> /**</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="dev-comment">* @param emailVerificationToken
+                                            token used to verify email of a User</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="dev-comment">* @return {@link
+                                            com.adtimokhin.model.User} that uses this {@param
+                                            emailVerificationToken}</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="dev-comment">**/</span> </p>
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;User findByEmailVerificationToken (String
+                                        emailVerificationToken) <span class="key-word">;</span></p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">UserService.interface:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Service</span> </p>
+                                    <p><span class="annotation">@Transactional</span> (readOnly = <span
+                                            class="key-word">true</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">interface</span>
+                                        UserService { </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160; <span class="dev-comment">/**</span></p>
+                                    <p>&#160;&#160;&#160;&#160; <span class="dev-comment"> * @param token email token
+                                            used to verify email of {@link com.adtimokhin.model.User}</span></p>
+                                    <p>&#160;&#160;&#160;&#160; <span class="dev-comment">* @return true if the
+                                            verification was completed successfully</span></p>
+                                    <p>&#160;&#160;&#160;&#160; <span class="dev-comment">**/</span></p>
+
+
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Transactional</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">boolean</span> verifyEmail (String
+                                        token) <span class="key-word">;</span></p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">UserServiceImpl.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        UserServiceImpl <span class="key-word">implements</span> UserService { </p>
+                                    <br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">boolean</span> verifyEmail (String token) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                        userRepository.findByEmailVerificationToken(token) <span class="key-word">;
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (user == <span class="key-word">null</span>) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">false</span> <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">this</span>.removeEmailVerificationToken(user) <span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">true</span> <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">AuthController.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Controller</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        AuthController { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@GetMapping</span> (<span
+                                            class="string">"/verify/{token}"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String
+                                        verifyEmailPost (<span class="annotation">@PathVariable</span> (name = <span
+                                            class="string">"token"</span>) String token) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (userService.verifyEmail(token)) { <span class="comment">// if email was
+                                            verified </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="string">"redirect:/"</span><span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="string">"errors/404"</span><span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// honesty,
+                                            these return statements are a bit random. When you create your application
+                                            you can create some new ftl pages for this behaviour </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>Now let’s call the method to send the verification email.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">SimpleEmailSender.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        SimpleEmailSender { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> JavaMailSender
+                                        javaMailSender<span class="key-word">; </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span> (<span
+                                            class="string">"${mail username}"</span>) <span class="comment">//
+                                            apparently, we can access the .properties file from other parts of the
+                                            application </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String email<span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> sendEmailVerificationEmail (User recipient) {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MimeMailMessage message = <span
+                                            class="key-word">new</span>
+                                        MimeMailMessage(javaMailSender.createMimeMessage()) <span class="key-word">;
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setFrom(email) <span
+                                            class="key-word">; </span><span class="comment">// this is how we set the
+                                            sender now </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setTo(recipient.getEmail())
+                                        <span class="key-word">; </span><span class="comment">// this is how you set
+                                            recipients now </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setSubject(<span
+                                            class="string">"Email verification"</span>) <span class="key-word">;</span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setText(<span
+                                            class="string">"Please, follow this link to verify your email: <span
+                                                class="key-word">\n</span>"</span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+
+                                        <span class="string">"localhost:8080/verify/"</span> +
+                                        recipient.getEmailVerificationToken())<span class="key-word">;</span><span
+                                            class="comment"> // this
+                                            text will be in your email's body</span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.send(message.getMimeMessage())
+                                        <span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>You see that I have also changed the argument’s type to take in the <span
+                                    class="text-class-name">User</span>, so we can
+                                get their email verification token easier.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Note: It is a very sensible decision to put the host of the website as a constant value.
+                                That will help
+                                us in the
+                                future, when the project is placed onto the web, to change the hostname from
+                                “localhost:8080” to
+                                something more
+                                readable.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">SimpleEmailSender.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        SimpleEmailSender { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> JavaMailSender
+                                        javaMailSender<span class="key-word">; </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Value</span> (<span
+                                            class="string">"${mail username}"</span>) <span class="comment">//
+                                            apparently, we can access the .properties file from other parts of the
+                                            application </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> String email<span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                            class="key-word">static</span> <span class="key-word">final</span> String
+                                        HOSTNAME = <span class="string">"localhost:8080"</span><span class="key-word">;
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> sendEmailVerificationEmail (User recipient) {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MimeMailMessage message = <span
+                                            class="key-word">new</span>
+                                        MimeMailMessage(javaMailSender.createMimeMessage()) <span class="key-word">;
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setFrom(email) <span
+                                            class="key-word">; </span><span class="comment">// this is how we set the
+                                            sender now </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setTo(recipient.getEmail())
+                                        <span class="key-word">; </span><span class="comment">// this is how you set
+                                            recipients now </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setSubject(<span
+                                            class="string">"Email verification"</span>)<span class="key-word">;
+                                        </span> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message.setText(<span
+                                            class="string">"Please, follow this link to verify your email: <span
+                                                class="key-word">\n</span>"</span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+
+                                        HOSTNAME + <span class="string">"/verify/"</span> +
+                                        recipient.getEmailVerificationToken()) <span class="key-word">; </span> <span
+                                            class="comment">// this text will be in your email's body </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;javaMailSender.send(message.getMimeMessage())
+                                        <span class="key-word">; </span>
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">AuthController.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Controller</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        AuthController { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@PostMapping</span> (<span
+                                            class="string">"/sign_up"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String signUpPost(
+                                        <span class="annotation">@RequestParam</span> (name = <span
+                                            class="string">"email"</span>) String email,
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="annotation">@RequestParam</span> (name = <span
+                                            class="string">"password"</span>) String password, </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="annotation">@RequestParam</span> (name = <span
+                                            class="string">"passwordTwo"</span>) String passwordTwo, </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Model
+                                        model) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user = <span
+                                            class="key-word">new</span> User() <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setEmail(email) <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user.setPassword(password) <span
+                                            class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;List&#60;UserError&#62; errorList
+                                        = userValidator.validate(user, passwordTwo) </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (!errorList.isEmpty()) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        model.addAttribute(<span class="string">"errors"</span>, errorList)<span
+                                            class="key-word">;</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="string">"signUp"</span><span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} <span
+                                            class="key-word">else</span> { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;userService.saveUser(user)
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;emailSender.sendEmailVerificationEmail(user)
+                                        <span class="key-word">; </span><span class="comment">// now we also send email
+                                            to user </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="string">"signUp"</span><span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>Just updating the <span class="code">signUpPost()</span> method to send email after the
+                                user was created.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                If everything was done correctly, then we should be able to send verification emails and
+                                then follow the
+                                link to verify
+                                the email:</p>
+
+                            <div class="text-image">
+                                <p>Email dropbox:</p>
+                                <img src="../../images/entries/111/10.1.4Pic43.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p>If you enter this URL into your search bar in your browser, you should see that your
+                                email has been
+                                verified (i.e.
+                                “verification” field should be set to null):</p>
+                            <div class="text-image">
+                                <p>“users” table:</p>
+                                <img src="../../images/entries/111/10.1.5Pic45.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title"> Step Five: Some security</h6>
+                        <div class="paragraph">
+                            <p>If a person with an unverified email tries to enter the platform, they should be stopped
+                                and not allowed
+                                in. We have a
+                                class that is responsible for authorizing our users - <span
+                                    class="text-class-name">AuthProvider</span>.
+                                We simply need
+                                to check in there if the <span class="text-class-name">User</span> had verified their
+                                email or not:</p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">
+                                AuthProvider.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        AuthProvider <span class="key-word">implements</span> AuthenticationProvider {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> Authentication
+                                        authenticate (Authentication authentication) <span
+                                            class="key-word">throws</span> AuthenticationException { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String email =
+                                        authentication.getName() <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                        userService.findUser(email) <span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (user == <span class="key-word">null</span>) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">throw</span> <span class="key-word">new</span>
+                                        AuthenticationCredentialsNotFoundException (<span class="string">"User with such
+                                            email was not detected"</span>)<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String
+                                        password = authentication.getCredentials().toString()<span class="key-word">;
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (!passwordEncoder.matches(password, user.getPassword())) { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">throw</span> <span class="key-word">new</span>
+                                        BadCredentialsException (<span class="string">"Bad credentials"</span>)<span
+                                            class="key-word">; </span> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (user.getEmailVerificationToken() != <span class="key-word">null</span>) { <span
+                                            class="comment"> // new check </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">throw</span> <span class="key-word">new</span>
+                                        LockedException (<span class="string">"Email is not verified"</span>) <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ArrayList&#60;GrantedAuthority&#62;
+                                        authorities = <span class="key-word">new</span> ArrayList&#60;&#62;() <span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;authorities.add(user.getRole())
+                                        <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="key-word">new</span>
+                                        UsernamePasswordAuthenticationToken(user.getEmail(),
+                                        user.getPassword(), authorities)<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>Now no unverified user will pass.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>A side note: Now when an unverified user tries to login he will see a message that tells
+                                them that “their
+                                credentials
+                                were not identified”. We can get the error that was thrown to check which message should
+                                be displayed:
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">
+                                AuthController.class:</p>
+                            [<div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Controller</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        AuthController { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@GetMapping</span> (<span
+                                            class="string">"/login"</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String loginGet(
+                                        <span class="annotation">@RequestParam</span> (value = <span
+                                            class="string">"error"</span>, required = <span
+                                            class="key-word">false</span>) Boolean error,
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Model
+                                        model, HttpServletRequest request) { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (Boolean.TRUE.equals(error)) { <span class="comment">// as error might be null
+                                            we have to put this statement in this order </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;AuthenticationException
+                                        authenticationException = </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        (AuthenticationException)
+                                        request.getSession().getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION)<span
+                                            class="key-word">;</span> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">if</span>
+                                        (authenticationException.getClass().equals(LockedException.<span
+                                            class="key-word">class</span>)) {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;model.addAttribute(<span
+                                            class="string">"error", "You have to verify your email before logging onto
+                                            the page"</span>) <span class="key-word">;</span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} <span
+                                            class="key-word">else</span> { </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;model.addAttribute(<span
+                                            class="string">"error", "No user with such credentials was
+                                            found"</span>)<span class="key-word">;</span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="string">"login"</span><span
+                                            class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                You can refer back to this section to read more about <span
+                                    class="text-class-name">HttpServletRequest</span> class.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>One other thing that we might want to add is asynchronous execution of the <span
+                                    class="code">sendEmailVerificationEmail()</span> method. That will make the sending
+                                of the
+                                verification email to
+                                happen at the same time as the user interacts with the application. To be honest,
+                                multithreading is a
+                                very big topic,
+                                and if you didn’t have a chance to learn about it I strongly encourage you to find a
+                                time to do so.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>For now, however, we will just add a Spring annotation that will make the execution of a
+                                method to happen
+                                asynchronously
+                                from the main thread:</p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">SimpleEmailSender.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        SimpleEmailSender { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@Async</span> <span
+                                            class="comment">// this is the dependency that we are after. </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> <span
+                                            class="key-word">void</span> sendEmailVerificationEmail (User recipient) {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// ...
+                                        </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
+                <section>
+                    <div class="paragraph">
+                        <p>And this summarizes my implementation of the “email verification” feature.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="nav-button" onclick="location.href='91.ExceptionHandling.html'" type="button">
+                                Previous topic: Exception Handling
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='121.Logging.html'" type="button">
+                                Next topic: Logging
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

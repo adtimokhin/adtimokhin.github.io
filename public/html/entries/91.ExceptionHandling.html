@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | Web Exception Handling</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">Web Exception Handling</h1>
+                <section>
+                    <div class="paragraph">
+                        <p>To be honest, we have covered all of the basics of the Spring that I wanted to show you. You
+                            now are aware of
+                            how:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>To start a new Spring project</li>
+                                <li>To work with FTL</li>
+                                <li>To work with MVC model</li>
+                                <li>To work with persistence</li>
+                                <li>To work with Spring Security</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p>Of course I can’t tell that now you know everything. I don’t know much even after a year of
+                            coding in Spring.
+                            But what
+                            you’ve learned so far should give you enough tools to start working on your own projects.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>But I can’t let you go just yet. There are still some things that I can show to you that will
+                            come in handy
+                            during your
+                            development.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>First of such is the exception handling.</p>
+                    </div>
+                </section>
+                <section>
+                    <div class="paragraph">
+                        <p>
+                            When you code you are very likely to make mistakes in your code. There will be exceptions
+                            being thrown at
+                            you. You are
+                            likely to see two of mistakes most frequently:</p>
+                    </div>
+                    <div class="paragraph">
+                        <div class="text-image">
+                            <p>404 - page was not found:</p>
+                            <img src="../../images/entries/91/9.1.1Pic1.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="text-image">
+                            <p>500 - internal server error:</p>
+                            <img src="../../images/entries/91/9.1.2Pic2.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Those errors are very useful to us - programmers. We can see them, read the error message
+                            and then fix the
+                            problem
+                            faster. But this page is not appealing to the general public. You don’t go to a website and
+                            see those error
+                            pages
+                            looking like that. No, usually they are prettier and they don’t contain the error message.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Our task right now will be creating custom error pages.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>There are many ways of doing these pages, but I will show you one of them.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Spring has a special annotation <span class="text-annotation">@ExceptionHandler</span>. We
+                            can add this
+                            annotation to
+                            any class inside our controllers to make them be called when a certain error has occurred in
+                            our system.
+                            Just for
+                            example:</p>
+                        <p class="file-name">Example code:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;"><br />
+                                <p> </p>
+                                <p><span class="comment">// this method will be called when a RuntimeException occurs in
+                                        the controller this method is defined. </span></p>
+                                <p><span class="annotation">@ExceptionHandler</span> (value = RuntimeException.<span
+                                        class="key-word">class</span>) </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String
+                                    noHandlerFoundExceptionHandler () {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    <span class="string">"errors/error"</span><span class="key-word">;
+                                    </span><span class="comment">// returns a page that displays an error
+                                        message to a user. </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            But if you set up the methods with such annotation inside the controller with your standart
+                            <span class="text-annotation">@GetMapping </span>and <span
+                                class="text-annotation">@PostMapping </span> then
+                            these “error
+                            methods” will only be called for the requests inside this controller. To make the exception
+                            handling more
+                            global we need
+                            to put the exception methods inside a separate class. This class will have a special
+                            annotation:
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="centered"><span class="text-annotation">@ControllerAdvice</span></p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Let’s create a new controller that we will use to handle exceptions.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Do the following:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>Inside the controller package create a new class called
+                                    DefaultExceptionHandlerControlAdvice (or
+                                    chose any other name)</li>
+                                <li>Annotate it with the @ControllerAdvice annotation</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name"> DefaultExceptionHandlerControlAdvice.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@ControllerAdvice</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    DefaultExceptionHandlerControlAdvice { </p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>To test that everything works as intended, let’s create a sample method that will be mapped
+                            to all
+                            exceptions. Only for
+                            the example purposes let’s make it redirect us to the landing page and print some message
+                            into the console:
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">DefaultExceptionHandlerControlAdvice.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@ControllerAdvice</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    DefaultExceptionHandlerControlAdvice { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@ExceptionHandler</span> (value =
+                                    Exception.<span class="key-word">class</span>) </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String
+                                    sampleExceptionHandler () {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;system.out.println(<span
+                                        class="string">"Execution error!"</span>) <span class="key-word">;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span> <span
+                                        class="string">"redirect:/"</span><span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            You can play around with this method a bit. Try to trigger different types of exceptions and
+                            see which ones
+                            do get
+                            mapped to the method with the <span class="text-annotation">@ExceptionHandler</span>
+                            annotation.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            You will notice that error 404 still appears as before. Why is that? The reason is, my dear
+                            friends, that it
+                            is the job
+                            of the dispatcher servlet to handle this error. It is the Dispatcher servlet that is
+                            responsible for finding
+                            appropriate
+                            handlers for the user's request and if it doesn’t it will trigger an error. What shall we
+                            do, you might ask?
+                            I have just
+                            a solution for you!</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Like most things in Spring, the dispatcher servlet can be configured inside the
+                            configuration classes. The
+                            one that we
+                            will need is our old friend <span class="text-class-name">WebAppInitializer</span>, the one,
+                            where we were
+                            setting
+                            configuration files for our dispatcher servlet before.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Do the following:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>
+                                    Override method responsible for creating the Dispatcher Servlet itself inside the
+                                    WebAppInitializer
+                                    class. This method is called createDispatcherServlet()</li>
+                                <li>
+                                    Create the DispatcherServlet object using the super method but then change
+                                    ThrowExceptionIfNoHandlerFound to true</li>
+
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Essentially, this is what you will end up with:
+                        </p>
+                        <p class="file-name"> WebAppInitializer.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Order</span> (1) </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    WebAppInitializer <span class="key-word">extends</span>
+                                    AbstractAnnotationConfigDispatcherServletInitializer { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Override</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">protected</span> FrameworkServlet
+                                    createDispatcherServlet (WebApplicationContext servletAppContext) { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;DispatcherServlet dispatcherServlet =
+                                    (DispatcherServlet)
+                                    <span class="key-word">super</span>.createDispatcherServlet(servletAppContext)<span
+                                        class="key-word">; </span>
+                                </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;dispatcherServlet.setThrowExceptionIfNoHandlerFound(<span
+                                        class="key-word">true</span>) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    dispatcherServlet<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p> Now an incorrect URL should result in triggering our method with the <span
+                                class="text-annotation">@ExceptionHandler</span> annotation.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Wonderfull.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Creating separate ExceptionHandlers</h4>
+                    <div class="paragraph">
+                        <p> Of course, we don’t usually want to call the same method for handling all of our exceptions.
+                            Different
+                            exceptions need
+                            different treatment.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>What we can do is create different ExceptionHandlers methods. We will need one for the <span
+                                class="text-class-name">NoHandlerFoundException</span>, which is thrown when no handler
+                            for a user's
+                            request was
+                            found (404), and we will have another ExceptionHandler for all other errors (which we will
+                            all treat as a
+                            500 error for
+                            now).</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Let our 404 error handler will also return a seperate view.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Do the following:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>Create a new package for error views inside of the “templates” package.</li>
+                                <li>Create a new page for the 404 error inside the “error” package</li>
+                                <li>Fill that page with some context</li>
+                                <li>
+                                    Create a new ExceptionHandler method inside our ControllerAdvice class, that will
+                                    handle the <span class="text-class-name">NoHandlerFoundException</span></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <div class="text-image">
+                            <p>“errors” package:</p>
+                            <img src="../../images/entries/91/9.1.3Pic6.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="text-image">
+                            <p>404.ftl:</p>
+                            <img src="../../images/entries/91/9.1.4Pic7.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+                    <div class="paragraph">
+
+                    </div>
+
+
+                    <div class="paragraph">
+
+                        <p class="file-name">DefaultExceptionHandlerControlAdvice.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@ControllerAdvice</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    DefaultExceptionHandlerControlAdvice { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@ResponseStatus</span>
+                                    (HttpStatus.NOT_FOUND) <span class="comment">// 404 </span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@ExceptionHandler</span> (value =
+                                    NoHandlerFoundException.<span class="key-word">class</span>) </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String
+                                    noHandlerFoundExceptionHandler () {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    <span class="string">"errors/404"</span><span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <p> <span class="text-annotation">@ResponseStatus</span> annotation will set the HTTP status
+                                to
+                                the response we
+                                will send to
+                                the user.</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p>Let’s also add the <span class="text-annotation">@ResponseStatus</span> annotation to the
+                                other
+                                ExceptionHandler we
+                                have:</p>
+                        </div>
+
+                        <div class="paragraph">
+                            <p class="file-name">DefaultExceptionHandlerControlAdvice.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@ControllerAdvice</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        DefaultExceptionHandlerControlAdvice { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@ResponseStatus</span>
+                                        (HttpStatus.INTERNAL_SERVER_ERROR) <span class="comment">// 500 </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@ExceptionHandler</span> (value
+                                        = Exception.<span class="key-word">class</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String
+                                        sampleExceptionHandler () {</p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system.out.println(<span
+                                            class="string">"Execution error!"</span>) <span class="key-word">;</span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="string">"errors/500"</span><span
+                                            class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="paragraph">
+                        <p> I will go ahead and create a page for error 500 and will set it to be returned inside that
+                            ExceptionHandler:
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <div class="text-image">
+                            <p>500.ftl:</p>
+                            <img src="../../images/entries/91/9.1.5Pic10.png" class="mx-auto d-block">
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">DefaultExceptionHandlerControlAdvice.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@ControllerAdvice</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        DefaultExceptionHandlerControlAdvice { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@ResponseStatus</span>
+                                        (HttpStatus.INTERNAL_SERVER_ERROR) <span class="comment">// 500 </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="annotation">@ExceptionHandler</span> (value
+                                        = Exception.<span class="key-word">class</span>) </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String
+                                        sampleExceptionHandler () {</p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="string">"errors/500"</span><span
+                                            class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>And this is how we can catch the exceptions in Spring. But I want us to have a few custom
+                                errors to show
+                                you how we can
+                                work with them.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">
+                        Creating custom Exceptions</h4>
+                    <div class="paragraph">
+                        <p>
+                            I want to create two custom exceptions:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>NoSuchEntityFoundException - this one will be called when we can’t find an entity
+                                    from a table.</li>
+                                <li>NoSuchUserFoundException - this one we will call when we can’t find a user from the
+                                    authentication
+                                    token.</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p>Do the following:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>Create a new package “exception” inside the “java” package</li>
+                                <li>Create two classes that will represent our custom exceptions. Both classes should
+                                    extend the
+                                    RuntimeException class.</li>
+                            </ul>
+                        </ul>
+                    </div>
+
+                    <div class="paragraph">
+                        <div class="text-image">
+                            <p>exception folder:</p>
+                            <img src="../../images/entries/91/9.1.6Pic12.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">NoSuchEntityFoundException.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    NoSuchEntityFoundException <span class="key-word">extends</span> RuntimeException {
+                                </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">NoSuchUserFoundException.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    NoSuchUserFoundException <span class="key-word">extends</span> RuntimeException {
+                                </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>Let’s also create new ExceptionHandler methods that we will need to catch these new
+                            exceptions that we have
+                            just
+                            created.</p>
+
+                        <p class="file-name">DefaultExceptionHandlerControlAdvice.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@ControllerAdvice</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    DefaultExceptionHandlerControlAdvice { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@ResponseStatus</span>
+                                    (HttpStatus.NOT_FOUND) <span class="comment">// 404 </span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@ExceptionHandler</span> (value =
+                                    {NoHandlerFoundException.<span class="key-word">class</span>,
+                                    NoSuchEntityFoundException.class}) <span class="comment"> // This is how we can
+                                        handle multiple errors by the same method.</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String
+                                    noHandlerFoundExceptionHandler () {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    <span class="string">"errors/404"</span><span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// NoSuchUserFoundException
+                                        error-catching method. </span></p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@ResponseStatus</span>
+                                    (HttpStatus.INTERNAL_SERVER_ERROR) </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@ExceptionHandler</span> (value =
+                                    NoSuchUserFoundException.<span class="key-word">class</span>) </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String
+                                    noSuchUserFoundExceptionHandler () {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    <span class="string">"errors/500"</span><span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Now as you can see, I didn’t create two new exception handling methods. I will not need to
+                            perform any
+                            special activity
+                            for the <span class="text-class-name">NoSuchEntityFoundException</span>. I will treat it in
+                            the same manner
+                            as the <span class="text-class-name">NoHandlerFoundException</span>.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>But because I will do some special operations when the <span
+                                class="text-class-name">NoSuchUserFoundException</span> is
+                            thrown, I have created a separate exception handling method for it.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>The last job is to actually trigger the new exceptions in the code.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>I will throw <span class="text-class-name">NoSuchUserFoundException</span> when the user we
+                            got from the
+                            authentication
+                            token is null:</p>
+                        <p class="file-name">ContextProvider.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    ContextProvider { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserService
+                                    userService<span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User getUser () { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SecurityContext context =
+                                    SecurityContextHolder.getContext() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Authentication authentication =
+                                    context.getAuthentication() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String principle =
+                                    authentication.getPrincipal().toString()<span class="key-word">;</span> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                    userService.findUser(principle) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (user == <span class="key-word">null</span>) </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">throw</span> <span class="key-word">new</span>
+                                    NoSuchUserFoundException() <span class="key-word">; </span><span class="comment">//
+                                        Throwing one of our new excrptions. </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">return</span> user<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>And I will throw the <span class="text-class-name">NoSuchEntityFoundException</span> if the
+                            <span class="text-class-name">News</span> id we get from one of the paths does not match any
+                            of the entities’.
+                        </p>
+                        <p class="file-name">NewsController.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Controller</span> </p>
+                                <p><span class="annotation">@RequestMapping</span> (<span class="string">"news"</span>)
+                                </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    NewController { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@GetMapping</span> (<span
+                                        class="string">"/view/{id}"</span>) </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String getANewsArticle
+                                    (<span class="annotation">@PathVariable</span> (name =) <span
+                                        class="key-word">int</span> id, Model model) { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;News news = newsService.getNews(id)
+                                    <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (news == <span class="key-word">null</span>) { </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">throw</span> <span class="key-word">new</span>
+                                    NoSuchEntityFoundException() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        model.addAttribute(<span class="string">"article"</span>, news)<span class="key-word">;</span> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        model.addAttribute(<span class="string">"user"</span>, news.getUser())<span class="key-word">;</span> <span class="comment">// this is how we pass the user of
+                                        our news. </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    <span class="string">"/news/article"</span><span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>That will do for the exception handling.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            If you want to read a bit more on the exception handling, I have found two very good sources
+                            for you to read
+                            through:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li><a href="https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc"
+                                        target="_blank" class="text-link">
+                                        https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc</a></li>
+                                <li><a href="https://www.baeldung.com/custom-error-page-spring-mvc" target="_blank"
+                                        class="text-link">
+                                        https://www.baeldung.com/custom-error-page-spring-mvc</a></li>
+
+                            </ul>
+                        </ul>
+
+                    </div>
+                    <div class="paragraph">
+                        <p></p>
+                    </div>
+                    <div class="paragraph">
+                        <p></p>
+                    </div>
+                </section>
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="nav-button" onclick="location.href='81.Authorities.html'" type="button">
+                                Previous topic: Security. Authorities and Roles
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='111.MailAPI.html'" type="button">
+                                Next topic: Mail API. Sending Emails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

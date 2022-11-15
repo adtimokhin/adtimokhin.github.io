@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Some Spring Stuff | Logging</title>
+    <link rel="icon" type="image/x-icon" href="../../images/SomeSpringStuff_LOGO.svg" />
+
+</head>
+
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/code-in-text.css" rel="stylesheet">
+<link href="../../css/code.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body class="bdy">
+
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-dark justify-content-center"
+                     style="background-color: #203c96;">
+                    <div class="container-fluid">
+                        <p class="navbar-brand">Some Spring Stuff </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-md-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px;">
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">About the site</a>-->
+                                <!--                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Project's structure
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a class="dropdown-item" onclick="location.href='01.Introduciton.html'">Introduction to Spring Framework</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='11.SetUpIntellij.html'">Setting up IDE</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='12.SettingUpMaven.html'">Getting familiar with Maven</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='13.SettingUpServer.html'">Setting up Tomcat Server</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='21.InversionOfControlAndDependencyInjection.html'">Inversion of Control and Dependency Injection</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='22.ConfigurationFiles.html'">Configuration Files</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='23.Web.xmlAndDispatcher-servlet.html'">XML Configuration</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='31.FirstController.html'">First Controller</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='32.CreatingFirstFTLPages.html'">FTL Pages</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='00.MVC.html'">MVC Model</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='33.StartingWithDatabases.html'">Introduction to Databases</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='331.JDBCAPI.html'">JDBC API</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='332.JDBCTemplate.html'">JDBC Template</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='333.HibernateORM.html'">Hibernate ORM</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='334.JPA.html'">JPA</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='41.UserValidation.html'">User Validation</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='51.News.EntityAndValidation.html'">Adding Another Entity</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='61.SpringSecurityIntroduction.html'">Spring Security. Introduction</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='62.SpringSecuritySomeOtherSecurityStuff.html'">Spring Security. Advanced Topics</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='71.MappingPartOne.html'">Mappings. Part One</a></li>
+                                        <li><a class="dropdown-item" onclick="location.href='72.MappingsPartTwo.html'">Mappings. Part Two</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='81.Authorities.html'">Security. Authorities and Roles</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='91.ExceptionHandling.html'">Exception Handling</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='111.MailAPI.html'">Mail API. Sending Emails</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='121.Logging.html'">Logging</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" onclick="location.href='131.AOP.html'">AOP and Spring AOP</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" href="#">Roadmap</a>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="nav-item">-->
+                                <!--                                    <a class="nav-link" onclick="location.href='links.html'">Links</a>-->
+                                <!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-none d-md-block col-md-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main role="main" class="container">
+
+        <div class="row">
+            <!-- Main content body -->
+            <div class="col-md-10 col-xs-12">
+                <h1 class="display-3 text-center page-title">Logging</h1>
+                <section>
+                    <h4 class="section-title">What is logging and why is it a good idea to implement it into your code?
+                    </h4>
+                    <div class="paragraph">
+                        <p> Imagine you have uploaded your application to the web. The server is running and people all
+                            over the globe
+                            are using
+                            your app. But suddenly you start to get messages from your customers telling you that there
+                            is a bug in your
+                            system.
+                            How are you going to find and fix it?</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Potentially you can run your code on another server and try to recreate the error. But what
+                            if that will
+                            take a lot
+                            of time, or what if you won’t be able to get the same bug and you will not know what to fix?
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p> Here is where logging comes into play. Logging let’s you write into a file some information
+                            about the
+                            process that
+                            your application is running. Most commonly you would save this data into log files:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="centered"><b> At what time the logging happened<br />
+                                What method is running<br />
+                                Some message</b></p>
+                    </div>
+                    <div class="paragraph">
+                        <p> This “Some message” is any text that you want actually to record for you to analyse in the
+                            future. This
+                            message may
+                            very well be an error trace.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Logging levels</h4>
+                    <div class="paragraph">
+                        <p>While the code runs you can update the things that you want to see appearing in your log
+                            files. Sometimes you
+                            will want
+                            to log only the errors that occur, in other cases you may find it useful to trace the whole
+                            execution of
+                            your program
+                            (including execution of all methods in certain packages).</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Therefore different logging levels exist. You mark each call to record something into the
+                            logging files with
+                            one of the
+                            5 logging levels:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p><b>Trace</b> - records how the execution of the program is going
+                        <p>
+                        <p><b>Debug</b> - records information relevant to debugging of the code execution</p>
+                        <p><b>Info</b> - records that some important action (for the program execution) happened (e.g.
+                            you’ve opened
+                            connection with your
+                            database)</p>
+                        <p><b>Warn</b> - records program does not behave as expected, but currently it does not thread
+                            the running of
+                            your server</p>
+                        <p><b>Error</b> - records an exception was thrown</p>
+                    </div>
+                    <div class="paragraph">
+                        <p> Depending on the logging level that you have selected to be recorded different log entries
+                            will be added to
+                            the
+                            files.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p> The table below summarizes what levels of logging will be recorded in the log files,
+                            depending on what level
+                            of
+                            logging
+                            was set to you log files:</p>
+
+                        <div class="text-image">
+                            <p>Table:</p>
+                            <img src="../../images/entries/121/12.1Table.png" class="mx-auto d-block">
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <p> What you log and what logging level you use is totally up to you. There are no specific
+                            rules, but make sure
+                            that
+                            your
+                            logging will help you in the future.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Example of logging levels</h4>
+                    <div class="paragraph">
+                        <p>
+                            Let me show you on one of the methods that we have created so far how you might want to log
+                            it:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">ContextProvider.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    ContextProvider { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserService
+                                    userService<span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User getUser () { </p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// INFO -
+                                        method getUser() was initialized </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SecurityContext context =
+                                    SecurityContextHolder.getContext() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// TRACE - got
+                                        Context out of the SecurityContextHolder </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Authentication authentication =
+                                    context.getAuthentication() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// TRACE - got
+                                        authentication token </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String
+                                    principle = authentication.getPrincipal().toString()<span class="key-word">; </span>
+                                </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// TRACE - got
+                                        principle form the token </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                    userService.findUser(principle) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (user == <span class="key-word">null</span>) { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ERROR - no User was found with the token passed </span></p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">throw</span> <span class="key-word">new</span>
+                                    NoSuchUserFoundException() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// this is a
+                                        made up check. You do not to test passwords. It is here just to show you that
+                                        you can call WARN log statements. </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// WARN - user
+                                        has an unsecured password </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span> (
+                                    user.getPassword().length() &#60; 10 ) {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ... </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                        DEBUG - got User with parameters: ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    user<span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Above you see a method <span class="code">getUser()</span> from <span
+                                class="text-class-name">ContextProvider</span>.
+                            Comments represent potential calls to log files to save some information. Depending on what
+                            log level you
+                            have set in
+                            your program to be recorded, only certain of these calls will actually be executed.</p>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">TRACE</h6>
+                        <p class="file-name">ContextProvider.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    ContextProvider { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserService
+                                    userService<span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User getUser () { </p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// INFO -
+                                        method getUser() was initialized </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SecurityContext context =
+                                    SecurityContextHolder.getContext() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// TRACE - got
+                                        Context out of the SecurityContextHolder </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Authentication authentication =
+                                    context.getAuthentication() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// TRACE - got
+                                        authentication token </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String
+                                    principle = authentication.getPrincipal().toString()<span class="key-word">; </span>
+                                </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// TRACE - got
+                                        principle form the token </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                    userService.findUser(principle) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (user == <span class="key-word">null</span>) { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ERROR - no User was found with the token passed </span></p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">throw</span> <span class="key-word">new</span>
+                                    NoSuchUserFoundException() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// this is a
+                                        made up check. You do not to test passwords. It is here just to show you that
+                                        you can call WARN log statements. </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// WARN - user
+                                        has an unsecured password </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span> (
+                                    user.getPassword().length() &#60; 10 ) {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ... </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                        DEBUG - got User with parameters: ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    user<span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">DEBUG</h6>
+                        <p class="file-name">ContextProvider.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    ContextProvider { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserService
+                                    userService<span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User getUser () { </p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// INFO -
+                                        method getUser() was initialized </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SecurityContext context =
+                                    SecurityContextHolder.getContext() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Authentication authentication =
+                                    context.getAuthentication() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String
+                                    principle = authentication.getPrincipal().toString()<span class="key-word">; </span>
+                                </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                    userService.findUser(principle) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (user == <span class="key-word">null</span>) { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ERROR - no User was found with the token passed </span></p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">throw</span> <span class="key-word">new</span>
+                                    NoSuchUserFoundException() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// this is a
+                                        made up check. You do not to test passwords. It is here just to show you that
+                                        you can call WARN log statements. </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// WARN - user
+                                        has an unsecured password </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span> (
+                                    user.getPassword().length() &#60; 10 ) {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ... </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                        DEBUG - got User with parameters: ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    user<span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">INFO</h6>
+                        <p class="file-name">ContextProvider.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    ContextProvider { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserService
+                                    userService<span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User getUser () { </p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// INFO -
+                                        method getUser() was initialized </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SecurityContext context =
+                                    SecurityContextHolder.getContext() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Authentication authentication =
+                                    context.getAuthentication() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String
+                                    principle = authentication.getPrincipal().toString()<span class="key-word">; </span>
+                                </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                    userService.findUser(principle) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (user == <span class="key-word">null</span>) { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ERROR - no User was found with the token passed </span></p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">throw</span> <span class="key-word">new</span>
+                                    NoSuchUserFoundException() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// this is a
+                                        made up check. You do not to test passwords. It is here just to show you that
+                                        you can call WARN log statements. </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// WARN - user
+                                        has an unsecured password </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span> (
+                                    user.getPassword().length() &#60; 10 ) {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ... </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    user<span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">WARN
+                        </h6>
+                        <p class="file-name">ContextProvider.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    ContextProvider { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserService
+                                    userService<span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User getUser () { </p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SecurityContext context =
+                                    SecurityContextHolder.getContext() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Authentication authentication =
+                                    context.getAuthentication() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String
+                                    principle = authentication.getPrincipal().toString()<span class="key-word">; </span>
+                                </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                    userService.findUser(principle) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (user == <span class="key-word">null</span>) { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ERROR - no User was found with the token passed </span></p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">throw</span> <span class="key-word">new</span>
+                                    NoSuchUserFoundException() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// this is a
+                                        made up check. You do not to test passwords. It is here just to show you that
+                                        you can call WARN log statements. </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// WARN - user
+                                        has an unsecured password </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span> (
+                                    user.getPassword().length() &#60; 10 ) {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ... </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    user<span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">ERROR</h6>
+                        <p class="file-name">ContextProvider.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    ContextProvider { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="annotation">@Autowired</span> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> UserService
+                                    userService<span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User getUser () { </p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SecurityContext context =
+                                    SecurityContextHolder.getContext() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Authentication authentication =
+                                    context.getAuthentication() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String
+                                    principle = authentication.getPrincipal().toString()<span class="key-word">; </span>
+                                </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                    userService.findUser(principle) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (user == <span class="key-word">null</span>) { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ERROR - no User was found with the token passed </span></p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">throw</span> <span class="key-word">new</span>
+                                    NoSuchUserFoundException() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span> (
+                                    user.getPassword().length() &#60; 10 ) {</p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ... </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    user<span class="key-word">; </span>
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>
+                            That pretty much summarizes the concept of logging. Now let’s talk about different tools
+                            there are to log
+                            with.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Logging tools</h4>
+                    <div class="paragraph">
+                        <p>There are some tools used commonly for logging Java applications:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>Log4j</li>
+                                <li>JDK logging</li>
+                                <li>Logback</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p>Log4j is the most popular of the bunch.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>There is also another tool - slf4j.slf4j is not a logging instrument, but rather a medium
+                            between your
+                            application and your logger. slf4j will be used to
+                            call the log methods inside your code, but the execution of actual logger will be with
+                            log4j, JDK logging,
+                            or logback.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>slf4j is helping you to switch between logging instruments, and that might be useful
+                            sometimes.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            slf4j has its own implementation that can record log messages, called “simple”, but we will
+                            not focus on it
+                            right now.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>We will be using log4j and slf4j to log our application.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Dependencies</h4>
+                    <div class="paragraph">
+                        <p>Basically you need three components:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>The slf4j itself</li>
+                                <li>log4j</li>
+                                <li>A library to bind slf4j and log4j</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p>You can find all of the required packages in the following dependencies:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li><a target="_blank" class="text-link"
+                                        href="https://mvnrepository.com/artifact/org.slf4j/slf4j-api">This dependency
+                                        will give that
+                                        slf4j instrument that will allow you to choose what log instrument to use.</a>
+                                </li>
+                                <li><a target="_blank" class="text-link"
+                                        href="https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12">This is the
+                                        part of the slf4j
+                                        library that will allow your application to bind with log4j</a></li>
+                                <li><a target="_blank" class="text-link"
+                                        href="https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core">For
+                                        log4j you will
+                                        need to get this dependency.</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p>Now, do the following:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>Add dependencies required</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">pom.xml:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!-- ...
+                                        --&#62;<br /></span></p><br />
+                                <p></p>
+                                <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                        Logging --&#62;<br /></span></p><br />
+                                <p></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;dependency&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;groupId&#62;</span>org.slf4j<span
+                                        class="xml-tag">&#60;/groupId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;artifactId&#62;</span>slf4j-api<span
+                                        class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;version&#62;</span>1.7.32<span
+                                        class="xml-tag">&#60;/version&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                <p></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;dependency&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;groupId&#62;</span>org.slf4j<span
+                                        class="xml-tag">&#60;/groupId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;artifactId&#62;</span>slf4j-log4j12<span
+                                        class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;version&#62;</span>1.7.32<span
+                                        class="xml-tag">&#60;/version&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;scope&#62;</span>test<span
+                                        class="xml-tag">&#60;/scope&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                <p></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;dependency&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;groupId&#62;</span>org.apache.logging.log4j<span
+                                        class="xml-tag">&#60;/groupId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;artifactId&#62;</span>log4j-core<span
+                                        class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;version&#62;</span>2.14.1<span
+                                        class="xml-tag">&#60;/version&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                <p></p>
+                                <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!-- ...
+                                        --&#62;<br /></span></p><br />
+                                <p></p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>Also, don’t forget to remove the <span
+                                class="text-xml-tag">&#60;scope&#62;&#60;/scope&#62;</span> annotations for the
+                            second dependency. We want to be able to work with log4j not only in the test scope.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">pom.xml:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!-- ...
+                                        --&#62;<br /></span></p><br />
+                                <p></p>
+                                <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                        Logging --&#62;<br /></span></p><br />
+                                <p></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;dependency&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;groupId&#62;</span>org.slf4j<span
+                                        class="xml-tag">&#60;/groupId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;artifactId&#62;</span>slf4j-api<span
+                                        class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;version&#62;</span>1.7.32<span
+                                        class="xml-tag">&#60;/version&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                <p></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;dependency&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;groupId&#62;</span>org.slf4j<span
+                                        class="xml-tag">&#60;/groupId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;artifactId&#62;</span>slf4j-log4j12<span
+                                        class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;version&#62;</span>1.7.32<span
+                                        class="xml-tag">&#60;/version&#62;</span></p>
+                                <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!--
+                                        remove the scope --&#62;<br /></span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                <p></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;dependency&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;groupId&#62;</span>org.apache.logging.log4j<span
+                                        class="xml-tag">&#60;/groupId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;artifactId&#62;</span>log4j-core<span
+                                        class="xml-tag">&#60;/artifactId&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;version&#62;</span>2.14.1<span
+                                        class="xml-tag">&#60;/version&#62;</span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="xml-tag">&#60;/dependency&#62;</span></p><br />
+                                <p></p>
+                                <p><span class="comment">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;!-- ...
+                                        --&#62;<br /></span></p><br />
+                                <p></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Configuring Log4j</h4>
+                    <div class="paragraph">
+                        <p>Believe it or not, but we don’t need to add any configuration for slf4j.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            But Log4j needs additional setup. This is actually very good because we can specify how and
+                            what we want to log.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>I will talk about what log4j’s configuration is made of and then how to write it.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>Loggers are made of a bunch of parts:</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>1) <b>Appenders</b> describe: where are your log files stored; what is the maximum size of
+                            the log files; what class is used to
+                            update the log files.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>2) <b>Layouts</b> describe the format in which the data will be stored in the log files.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>3) <b>Categories</b> describe to which packages will your appender be applied to and what
+                            logging level will be recorded in them.
+                        </p>
+                    </div>
+                    <div class="paragraph">
+                        <p>I hope that this will become more clear when you see the example below.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="file-name">log4j.properties:</p>
+                        <!-- 
+<p><span class="comment"></span></p>
+                            <p><span class="key-word"></span><span class="string"></span></p>-->
+
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="comment">#Class that will be used to append information to our log
+                                        files</span></p>
+                                <p><span class="key-word">log4j.appender.file</span>=<span
+                                        class="string">org.apache.log4j.RollingFileAppender</span></p>
+                                <p><span class="comment">#Where log file for this appender will be stored</span></p>
+                                <p><span class="key-word">log4j.appender.file.File</span>=<span class="string">/(path to
+                                        project)/newsSite/log/main.log</span></p>
+                                <p><span class="comment">#Maximum size of the log file</span></p>
+                                <p><span class="key-word">log4j.appender.file.MaxFileSize</span>=<span
+                                        class="string">1KB</span></p>
+                                <p><span class="comment">#We will talk about this in a second</span></p>
+                                <p><span class="key-word">log4j.appender.file.MaxBackupIndex</span>=<span
+                                        class="string">10</span></p>
+                                <p><span class="comment">#Class used for the layout of the log file</span></p>
+                                <p><span class="key-word">log4j.appender.file.layout</span>=<span
+                                        class="string">org.apache.log4j.PatternLayout</span></p>
+                                <p><span class="comment">#Pattern for storing data into the log file (we will talk about
+                                        this in just a minute)</span></p>
+                                <p><span class="key-word">log4j.appender.file.layout.ConversionPattern</span>=<span
+                                        class="string">%d{yyyy-MM-dd HH:mm:ss} %-5p [%l]: %m%n</span></p>
+                                <p><span class="comment">#Category parameters for your appender</span></p>
+                                <p><span class="key-word">log4j.category.com.adtimokhin</span>=<span
+                                        class="string">DEBUG, file</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Log4j supports configuration via .properties file. Log4j will automatically detect a file
+                            with name log4j.properties,
+                            inside the <span class="text-folder-name">resources</span> folder, as the log4j
+                            configuration file.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            This file has a certain structure in terms of the tags used.</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>All keys start with log4j.</li>
+                                <li>
+                                    log4j is then followed by the name of the logger part (appender, category, etc.).
+                                    Notice that layout is a part section
+                                    of the appender.</li>
+                                <li>Then you write the name of the appender (In my case, I have named the appender as
+                                    “file”).</li>
+                                <li>And you finish by specifying what configuration you want to specify. But this is not
+                                    always necessary.</li>
+                            </ul>
+                        </ul>
+                    </div>
+
+
+                    <div class="paragraph">
+                        <p>The tag for setting the category parameters is a bit odd, as you can see. The key’s name has
+                            the following structure:</p>
+                        <p class="centered"><b>log4j.category.**package.to.scan**=*LOGGING LEVEL*, *name of the
+                                appender*</b></p>
+                    </div>
+                    <div class="paragraph">
+                        <p>“package.to.scan” - is a parent package in which the logger will be looking for logger
+                            methods.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>In my case, “package.to.scan” is <span class="text-folder-name">com.adtimokhin</span>,
+                            because I want this appender to
+                            work with all of the files inside the <span class="text-folder-name">com.adtimokhin</span>
+                            package.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Let’s also look at the values the appender tags store:</p>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">RollingFileAppender</h6>
+                        <div class="paragraph">
+                            <p>All logging data is stored in .log files. <span
+                                    class="text-class-name">RollingFileAppender</span> specifies how this is
+                                done. This class will make it so that you have a fixed size of every .log file and a
+                                fixed number of .log files
+                                themselves.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                When the newest log file is full it will create a new one if the capacity of the log
+                                files has not yet been reached. If
+                                it had then the oldest file would be erased.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                Each new log file would start with the name specified in the log4j.properties and then
+                                would be followed by a number.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>MaxBackupIndex specifies the maximum number of log files.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>The <b>smaller</b> the number of the log file - the fresher is the data:</p>
+                            <div class="text-image">
+                                <img src="../../images/entries/121/12.2Folders.png" class="mx-auto d-block">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Conversion Patterns</h6>
+                        <div class="paragraph">
+                            <p>Conversion patterns may scare you. And it is obvious - it is hard to understand what is
+                                going on. But essentially this
+                                is just an encoded string that tells how to store data in the log.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+
+                                There are many ways to encode data, so you have a lot of flexibility in what to store
+                                inside your log files.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>The string in the log4j.properties, for example, matches to this format:</p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="centered"><b>Year-Month-Day Hour:Minute:Second LOGGING LEVEL [Method name]: the
+                                    message</b></p>
+                        </div>
+                        <div class="paragraph">
+                            <p>You can read on how to create any conversion pattern you like <a
+                                    href="https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html"
+                                    class="text-link" target="_blank">here</a>.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">How to use loggers in our code</h4>
+                    <div class="paragraph">
+                        <p>It is very easy to use loggers in the code. Here is the most basic way to do it:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>Go to the class you want to log</li>
+                                <li>Create an instance of Logger (imported from the org.slf4j package!)</li>
+                                <li>Call appropriate methods when needed</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p>This is how to create <span class="text-class-name">Logger</span> inside a class:</p>
+                        <p class="file-name">ContextProvider.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    ContextProvider { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                        class="key-word">final</span> <span class="key-word">static</span> Logger logger
+                                    = LoggerFactory.getLogger(ContextProvider.<span class="key-word">class</span>) <span
+                                        class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>You have to pass the class that will be logged into the <span class="code">getLogger()</span>
+                            method.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            Let’s return back to the example with the <span class="code">getUser()</span> method, and
+                            now call the logger’s methods:</p>
+                        <p class="file-name">ContextProvider.class:</p>
+                        <div class="code-container">
+                            <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="annotation">@Component</span> </p>
+                                <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                    ContextProvider { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                        class="key-word">final</span> <span class="key-word">static</span> Logger logger
+                                    = LoggerFactory.getLogger(ContextProvider.<span class="key-word">class</span>) <span
+                                        class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User getUser () { </p>
+                                <br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// INFO -
+                                        method getUser() was initialized </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.info(<span
+                                        class="string">"Method getUser() was initialized"</span>)<span
+                                        class="key-word">; </span> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SecurityContext context =
+                                    SecurityContextHolder.getContext() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// TRACE - got
+                                        Context out of the SecurityContextHolder </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.trace(<span
+                                        class="string">"Got Context out of the SecurityContextHolder"</span>)<span
+                                        class="key-word">; </span> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Authentication authentication =
+                                    context.getAuthentication() <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// TRACE - got
+                                        authentication token </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.trace(<span
+                                        class="string">"Got authentication token"</span>)<span class="key-word">;
+                                    </span> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;String principle =
+                                    authentication.getPrincipal().toString()<span class="key-word">; </span> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                        TRACE - got principle form the token </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.trace(<span
+                                        class="string">"Got principle form the token"</span>)<span class="key-word">;
+                                    </span> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User user =
+                                    userService.findUser(principle) <span class="key-word">; </span></p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (user == <span class="key-word">null</span>)
+                                    { </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="comment">// ERROR - no User was found with the token passed
+                                    </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.error(<span
+                                        class="string">"No User was found with the token passed"</span>)<span
+                                        class="key-word">; </span> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                        class="key-word">throw</span> <span class="key-word">new</span>
+                                    NoSuchUserFoundException() <span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// this
+                                        is a made up check. You do not to test passwords. It is here just to
+                                        show you that you can call WARN log statements. </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// WARN
+                                        - user has an unsecured password </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                    (user.getPassword().length() &#60; 10){
+                                </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.warn(<span
+                                        class="string">"user has an unsecured password"</span>)<span class="key-word">;
+                                    </span> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                        DEBUG - got User with parameters: ... </span></p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.debug(<span
+                                        class="string">"Got User with parameters: ..."</span>)<span class="key-word">;
+                                    </span> </p>
+                                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">return</span>
+                                    user<span class="key-word">; </span></p>
+                                <p>&#160;&#160;&#160;&#160;} </p><br />
+                                <p> </p><br />
+                                <p> </p>
+                                <p>} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="paragraph">
+                        <p>This is the most basic, and the most common, way of using loggers. There are some other handy
+                            “tricks” that you might
+                            find useful when working with loggers.</p>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Additional Steps</h4>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Making the logger messages more interesting</h6>
+                        <div class="paragraph">
+                            <p>
+                                I want to add details about the <span class="text-class-name">User</span> that we get
+                                from the <span class="code">getUser()</span> method in the log.
+                                To do that we need to modify our message:</p>
+                            <p class="file-name">ContextProvider.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        ContextProvider { </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                            class="key-word">final</span> <span class="key-word">static</span> Logger
+                                        logger = LoggerFactory.getLogger(ContextProvider.<span class="key-word">class
+                                        </span>) <span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User getUser () {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// ...
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">// DEBUG -
+                                            got User with parameters: ... </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;logger.debug(<span
+                                            class="string">"Got User with parameters: {}"</span> , user.getInfo())<span
+                                            class="key-word">; </span> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> user<span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>{} will be replaced with the parameter passed after the message String. You can have as
+                                many parameters as you want.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>A note:<br />
+                                I have created a method called <span class="code">getInfo()</span> inside the <span
+                                    class="text-class-name">User</span>
+                                class. It does the same as the <span class="code">toString()</span> method, but
+                                hibernate works incorrectly if
+                                you override the <span class="code">toString()</span> method.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p class="file-name">User.class:
+                            </p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Entity</span> </p>
+                                    <p><span class="annotation">@Table</span> (name = <span
+                                            class="string">"users"</span>) </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span> User {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// new method: </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> String getInfo () {
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="key-word">return</span> <span class="string">"User{"</span> + </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="string">"id="</span> + id + </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="string">", email='</span> <span class="string">"</span> + email +
+                                        <span class="string">", email=''\' '</span> +
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="string">", password='</span> <span class="string">"</span> + password
+                                        + <span class="string">", password=''\' '</span> + </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="string">", role="</span> + role.getName() + </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="string">", emailVerificationToken='</span> <span
+                                            class="string">"</span> + emailVerificationToken + <span class="string">",
+                                            emailVerificationToken=''\' '</span> + </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
+                                            class="string">'}'</span><span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                Now, let’s imagine that we want to time the execution time of the method <span
+                                    class="code">getUser()</span>. Maybe we
+                                want to optimise the code and we want to find out how much it takes to execute each call
+                                of the <span class="code">getUser()</span> method.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Of course, we don’t want to calculate the time of the execution process every time we
+                                call this method. Say, we want
+                                only to do so if we are logging at the level DEBUG or higher.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>This is how we might approach this:</p>
+                            <p class="file-name">ContextProvider.class:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="annotation">@Component</span> </p><br />
+                                    <p> </p>
+                                    <p><span class="key-word">public</span> <span class="key-word">class</span>
+                                        ContextProvider { </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="comment">// ... </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                            class="key-word">final</span> <span class="key-word">static</span> Logger
+                                        logger = LoggerFactory.getLogger(ContextProvider.<span class="key-word">class
+                                        </span>) <span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">private</span> <span
+                                            class="key-word">static</span> long timeBefore<span class="key-word">;
+                                        </span></p>
+                                    <p>&#160;&#160;&#160;&#160;<span class="key-word">public</span> User getUser () {
+                                    </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (logger.isDebugEnabled()) { <span class="comment">// checking if logger is set
+                                            to a debug mode or any of the one above (trace, in this case) </span> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;timeBefore
+                                        = System.currentTimeMillis() <span class="key-word">; </span></p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                            ... </span></p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="key-word">if</span>
+                                        (logger.isDebugEnabled()) { <span class="comment">// calculating time it took to
+                                            execute method
+                                        </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;long
+                                        timeAfter = System.currentTimeMillis() <span class="key-word">; </span>
+                                    </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;long
+                                        diff = timeAfter - timeBefore<span class="key-word">; </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        logger.debug(<span class="string">"It took {} nanoseconds to execute
+                                            this method"</span>, diff)<span class="key-word">;</span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="comment">//
+                                            ... </span></p><br />
+                                    <p> </p>
+                                    <p>&#160;&#160;&#160;&#160;} </p><br />
+                                    <p> </p><br />
+                                    <p> </p>
+                                    <p>} </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="paragraph">
+                            <p><span class="code">isDebugEnabled()</span> will return true if the logging level for the
+                                appropriate appender is set to
+                                TRACE or DEBUG.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Advanced Logger Configuration. Second file appender</h6>
+                        <div class="paragraph">
+                            <p>
+
+                                Sometimes you will need more than one appender. Say, in one package you want to log with
+                                DEBUG, in another you may think
+                                that TRACE logging level is more appropriate.</p>
+
+                        </div>
+                        <div class="paragraph">
+                            <p>This is how you configure to separate appenders:</p>
+                            <p class="file-name">log4j.poperties:</p>
+                            <!-- 
+<p><span class="comment"></span></p>
+                            <p><span class="key-word"></span><span class="string"></span></p>
+                        
+                        -->
+
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    <p><span class="key-word">log4j.appender.file</span>=<span
+                                            class="string">org.apache.log4j.RollingFileAppender</span></p>
+                                    <p><span class="key-word">log4j.appender.file.File</span>=<span
+                                            class="string">/(path to
+                                            project)/newsSite/log/main.log</span></p>
+                                    <p><span class="key-word">log4j.appender.file.MaxFileSize</span>=<span
+                                            class="string">1KB</span></p>
+                                    <p><span class="key-word">log4j.appender.file.MaxBackupIndex</span>=<span
+                                            class="string">10</span></p>
+                                    <p><span class="key-word">log4j.appender.file.layout</span>=<span
+                                            class="string">org.apache.log4j.PatternLayout</span></p>
+                                    <p><span class="key-word">log4j.appender.file.layout.ConversionPattern</span>=<span
+                                            class="string">%d{yyyy-MM-dd HH:mm:ss} %-5p [%l]: %m%n</span></p>
+                                    <p><span class="key-word">log4j.category.com.adtimokhin</span>=<span
+                                            class="string">DEBUG, file</span></p>
+                                    <p><span class="comment">#NEW APPENDER:</span></p>
+                                    <p><span class="comment">#Class that will be used to append information to our log
+                                        files</span></p>
+                                <p><span class="key-word">log4j.appender.trace</span>=<span
+                                        class="string">org.apache.log4j.RollingFileAppender</span></p>
+                                <p><span class="comment">#Where log file for this appender will be stored</span></p>
+                                <p><span class="key-word">log4j.appender.trace.File</span>=<span class="string">/(path to
+                                        project)/newsSite/log/main.log</span></p>
+                                <p><span class="comment">#Maximum size of the log file</span></p>
+                                <p><span class="key-word">log4j.appender.trace.MaxFileSize</span>=<span
+                                        class="string">1KB</span></p>
+                                <p><span class="comment">#We will talk about this in a second</span></p>
+                                <p><span class="key-word">log4j.appender.trace.MaxBackupIndex</span>=<span
+                                        class="string">10</span></p>
+                                <p><span class="comment">#Class used for the layout of the log file</span></p>
+                                <p><span class="key-word">log4j.appender.trace.layout</span>=<span
+                                        class="string">org.apache.log4j.PatternLayout</span></p>
+                                <p><span class="comment">#Pattern for storing data into the log file (we will talk about
+                                        this in just a minute)</span></p>
+                                <p><span class="key-word">log4j.appender.trace.layout.ConversionPattern</span>=<span
+                                        class="string">%d{yyyy-MM-dd HH:mm:ss} %-5p [%l]: %m%n</span></p>
+                                <p><span class="comment">#Category parameters for your appender</span></p>
+                                <p><span class="key-word">log4j.category.com.adtimokhin.service.impl</span>=<span
+                                        class="string">TRACE, trace</span></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p>Slf4j will use the appender that has the package configured closer to the package where
+                                you have called a log method.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>But if you test this configuration you will see that the message will be recorded in two
+                                seperate files:</p>
+                        </div>
+                        <div class="paragraph">
+                            <div class="text-image">
+                                <p>main.log:</p>
+                                <img src="../../images/entries/121/12.3Pic20.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="text-image">
+                                <p>trace.log:</p>
+                                <img src="../../images/entries/121/12.4Pic21.png" class="mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p>How do we stop that from happening? We need to add one line into the configuration file:
+                            </p>
+                            <p class="file-name">log4j.poperties:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                    
+                                <p><span class="comment">#...</span></p>
+                                <p><span class="key-word">log4j.additivity.com.adtimokhin.service.impl</span>=<span
+                                        class="string">false</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p>After “log4j.additivity.” insert the name of the more specific package. Without it all
+                                appenders will write into their
+                                log files if their configuration tells them that they can access those logger methods.
+                            </p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Say in our example <span class="text-folder-name">com.adtimokhin</span> also includes
+                                <span class="text-folder-name">com.adtimokhin.service.impl</span> folder. That is why
+                                the first appender will write to its
+                                file as well.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Advanced Logger: Logging into the console</h6>
+                        <div class="paragraph">
+                            <p>
+                                You never know when you will need to make your log messages appear in the console.
+                                Instead of writing <span class="code">system.out.println()</span> every time you can use
+                                log4j. There is not much to tell about the
+                                configuration, as it is very similar to the file configuration. So, I will just show you
+                                how you can write this
+                                configuration:</p>
+                            <p class="file-name">log4j.properties:</p>
+                            <div class="code-container">
+                                <div class="code-block" style="overflow-y:auto;">
+                                <p><span class="key-word">log4j.appender.stdout</span>=<span
+                                        class="string">org.apache.log4j.ConsoleAppender</span></p>
+                                <p><span class="key-word">log4j.appender.stdout.Target</span>=<span class="string">System.out</span></p>
+                                <p><span class="key-word">log4j.appender.stdout.layout</span>=<span
+                                        class="string">org.apache.log4j.PatternLayout</span></p>
+                                <p><span class="key-word">log4j.appender.stdout.layout.ConversionPattern</span>=<span
+                                        class="string">%d{yyyy-MM-dd HH:mm:ss} %-5p [%l]: %m%n</span></p>
+                                <p><span class="key-word">log4j.category.com.adtimokhin</span>=<span
+                                        class="string">TRACE, stdout</span></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p> Only thing I will note is that in this example you can see another <span
+                                    class="text-class-name">Appender</span> class
+                                being used - <span class="text-class-name">ConsoleAppender</span>. Now you know that
+                                there is more than one appender we
+                                saw before.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>
+                                To be honest, there are several appenders and each one is used for different things. You
+                                can go to their documentation
+                                to read about them.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>But for now, I will delete this ConsoleLogger “stdout” as I don’t see a point in it in
+                                this functionality in our
+                                application right now.</p>
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <h6 class="sub-section-title">Advance Logger: Root Logger</h6>
+                        <div class="paragraph">
+                            <p>The last thing I wanted to talk about is the root logger. Each logger that we declare
+                                inside the log4j.properties file
+                                can have a parent. The parent that every logger shares is rootLogger.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>It is created by log4j automatically and we don’t have to worry about it. But we can set
+                                some parameters to it:</p>
+                            <p class="file-name">
+                                <div class="code-container">
+                                    <div class="code-block" style="overflow-y:auto;">
+                                        
+                                    <p><span class="comment">#...</span></p>
+                                    <p><span class="key-word">log4j.rootLogger</span>=<span
+                                            class="string">ERROR, file, trace</span></p>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="paragraph">
+                            <p>This line does what you expect it to do: it sets the parent logging level, and also sets
+                                the children of the rootLogger.</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>You still can change the logging level and the “scope of action” for each logger as we
+                                have done it before.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4 class="section-title">Sidenote</h4>
+                    <div class="paragraph">
+                        <p>Properties file is not the only way you can configure log4j. Other common options are:</p>
+                        <ul class="list-unstyled">
+                            <ul>
+                                <li>XML</li>
+                                <li>JSON</li>
+                                <li>YAML</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="paragraph">
+                        <p>Some people even configure Log4j via Java classes, though it is not a common practise.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>
+                            We will not touch on them because after you have read this article you should be able to
+                            understand what you should put
+                            into your configuration file, which is more important than knowing the syntax. I am sure
+                            that you will be able to search
+                            online how to, for instance, write appenders in xml log4j file.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- adverts -->
+<!--            <div class="col-md-2 col-xs-12">-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--                <div class="advert-v" style="background-color: blueviolet;">-->
+<!--                    <p>FCGHVIUOJ</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Bottom navigation pannel -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="nav-button" onclick="location.href='111.MailAPI.html'" type="button">
+                                Previous topic: Mail API. Sending Emails
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="nav-button mx-auto d-block" onclick="location.href='131.AOP.html'" type="button">
+                                Next topic: AOP and Spring AOP
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- photo -->
+                <div class="col-md-4 col-sm-5 col-xs-12" id="logo-container">
+                    <div class="logo-container">
+                        <img src="../../images/adtimokhinLOGOfooter.svg" class="mx-auto d-block">
+                    </div>
+                </div>
+                <!-- Other action buttons -->
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <a href="#" class="footer-link-title">Contact</a>
+                    <a href="https://github.com/adtimokhin/" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aleksandr-timokhin-5300361b6" target="_blank"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/adtimokhin/" target="_blank" class="footer-link">Instagram</a>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-6">
+                    <a href="#" class="footer-link-title">Terms & policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
